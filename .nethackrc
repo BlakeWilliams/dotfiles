@@ -5,20 +5,6 @@ OPTIONS=msg_window:reversed,pettype:cat
 OPTIONS=pickup_types:$?!/=+(",pushweapon,runmode:crawl
 OPTIONS=scores:5t 2a o,autoquiver,pickup_burden:burdened
 OPTIONS=suppress_alert:3.3.1
-CATNAME=Gerty
-DOGNAME=Hudson
-HORSENAME=Fuunsaiki
-#Gui options
-OPTIONS=tile_width:30
-OPTIONS=tile_height:30
-#End Gui options
-# Patch options
-## Menu Colors
-OPTIONS=menucolors
-MENUCOLOR="* cursed *"=red
-MENUCOLOR="* unholy *"=red
-MENUCOLOR="* blessed *"=green
-MENUCOLOR="* holy *"=green
-MENUCOLOR="* cursed * (being worn)"=orange&underline
-MENUCOLOR="* potions? *"=cyan
-## End Menu Colors
+catname=Gerty
+dogname=Hudson
+OPTION=horsename:Fuunsaiki

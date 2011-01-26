@@ -7,6 +7,7 @@ set hlsearch "Highlights search
 set noerrorbells "Obvious
 set backspace=indent,eol,start "Adds intuitive backspacing
 "set visualbell "
+set fdc=1 "Fold column width
 set backup "Make backup before overwriting file
 set backupdir=~/.vim/backup "Custom location for backups
 set directory=~/.vim/tmp "Location for the swap file
