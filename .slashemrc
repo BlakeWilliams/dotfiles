@@ -1,0 +1,19 @@
+OPTIONS=color,showrace,silent,fruit:apple,hilite_pet
+OPTIONS=disclose:+i +a +v yg +c
+OPTIONS=lit_corridor,menustyle:partial,msghistory:50
+OPTIONS=msg_window:reversed,pettype:cat
+OPTIONS=pickup_types:$?!/=+(",pushweapon,runmode:crawl
+OPTIONS=scores:5t 2a o,autoquiver,pickup_burden:burdened
+OPTIONS=sound
+OPTIONS=catname:Gerty,DOGNAME:Hudson,horsename:Fuunsaiki
+OPTIONS=wolfname:Jello
+
+# Patch options
+## Menu Colors
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
+## End Menu Colors
