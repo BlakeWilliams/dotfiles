@@ -15,10 +15,7 @@ set showmatch "Show matching paren/brace/bracket
 set ignorecase "Ignore case in searches
 set smarttab "Prevents tab/space fuckling
 set autoindent smartindent "Use line current indent level & interpret the next liens level
-set expandtab "Make spaces not tabs
 set undolevels=500 "More undo!
-set tabstop=3 "3 space tabs
-set shiftwidth=3 "3 spaces when indented
 filetype on "Find filetype
 filetype indent on "Filetype specific indent
 filetype plugin on "Filetype specific plugins
@@ -26,6 +23,11 @@ set wildmenu
 set history=100		" keep 50 lines of command line history
 set showcmd "Show command in the last line of the screen
 set incsearch "Searches for text as entered
+" Tab stuff!
+set expandtab "Make spaces not tabs
+set tabstop=4 "4 space tabs
+au FileType ruby setl shiftwidth=4 tabstop=4
+set shiftwidth=4 "4 spaces when indented
 if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
    set guioptions-=T    "Remove toolbar"
@@ -54,6 +56,8 @@ if has("autocmd")
 
       " For all text files set 'textwidth' to 78 characters.
       autocmd FileType text setlocal textwidth=78
+      " Language Specific Settings
+      autocmd FileType ruby setlocal shiftwidth=3 tabstop=3
 
       " When editing a file, always jump to the last known cursor position.
       " Don't do it when the position is invalid or when inside an event handler
