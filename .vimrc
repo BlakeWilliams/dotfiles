@@ -20,13 +20,12 @@ filetype on "Find filetype
 filetype indent on "Filetype specific indent
 filetype plugin on "Filetype specific plugins
 set wildmenu
-set history=100		" keep 50 lines of command line history
+set history=100		" keep 100 lines of command line history
 set showcmd "Show command in the last line of the screen
 set incsearch "Searches for text as entered
 " Tab stuff!
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
-au FileType ruby setl shiftwidth=4 tabstop=4
 set shiftwidth=4 "4 spaces when indented
 if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
