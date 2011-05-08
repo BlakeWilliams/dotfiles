@@ -29,7 +29,7 @@ set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
 if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
-   set guioptions-=T    "Remove toolbar"
+   set guioptions-=TL    "Remove toolbar And Left Scrollbar
    set ruler "Ensures a status line
    set number "print line number
    colorscheme molokai "Best colorscheme so far	

@@ -1,2 +1,2 @@
 rvm_make_flags="-j 3"
-rvm_archflags="-arch x86_64"
+rvm_archflags="-arch x86_64"export rvm_path="/Users/Blake/.rvm"
