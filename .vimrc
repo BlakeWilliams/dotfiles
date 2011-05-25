@@ -1,4 +1,6 @@
 syntax on
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 set autowrite "save files before :make or :next
 set nocompatible  "Remove vi compatibility
 set hidden "Enable unsaved buffers 
