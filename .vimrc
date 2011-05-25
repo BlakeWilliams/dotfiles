@@ -1,6 +1,5 @@
-syntax on
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+syntax on
 set autowrite "save files before :make or :next
 set nocompatible  "Remove vi compatibility
 set hidden "Enable unsaved buffers 
@@ -31,7 +30,8 @@ set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
 if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
-   set guioptions-=TL    "Remove toolbar And Left Scrollbar
+   set guioptions-=T    "Remove toolbar 
+   set guioptions-=L    "Remove left scrollbar
    set ruler "Ensures a status line
    set number "print line number
    colorscheme molokai "Best colorscheme so far	
