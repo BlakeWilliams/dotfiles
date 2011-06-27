@@ -32,6 +32,7 @@ if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
    set guioptions-=T    "Remove toolbar 
    set guioptions-=L    "Remove left scrollbar
+   set guicursor+=a:blinkon0
    set ruler "Ensures a status line
    set number "print line number
    colorscheme molokai "Best colorscheme so far	
