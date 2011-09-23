@@ -32,7 +32,6 @@ if has("gui_running")  "Gui only
    set guifont=monaco:h12 "monaco is boss
    set guioptions-=T    "Remove toolbar 
    set guioptions-=L    "Remove left scrollbar
-   set guicursor+=a:blinkon0
    set ruler "Ensures a status line
    set number "print line number
    colorscheme molokai "Best colorscheme so far	
@@ -58,8 +57,10 @@ if has("autocmd")
 
       " For all text files set 'textwidth' to 78 characters.
       autocmd FileType text setlocal textwidth=78
+
       " Language Specific Settings
       autocmd FileType ruby setlocal shiftwidth=3 tabstop=3
+      autocmd FileType scc setlocal shiftwidth=2 tabstop=2
 
       " When editing a file, always jump to the last known cursor position.
       " Don't do it when the position is invalid or when inside an event handler
