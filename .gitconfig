@@ -3,3 +3,7 @@
 	email = blake@bendystra.ws
 [github]
 	user = BlakeWilliams
+[format]
+	pretty = oneline
+[color]
+	ui = true

@@ -1,23 +1,38 @@
-call pathogen#runtime_append_all_bundles()
+set nocompatible  "Remove vi compatibility
+"filetype on "Find filetype
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" Bundles
+Bundle 'tpope/vim-rails'
+Bundle 'gmarik/vundle'
+Bundle 'rake.vim'
+Bundle 'vim-coffee-script'
+Bundle 'vim-scala'
+Bundle 'html5.vim'
+Bundle 'fugitive.vim'
+Bundle 'Haml'
+Bundle 'The-NERD-tree'
+Bundle 'surround.vim'
+Bundle 'VimClojure'
+Bundle 'molokai'
+
 syntax on
 set autowrite "save files before :make or :next
-set nocompatible  "Remove vi compatibility
 set hidden "Enable unsaved buffers 
 set backupcopy=yes "Keeps original creator code
 set hlsearch "Highlights search
 set noerrorbells "Obvious
 set backspace=indent,eol,start "Adds intuitive backspacing
 "set visualbell "
-set fdc=1 "Fold column width
+"set fdc=1 "Fold column width
 set backup "Make backup before overwriting file
 set backupdir=~/.vim/backup "Custom location for backups
 set directory=~/.vim/tmp "Location for the swap file
 set showmatch "Show matching paren/brace/bracket
 set ignorecase "Ignore case in searches
-set smarttab "Prevents tab/space fuckling
-set autoindent smartindent "Use line current indent level & interpret the next liens level
+set smarttab "Prevents tab/space issues
+set autoindent smartindent "Use lines current indent level & interpret the next lines level
 set undolevels=500 "More undo!
-filetype on "Find filetype
 filetype indent on "Filetype specific indent
 filetype plugin on "Filetype specific plugins
 set wildmenu
@@ -59,8 +74,9 @@ if has("autocmd")
       autocmd FileType text setlocal textwidth=78
 
       " Language Specific Settings
-      autocmd FileType ruby setlocal shiftwidth=3 tabstop=3
+      autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
       autocmd FileType scc setlocal shiftwidth=2 tabstop=2
+      autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
       " When editing a file, always jump to the last known cursor position.
       " Don't do it when the position is invalid or when inside an event handler
@@ -71,13 +87,9 @@ if has("autocmd")
                \ if line("'\"") > 1 && line("'\"") <= line("$") |
                \   exe "normal! g`\"" |
                \ endif
-
    augroup END
-
 else
-
-
-endif " has("autocmd")
+endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -86,4 +98,3 @@ if !exists(":DiffOrig")
    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
             \ | wincmd p | diffthis
 endif
-

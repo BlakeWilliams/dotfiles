@@ -1,17 +1,3 @@
-<<<<<<< HEAD
 /.vim/backup/*
 /.vim/tmp/*
 .DS_Store
-=======
-test_projects/*/lib
-test_projects/*/classes/
-test_projects/*/nomnomnom*.jar
-test_projects/sample/pom.xml
-classes/
-lib/
-leiningen*.jar
-lein-swank/lein-swank*.jar
-autodoc/
-bin/nom
-.lein-failures
->>>>>>> 4a3a5f0a450104f22480dc6000977e79aad59d33
