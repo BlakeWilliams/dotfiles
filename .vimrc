@@ -51,6 +51,7 @@ if has("gui_running")  "Gui only
    set number "print line number
    colorscheme molokai "Best colorscheme so far	
    set showtabline=2 "Always show tabs
+   set noballooneval " remove tooltips on hover
 endif
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
