@@ -1,20 +1,5 @@
 set nocompatible  "Remove vi compatibility
-"filetype on "Find filetype
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" Bundles
-Bundle 'tpope/vim-rails'
-Bundle 'gmarik/vundle'
-Bundle 'rake.vim'
-Bundle 'vim-coffee-script'
-Bundle 'vim-scala'
-Bundle 'html5.vim'
-Bundle 'fugitive.vim'
-Bundle 'Haml'
-Bundle 'The-NERD-tree'
-Bundle 'surround.vim'
-Bundle 'VimClojure'
-Bundle 'molokai'
+call pathogen#infect()
 
 syntax on
 set autowrite "save files before :make or :next
@@ -39,17 +24,19 @@ set wildmenu
 set history=100		" keep 100 lines of command line history
 set showcmd "Show command in the last line of the screen
 set incsearch "Searches for text as entered
+set laststatus=2 "Always show status line for powerline
+
 " Tab stuff!
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
 if has("gui_running")  "Gui only
-   set guifont=monaco:h12 "monaco is boss
+   set guifont=menlo:h12 "monaco is boss
    set guioptions-=T    "Remove toolbar 
    set guioptions-=L    "Remove left scrollbar
    set ruler "Ensures a status line
    set number "print line number
-   colorscheme molokai "Best colorscheme so far	
+   colorscheme tomorrow-night "Best colorscheme so far	
    set showtabline=2 "Always show tabs
    set noballooneval " remove tooltips on hover
 endif
@@ -76,8 +63,9 @@ if has("autocmd")
 
       " Language Specific Settings
       autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-      autocmd FileType scc setlocal shiftwidth=2 tabstop=2
-      autocmd FileType css setlocal shiftwidth=2 tabstop=2
+      autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+      autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+      autocmd FileType css  setlocal shiftwidth=2 tabstop=2
 
       " When editing a file, always jump to the last known cursor position.
       " Don't do it when the position is invalid or when inside an event handler
