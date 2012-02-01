@@ -10,9 +10,10 @@ set noerrorbells "Obvious
 set backspace=indent,eol,start "Adds intuitive backspacing
 "set visualbell "
 "set fdc=1 "Fold column width
-set backup "Make backup before overwriting file
-set backupdir=~/.vim/backup "Custom location for backups
-set directory=~/.vim/tmp "Location for the swap file
+set nobackup " NO MORE BACKUPS!
+set noswapfile " NO MORE SWAPFILES!
+"set backupdir=~/.vim/backup "Custom location for backups
+"set directory=~/.vim/tmp "Location for the swap file
 set showmatch "Show matching paren/brace/bracket
 set ignorecase "Ignore case in searches
 set smarttab "Prevents tab/space issues
@@ -30,16 +31,7 @@ set laststatus=2 "Always show status line for powerline
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
-if has("gui_running")  "Gui only
-   set guifont=menlo:h12 "monaco is boss
-   set guioptions-=T    "Remove toolbar 
-   set guioptions-=L    "Remove left scrollbar
-   set ruler "Ensures a status line
-   set number "print line number
-   colorscheme tomorrow-night "Best colorscheme so far	
-   set showtabline=2 "Always show tabs
-   set noballooneval " remove tooltips on hover
-endif
+
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
