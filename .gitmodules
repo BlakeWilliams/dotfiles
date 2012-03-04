@@ -18,7 +18,7 @@
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/tomorrow-night"]
 	path = .vim/bundle/tomorrow-night
-	url = git://github.com/BlakeWilliams/Vim-Tomorrow-Theme.git
+    url = git://github.com/BlakeWilliams/Vim-Tomorrow-Theme.git
 [submodule ".vim/bundle/html5"]
 	path = .vim/bundle/html5
 	url = https://github.com/othree/html5.vim.git
