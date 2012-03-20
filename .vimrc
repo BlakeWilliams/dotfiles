@@ -9,7 +9,7 @@ set hlsearch "Highlights search
 set noerrorbells "Obvious
 set backspace=indent,eol,start "Adds intuitive backspacing
 "set visualbell "
-"set fdc=1 "Fold column width
+set fdc=1 "Fold column width
 set nobackup " NO MORE BACKUPS!
 set noswapfile " NO MORE SWAPFILES!
 "set backupdir=~/.vim/backup "Custom location for backups
@@ -26,6 +26,7 @@ set history=100		" keep 100 lines of command line history
 set showcmd "Show command in the last line of the screen
 set incsearch "Searches for text as entered
 set laststatus=2 "Always show status line for powerline
+set nowrap
 
 " Tab stuff!
 set expandtab "Make spaces not tabs
