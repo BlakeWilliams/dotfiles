@@ -7,3 +7,5 @@
 	pretty = oneline
 [color]
 	ui = true
+[core]
+	excludesfile = /Users/Blake/.global_ignore
