@@ -3,7 +3,7 @@ call pathogen#infect()
 
 syntax on
 set autowrite "save files before :make or :next
-set hidden "Enable unsaved buffers 
+set nohidden "Enable/Disabe unsaved buffers 
 set backupcopy=yes "Keeps original creator code
 set hlsearch "Highlights search
 set noerrorbells "Obvious
