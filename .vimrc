@@ -1,4 +1,5 @@
 set nocompatible  "Remove vi compatibility
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 syntax on
