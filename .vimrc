@@ -2,6 +2,7 @@ set nocompatible  "Remove vi compatibility
 call pathogen#infect()
 
 syntax on
+set autochdir "change dirs automatically
 set autowrite "save files before :make or :next
 set hidden "Enable unsaved buffers 
 set backupcopy=yes "Keeps original creator code
