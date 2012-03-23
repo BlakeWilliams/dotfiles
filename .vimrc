@@ -1,10 +1,12 @@
 set nocompatible  "Remove vi compatibility
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 
 syntax on
 set autochdir "change dirs automatically
 set autowrite "save files before :make or :next
-set hidden "Enable unsaved buffers 
+set nohidden "Enable/Disabe unsaved buffers 
 set backupcopy=yes "Keeps original creator code
 set hlsearch "Highlights search
 set noerrorbells "Obvious
@@ -33,6 +35,10 @@ set nowrap
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
+
+"Plugin stuff
+let NERDTreeMinimalUI=1
+let NERDTreeMapChdir=2
 
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
