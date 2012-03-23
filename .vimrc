@@ -4,8 +4,6 @@ call pathogen#infect()
 call pathogen#helptags()
 
 syntax on
-set autochdir "change dirs automatically
-set autowrite "save files before :make or :next
 set nohidden "Enable/Disabe unsaved buffers 
 set backupcopy=yes "Keeps original creator code
 set hlsearch "Highlights search
@@ -38,52 +36,46 @@ set shiftwidth=4 "4 spaces when indented
 
 "Plugin stuff
 let NERDTreeMinimalUI=1
-let NERDTreeMapChdir=2
+let g:NERDTreeChDirMode=2
 
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
-   set mouse=a "MOUSE!
+    set mouse=a "MOUSE!
 endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-   " Enable file type detection.
-   " Use the default filetype settings, so that mail gets 'tw' set to 72,
-   " 'cindent' is on in C files, etc.
-   " Also load indent files, to automatically do language-dependent indenting.
-   filetype plugin indent on
 
-   " Put these in an autocmd group, so that we can delete them easily.
-   augroup vimrcEx
-      au!
+    " If the first arg is a directory, open up nerdtree
+    autocmd vimenter * exe "cd" argv(0)
+    if isdirectory(argv(0))
+        bd
+        autocmd VimEnter * NERDTree
+    endif
 
-      " For all text files set 'textwidth' to 78 characters.
-      autocmd FileType text setlocal textwidth=78
+    " Language Specific Settings
+    autocmd FileType text setlocal textwidth=78
+    autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+    autocmd FileType css  setlocal shiftwidth=2 tabstop=2
 
-      " Language Specific Settings
-      autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-      autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-      autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-      autocmd FileType css  setlocal shiftwidth=2 tabstop=2
-
-      " When editing a file, always jump to the last known cursor position.
-      " Don't do it when the position is invalid or when inside an event handler
-      " (happens when dropping a file on gvim).
-      " Also don't do it when the mark is in the first line, that is the default
-      " position when opening a file.
-      autocmd BufReadPost *
-               \ if line("'\"") > 1 && line("'\"") <= line("$") |
-               \   exe "normal! g`\"" |
-               \ endif
-   augroup END
-else
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+                \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
 endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-            \ | wincmd p | diffthis
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+                \ | wincmd p | diffthis
 endif
