@@ -1,6 +1,7 @@
 set nocompatible  "Remove vi compatibility
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 
 syntax on
 set autowrite "save files before :make or :next
@@ -33,6 +34,10 @@ set nowrap
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
+
+"Plugin stuff
+let NERDTreeMinimalUI=1
+let NERDTreeMapChdir=2
 
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
