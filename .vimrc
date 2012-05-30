@@ -38,6 +38,7 @@ set shiftwidth=4 "4 spaces when indented
 let NERDTreeMinimalUI=1
 let g:NERDTreeChDirMode=2
 
+
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
