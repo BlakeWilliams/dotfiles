@@ -27,14 +27,14 @@ set history=100		" keep 100 lines of command line history
 set showcmd "Show command in the last line of the screen
 set incsearch "Searches for text as entered
 set laststatus=2 "Always show status line for powerline
-set nowrap
+set nowrap " Don't wrap lines
 
 " Tab stuff!
 set expandtab "Make spaces not tabs
 set tabstop=4 "4 space tabs
 set shiftwidth=4 "4 spaces when indented
 
-"Plugin stuff
+" Plugin stuff
 let NERDTreeMinimalUI=1
 let g:NERDTreeChDirMode=2
 
@@ -61,6 +61,8 @@ if has("autocmd")
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
     autocmd FileType scss setlocal shiftwidth=2 tabstop=2
     autocmd FileType css  setlocal shiftwidth=2 tabstop=2
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2
+    autocmd FileType eco  setlocal shiftwidth=2 tabstop=2
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
