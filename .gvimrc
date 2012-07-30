@@ -1,4 +1,4 @@
-set guifont=monaco:h12 "monaco is boss
+set guifont=menlo:h12 "monaco is boss
 set guioptions-=T    "Remove toolbar 
 set guioptions-=L    "Remove left scrollbar
 set ruler "Ensures a status line

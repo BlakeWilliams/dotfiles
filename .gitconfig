@@ -8,4 +8,4 @@
 [color]
 	ui = true
 [core]
-	excludesfile = /Users/Blake/.global_ignore
+	excludesfile = ~/.global_ignore

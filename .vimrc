@@ -38,6 +38,23 @@ set shiftwidth=4 "4 spaces when indented
 let NERDTreeMinimalUI=1
 let g:NERDTreeChDirMode=2
 
+" Remaps!
+let mapleader = " "
+
+" Space to noh
+nnoremap <leader><space> :noh<cr>
+" v to select pasted lines
+nnoremap <leader>v V`]
+" s to split horizontally, S to split vertically
+nnoremap <leader>s <C-w>s<C-w>j
+nnoremap <leader>S <C-w>v<C-w>l
+
+" Easy navigation of splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
@@ -54,6 +71,7 @@ if has("autocmd")
         autocmd vimenter * exe "cd" argv(0)
         autocmd VimEnter * NERDTree
     endif
+
 
     " Language Specific Settings
     autocmd FileType text setlocal textwidth=78
