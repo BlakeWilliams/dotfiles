@@ -1,7 +1,36 @@
 set nocompatible  "Remove vi compatibility
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" Vundle must manage Vundle
+Bundle 'gamirik/vundle'
+
+" tpope utilities
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+
+" workflow
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'gregsexton/gitv'
+
+" Ruby
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+
+" Languages and markup
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'zaiste/VimClojure'
+Bundle 'nono/vim-handlebars'
+
+
+" Colors
+Bundle 'BlakeWilliams/Vim-Tomorrow-Theme'
 
 syntax on
 set nohidden "Enable/Disabe unsaved buffers 
@@ -43,21 +72,21 @@ let mapleader = " "
 
 " Space to noh
 nnoremap <leader><space> :noh<cr>
+
 " v to select pasted lines
 nnoremap <leader>v V`]
-" s to split horizontally, S to split vertically
+
+" a to split horizontally, S to split vertically
 nnoremap <leader>s <C-w>s<C-w>j
 nnoremap <leader>S <C-w>v<C-w>l
 
 " Easy navigation of splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 
-map Q gq
-inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
     set mouse=a "MOUSE!
 endif
