@@ -1,6 +1,6 @@
 [user]
 	name = Blake Williams
-	email = blake@bendystra.ws
+	email = blake@blakewilliams.me
 [github]
 	user = BlakeWilliams
 [format]
@@ -8,4 +8,6 @@
 [color]
 	ui = true
 [core]
-	excludesfile = ~/.global_ignore
+	excludesfile = ~/.excludes
+[push]
+	default = simple
