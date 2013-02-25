@@ -1,4 +1,1 @@
-/.vim/backup/*
-/.vim/tmp/*
-/!.*
-.DS_Store
+*

@@ -9,5 +9,11 @@
 	ui = true
 [core]
 	excludesfile = ~/.excludes
+	whitespace = trailing-space,space-before-tab
 [push]
 	default = simple
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+[merge]
+	stat = true

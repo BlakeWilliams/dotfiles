@@ -1,5 +1,4 @@
 set nocompatible  "Remove vi compatibility
-filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -15,19 +14,21 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'gregsexton/gitv'
+Bundle 'mileszs/ack.vim'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 
 " Languages and markup
+Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
+Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'zaiste/VimClojure'
 Bundle 'nono/vim-handlebars'
-
+Bundle 'pangloss/vim-javascript'
 
 " Colors
 Bundle 'BlakeWilliams/Vim-Tomorrow-Theme'
@@ -38,11 +39,10 @@ set backupcopy=yes "Keeps original creator code
 set hlsearch "Highlights search
 set noerrorbells "Obvious
 set backspace=indent,eol,start "Adds intuitive backspacing
-"set visualbell "
 set fdc=1 "Fold column width
-set nobackup " NO MORE BACKUPS!
+set backup " BACKUPS!
 set noswapfile " NO MORE SWAPFILES!
-"set backupdir=~/.vim/backup "Custom location for backups
+set backupdir=~/.vim/backup "Custom location for backups
 "set directory=~/.vim/tmp "Location for the swap file
 set showmatch "Show matching paren/brace/bracket
 set ignorecase "Ignore case in searches
@@ -104,8 +104,11 @@ if has("autocmd")
 
     " Language Specific Settings
     autocmd FileType text setlocal textwidth=78
+    autocmd FileType markdown setlocal wrap
     autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType coffee     setlocal shiftwidth=2 tabstop=2
+    autocmd FileType handlebars setlocal shiftwidth=2 tabstop=2
     autocmd FileType scss setlocal shiftwidth=2 tabstop=2
     autocmd FileType css  setlocal shiftwidth=2 tabstop=2
     autocmd FileType html setlocal shiftwidth=2 tabstop=2
