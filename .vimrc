@@ -31,7 +31,7 @@ Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
 
 " Colors
-Bundle 'BlakeWilliams/Vim-Tomorrow-Theme'
+Bundle 'BlakeWilliams/vim-tomorrow'
 
 syntax on
 set nohidden "Enable/Disabe unsaved buffers 
