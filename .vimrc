@@ -15,6 +15,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
+Bundle 'gregsexton/gitv'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -40,9 +42,9 @@ set hlsearch                    " Highlights search
 set noerrorbells                " Obvious
 set backspace=indent,eol,start  " Adds intuitive backspacing
 set fdc=1                       " Fold column width
-set backup                      " Backup files
+set nobackup                    " No Backup files
 set noswapfile                  " No swap
-set backupdir=~/.vim/backup     " Custom location for backups
+"set backupdir=~/.vim/backup     " Custom location for backups
 "set directory=~/.vim/tmp       " Location for the swap file
 set showmatch                   " Show matching paren/brace/bracket
 set ignorecase                  " Ignore case in searches
@@ -54,6 +56,7 @@ set showcmd                     " Show command in the last line of the screen
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show status line for powerline
 set nowrap                      " Don't wrap lines
+set gdefault                    " When on a line, replace all matches in line
 set wildmenu
 
 set expandtab                   " Make spaces not tabs
@@ -65,11 +68,17 @@ filetype plugin on              " Filetype specific plugins
 
 " Plugin settings
 let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeChDirMode=2
 
+let g:ctrlp_use_caching=0
 
 " Remap leader to <space>
+nnoremap <space> <Nop>
 let mapleader = " "
+
+" Ack to leader a
+nnoremap <leader>a :Ack
 
 " Double <space> to noh
 nnoremap <leader><space> :noh<cr>
@@ -80,9 +89,25 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
+" Create new splits
+nnoremap <leader>w <C-w>n<C-w>l
+nnoremap <leader>W <C-w>v<C-w>l
+
+" Create new tab with leader n
+nnoremap <leader>n :tabnew<cr>
+
 
 if has('mouse')
-    set mouse=a "MOUSE!
+    set mouse=a " Enable mouse
+endif
+
+" Use undo file for awesome undo
+if exists("+undofile")
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undofile
+  set undodir=~/.vim/undo/
 endif
 
 " Only do this part when compiled with support for autocommands.
