@@ -9,11 +9,12 @@ Bundle 'gamirik/vundle'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
 
 " workflow
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'terryma/vim-multiple-cursors'
@@ -21,6 +22,7 @@ Bundle 'terryma/vim-multiple-cursors'
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
 
 " Languages and markup
 Bundle 'othree/html5.vim'
@@ -34,6 +36,7 @@ Bundle 'pangloss/vim-javascript'
 
 " Colors
 Bundle 'BlakeWilliams/vim-tomorrow'
+Bundle 'BlakeWilliams/statuslight'
 
 syntax on
 set nohidden                    " Enable/Disabe unsaved buffers 
@@ -41,7 +44,7 @@ set backupcopy=yes              " Keeps original creator code
 set hlsearch                    " Highlights search
 set noerrorbells                " Obvious
 set backspace=indent,eol,start  " Adds intuitive backspacing
-set fdc=1                       " Fold column width
+"set fdc=1                       " Fold column width
 set nobackup                    " No Backup files
 set noswapfile                  " No swap
 "set backupdir=~/.vim/backup     " Custom location for backups
@@ -57,6 +60,8 @@ set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show status line for powerline
 set nowrap                      " Don't wrap lines
 set gdefault                    " When on a line, replace all matches in line
+set splitbelow                  " Open hsplits below rather than above
+set splitright                  " Open vsplits to the right rather than left
 set wildmenu
 
 set expandtab                   " Make spaces not tabs
@@ -78,7 +83,7 @@ nnoremap <space> <Nop>
 let mapleader = " "
 
 " Ack to leader a
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 
 " Double <space> to noh
 nnoremap <leader><space> :noh<cr>
@@ -128,10 +133,11 @@ if has("autocmd")
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
     autocmd FileType coffee     setlocal shiftwidth=2 tabstop=2
     autocmd FileType handlebars setlocal shiftwidth=2 tabstop=2
-    autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-    autocmd FileType css  setlocal shiftwidth=2 tabstop=2
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2
-    autocmd FileType eco  setlocal shiftwidth=2 tabstop=2
+    autocmd FileType scss  setlocal shiftwidth=2 tabstop=2
+    autocmd FileType css   setlocal shiftwidth=2 tabstop=2
+    autocmd FileType html  setlocal shiftwidth=2 tabstop=2
+    autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
+    autocmd FileType eco   setlocal shiftwidth=2 tabstop=2
 
     " Go to last known valid cursor position
     autocmd BufReadPost *
