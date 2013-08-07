@@ -23,6 +23,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'thoughtbot/vim-rspec'
 
 " Languages and markup
 Bundle 'othree/html5.vim'
@@ -36,7 +37,8 @@ Bundle 'pangloss/vim-javascript'
 
 " Colors
 Bundle 'BlakeWilliams/vim-tomorrow'
-Bundle 'BlakeWilliams/statuslight'
+Bundle 'bling/vim-airline'
+
 
 syntax on
 set nohidden                    " Enable/Disabe unsaved buffers 
@@ -78,6 +80,13 @@ let g:NERDTreeChDirMode=2
 
 let g:ctrlp_use_caching=0
 
+
+" Airline settings
+let g:airline_theme='solarized'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+
 " Remap leader to <space>
 nnoremap <space> <Nop>
 let mapleader = " "
@@ -94,13 +103,8 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
-" Create new splits
-nnoremap <leader>w <C-w>n<C-w>l
-nnoremap <leader>W <C-w>v<C-w>l
-
 " Create new tab with leader n
 nnoremap <leader>n :tabnew<cr>
-
 
 if has('mouse')
     set mouse=a " Enable mouse

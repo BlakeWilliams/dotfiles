@@ -11,7 +11,7 @@
 	excludesfile = ~/.excludes
 	whitespace = trailing-space,space-before-tab
 [push]
-	default = simple
+	default = current
 [advice]
 	pushNonFastForward = false
 	statusHints = false
