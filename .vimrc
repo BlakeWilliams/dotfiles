@@ -11,6 +11,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-bundler'
 
 " Workflow
 Bundle 'scrooloose/nerdtree'
@@ -30,11 +31,10 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'zaiste/VimClojure'
 Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
@@ -44,7 +44,7 @@ source $HOME/.vim/colors.vim
 source $HOME/.vim/config.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/shortcuts.vim
-" source $HOME/.vim/statusline.vim
+source $HOME/.vim/statusline.vim
 source $HOME/.vim/tabs.vim
 
 source $HOME/.vim/autocommands.vim

@@ -18,6 +18,8 @@ if has("autocmd")
 
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78
+  autocmd FileType gitcommit setlocal spell
+  autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal wrap
 
   " Go to last known valid cursor position
