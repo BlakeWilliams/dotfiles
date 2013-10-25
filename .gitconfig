@@ -4,7 +4,7 @@
 [github]
 	user = BlakeWilliams
 [format]
-	pretty = oneline
+	pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
 [color]
 	ui = true
 [core]
@@ -15,5 +15,3 @@
 [advice]
 	pushNonFastForward = false
 	statusHints = false
-[merge]
-	stat = true

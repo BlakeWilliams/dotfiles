@@ -45,3 +45,8 @@ if exists("+undofile")
   set undofile
   set undodir=~/.vim/undo/
 endif
+
+
+if exists("+clipboard")
+  set clipboard=unnamed
+endif

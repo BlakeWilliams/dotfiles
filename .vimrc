@@ -9,7 +9,6 @@ Bundle 'gamirik/vundle'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-bundler'
 
@@ -17,9 +16,6 @@ Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'gregsexton/gitv'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'jpalardy/vim-slime'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'

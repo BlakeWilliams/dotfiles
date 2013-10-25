@@ -1,6 +1,6 @@
 # Rbenv and Brew
-eval "$(rbenv init -)"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+eval "$(rbenv init -)"
 
 # Load autocomplete
 autoload -U compinit
@@ -35,7 +35,8 @@ setopt ALWAYS_TO_END
 setopt CORRECT
 
 #Custom prompt, username:directory lightning bolt
-PROMPT="%n:%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})⚡%{$reset_color%} "
+#PROMPT="%n:%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})⚡%{$reset_color%} "
+PROMPT="%n:%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})λ%{$reset_color%} "
 
 # HISTORY!
 HISTSIZE=1000
