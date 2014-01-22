@@ -13,8 +13,11 @@ let g:rspec_command="Dispatch rspec {spec}"
 let g:slime_target="tmux"
 
 " airline - set theme and remove stupid separators
-let g:airline_theme="solarized"
+let g:airline_theme="tomorrow"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 let g:airline#extensions#whitespace#show_message = 0
+
+" vim-slime config
+let g:slime_target = "tmux"

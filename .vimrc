@@ -16,6 +16,8 @@ Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jpalardy/vim-slime'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -28,12 +30,15 @@ Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'zaiste/VimClojure'
-Bundle 'nono/vim-handlebars'
+Bundle 'mustache/vim-mode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'wavded/vim-stylus'
 
 " Colors
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
+Bundle 'bling/vim-airline'
 
 " Split config up for cleanliness
 source $HOME/.vim/colors.vim
