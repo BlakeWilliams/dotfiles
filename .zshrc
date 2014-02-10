@@ -2,11 +2,18 @@
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 eval "$(rbenv init -)"
 
+autoload -U compinit
+compinit
+
+for function in ~/.zsh/*; do
+  source $function
+done
+
 # Load autocomplete
 autoload -U compinit
 compinit
 
-#Load Colors
+# Load Colors
 autoload -U colors
 colors
 
@@ -34,11 +41,17 @@ setopt ALWAYS_TO_END
 # Correct me
 setopt CORRECT
 
-#Custom prompt, username:directory lightning bolt
-#PROMPT="%n:%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})⚡%{$reset_color%} "
-PROMPT="%n:%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})λ%{$reset_color%} "
+# Beginning and End line shortcuts
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
+# Custom prompt, username:directory lightning bolt
+PROMPT="%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})λ%{$reset_color%} "
 
 # HISTORY!
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
+
+# Add binstubs to path 
+export PATH=".git/safe/../../bin:$PATH"

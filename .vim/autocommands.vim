@@ -10,11 +10,11 @@ endif
 
 if has("autocmd")
   " If the first arg is a directory, open up nerdtree
-  if isdirectory(argv(0))
-    bd
-    autocmd vimenter * exe "cd" argv(0)
-    autocmd VimEnter * NERDTree
-  endif
+  " if isdirectory(argv(0))
+  "   bd
+  "   autocmd vimenter * exe "cd" argv(0)
+  "   autocmd VimEnter * NERDTree
+  " endif
 
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78

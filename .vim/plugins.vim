@@ -3,6 +3,9 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeChDirMode=2
 
+" Split model, not drawer model
+let NERDTreeHijackNetrw=1
+
 " ctrlp - Don't cache
 let g:ctrlp_use_caching=0
 

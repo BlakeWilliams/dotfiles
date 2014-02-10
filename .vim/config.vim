@@ -12,23 +12,29 @@ set laststatus=2                " Always show statusline
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Enable/Disabe unsaved buffers 
+set nonumber                    " Show relative, hide number for 0 instead of current line
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
-set number                      " Always show line numbers
+set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
 set showmatch                   " Show matching paren/brace/bracket
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
+set ttyfast                     " Add g flag to search and replace as default
 set undolevels=500              " More undo
+set wildignore=.*               " Ignore dotfiles
 set wildmenu
 
 " Formatting settings
 set expandtab                   " Make spaces not tabs
 set tabstop=2                   " 2 space tabs
 set shiftwidth=2                " 2 spaces when indented
+
+" Netrw config
+let g:netrw_list_hide= '.*\.swp$,^\..*'
 
 filetype indent on              " Filetype specific indent
 filetype plugin on              " Filetype specific plugins
@@ -46,7 +52,7 @@ if exists("+undofile")
   set undodir=~/.vim/undo/
 endif
 
-
+" Vim and OS share clipboard
 if exists("+clipboard")
   set clipboard=unnamed
 endif

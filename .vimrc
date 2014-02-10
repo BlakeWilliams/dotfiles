@@ -10,14 +10,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-bundler'
 
 " Workflow
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'jpalardy/vim-slime'
+Bundle 'rking/ag.vim'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -39,6 +36,7 @@ Bundle 'wavded/vim-stylus'
 " Colors
 Bundle 'chriskempson/base16-vim'
 Bundle 'bling/vim-airline'
+Bundle 'BlakeWilliams/vim-single-cursor-line'
 
 " Split config up for cleanliness
 source $HOME/.vim/colors.vim
