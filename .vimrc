@@ -3,7 +3,7 @@ set nocompatible  "Remove vi compatibility
 " Setup Vundle
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'gamirik/vundle'
+Bundle 'gmairik/vundle'
 
 " tpope utilities
 Bundle 'tpope/vim-repeat'
