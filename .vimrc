@@ -12,9 +12,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 
 " Workflow
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'danro/rename.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-vinegar'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -32,6 +35,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
+Bundle 'elixir-lang/vim-elixir'
 
 " Colors
 Bundle 'chriskempson/base16-vim'

@@ -1,7 +1,7 @@
 " NERDTree - minimal ui, follow tree and autodelete buffers
 let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=0
 
 " Split model, not drawer model
 let NERDTreeHijackNetrw=1
@@ -16,7 +16,7 @@ let g:rspec_command="Dispatch rspec {spec}"
 let g:slime_target="tmux"
 
 " airline - set theme and remove stupid separators
-let g:airline_theme="tomorrow"
+let g:airline_theme="base16"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 

@@ -29,16 +29,29 @@ noremap <leader>T <C-w>T
 " Window resizing
 noremap <leader>= <C-w>=
 
-" Easy navigation of splits
+" Easy navigation of tabs
 nnoremap <leader>[ :tabp<cr>
 nnoremap <leader>] :tabn<cr>
 
-" Create splits easily
-nnoremap <leader>s :split<cr>
-nnoremap <leader>S :vsplit<cr>
+" Quick browsing
+nnoremap <leader>e :e .<cr>
+
+" Create splits easily that open netrw with default right split
+nnoremap <leader>s :Vexplore!<cr> 
+nnoremap <leader>S :Vexplore!<cr> 
+
+nnoremap <leader>sh :Vexplore<cr>
+nnoremap <leader>sk :Hexplore!<cr>
+nnoremap <leader>sj :Hexplore<cr>
+nnoremap <leader>sl :Vexplore!<cr>
 
 " CtrlP to leader t
 noremap <leader>t :CtrlP<cr>
+
+" Git shortcuts
+map <leader>gs :Gstatus<cr>
+map <leader>gg :Gbrowse<cr>
+map <leader>gb :Gblame<cr>
 
 " RSpec mappings for vim-rspec
 map <Leader>rc :call RunCurrentSpecFile()<CR>

@@ -13,6 +13,9 @@ done
 autoload -U compinit
 compinit
 
+# Case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # Load Colors
 autoload -U colors
 colors

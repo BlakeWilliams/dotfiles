@@ -9,16 +9,10 @@ if !has('gui_running')
 endif
 
 if has("autocmd")
-  " If the first arg is a directory, open up nerdtree
-  " if isdirectory(argv(0))
-  "   bd
-  "   autocmd vimenter * exe "cd" argv(0)
-  "   autocmd VimEnter * NERDTree
-  " endif
-
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78
   autocmd FileType gitcommit setlocal spell number norelativenumber
+  autocmd FileType netrw setlocal nonumber norelativenumber
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal wrap
 
@@ -28,3 +22,17 @@ if has("autocmd")
         \   exe "normal! g`\"" |
         \ endif
 endif
+
+" Makes parent directories if they don't exist
+function! s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END

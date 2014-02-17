@@ -5,10 +5,7 @@ BundleInstall	vundle.txt	/*BundleInstall*
 BundleInstall!	vundle.txt	/*BundleInstall!*
 BundleList	vundle.txt	/*BundleList*
 BundleSearch	vundle.txt	/*BundleSearch*
-Vundle	vundle.txt	/*Vundle*
 vundle	vundle.txt	/*vundle*
-vundle-about	vundle.txt	/*vundle-about*
-vundle-contents	vundle.txt	/*vundle-contents*
 vundle-interactive	vundle.txt	/*vundle-interactive*
 vundle-keymappings	vundle.txt	/*vundle-keymappings*
 vundle-options	vundle.txt	/*vundle-options*
