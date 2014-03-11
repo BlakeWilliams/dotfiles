@@ -15,6 +15,8 @@ if has("autocmd")
   autocmd FileType netrw setlocal nonumber norelativenumber
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal wrap
+  "Disable ctrl+h in netrw for split movement
+  autocmd FileType netrw unmap <buffer> <C-h>
 
   " Go to last known valid cursor position
   autocmd BufReadPost *

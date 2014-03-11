@@ -10,14 +10,15 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-commentary'
 
 " Workflow
-"Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
-Bundle 'danro/rename.vim'
-Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-vinegar'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
