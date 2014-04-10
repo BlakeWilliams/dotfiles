@@ -2,6 +2,9 @@
 let g:ctrlp_use_caching=0
 let g:ctrlp_map = '<c-p>'
 
+" vinegar hide dotfiles
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
 " vim-rspec - Use Dispatch to run rspec
 let g:rspec_command="Dispatch rspec {spec}"
 
@@ -19,6 +22,3 @@ let g:syntastic_check_on_open = 1 " Check file on open
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_scss_checkers = ['scss_lint']
-
-" Hide signs in sidebar
-let g:syntastic_enable_signs=0

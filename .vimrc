@@ -12,12 +12,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-vinegar'
 
 " Workflow
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-vinegar'
 Bundle 'christoomey/vim-tmux-navigator'
 
 " Ruby
@@ -34,8 +34,6 @@ Bundle 'zaiste/VimClojure'
 Bundle 'mustache/vim-mode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'wavded/vim-stylus'
 Bundle 'elixir-lang/vim-elixir'
 
 " Colors

@@ -18,6 +18,11 @@ if has("autocmd")
   "Disable ctrl+h in netrw for split movement
   autocmd FileType netrw unmap <buffer> <C-h>
 
+  " Start with tree open
+  if isdirectory(argv(0))
+    autocmd VimEnter * e
+  endif
+
   " Go to last known valid cursor position
   autocmd BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |

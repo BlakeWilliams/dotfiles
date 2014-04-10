@@ -44,7 +44,7 @@ nnoremap <leader>ek :Hexplore!<cr>
 nnoremap <leader>el :Vexplore!<cr>
 
 " Prepend Dispatch for easy commands
-nnoremap <leader>d :Dispatch
+nnoremap <leader>d :Dispatch 
 
 " Git shortcuts
 map <leader>gs :Gstatus<cr>

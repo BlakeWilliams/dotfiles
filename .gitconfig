@@ -18,6 +18,7 @@
 [commit]
   template = ~/.gitmessage
 [alias]
+  a  = add
   aa = add --all
   ap = add -i
   ca = commit --amend
@@ -27,3 +28,6 @@
   ds = diff --staged
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
