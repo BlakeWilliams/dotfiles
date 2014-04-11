@@ -2,6 +2,12 @@
 let g:ctrlp_use_caching=0
 let g:ctrlp_map = '<c-p>'
 
+" Use ag instead of grep
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " vinegar hide dotfiles
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
