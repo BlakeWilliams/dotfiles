@@ -51,6 +51,7 @@ map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 map <leader>gg :Gbrowse<cr>
 map <leader>gb :Gblame<cr>
+map <leader>gd :Gdiff<cr>
 
 " RSpec mappings for vim-rspec
 map <Leader>rc :call RunCurrentSpecFile()<CR>
