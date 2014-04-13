@@ -7,7 +7,7 @@ Bundle 'gmairik/vundle'
 
 " tpope utilities
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
+" Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-eunuch'
