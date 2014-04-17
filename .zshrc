@@ -35,11 +35,11 @@ export EDITOR=vim
 export VISUAL=$EDITOR
 
 # All terminals append history, immediately
-setopt APPEND_HISTORY 
+setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 
 # Always go to end of line
-setopt ALWAYS_TO_END 
+setopt ALWAYS_TO_END
 
 # Correct me
 setopt CORRECT
@@ -56,5 +56,15 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
 
-# Add binstubs to path 
+setopt hist_ignore_dups
+
+# Add binstubs to path
 export PATH=".git/safe/../../bin:$PATH"
+
+# Vim like history search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down

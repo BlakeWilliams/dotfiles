@@ -11,6 +11,9 @@ endif
 " vinegar hide dotfiles
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" disable left click open
+let g:netrw_retmap=1
+
 " vim-rspec - Use Dispatch to run rspec
 let g:rspec_command="Dispatch rspec {spec}"
 
