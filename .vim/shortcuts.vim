@@ -9,10 +9,10 @@ noremap <leader>a :Ag -i
 noremap <leader><space> :noh<cr>
 
 " Easy navigation of splits
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-l> <C-w>l
 
 " Map window movements
 noremap <leader>h <C-w>H
@@ -66,12 +66,10 @@ map <Leader>n :call ToggleNumber()<cr>
 map <Leader>c :call ToggleErrors()<cr>
 
 function! ToggleNumber()
-  if &number
-    set nonumber
-    set relativenumber
-  else
-    set number
+  if &relativenumber
     set norelativenumber
+  else
+    set relativenumber
   endif
 endfunction
 

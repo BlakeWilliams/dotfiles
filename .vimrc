@@ -42,8 +42,8 @@ Bundle 'bling/vim-airline'
 Bundle 'BlakeWilliams/vim-single-cursor-line'
 
 " Split config up for cleanliness
-source $HOME/.vim/colors.vim
 source $HOME/.vim/config.vim
+source $HOME/.vim/colors.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/shortcuts.vim
 source $HOME/.vim/statusline.vim

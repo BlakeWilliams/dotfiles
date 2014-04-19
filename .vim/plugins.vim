@@ -10,6 +10,7 @@ endif
 
 " vinegar hide dotfiles
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_retmap=1
 
 " disable left click open
 let g:netrw_retmap=1
@@ -29,5 +30,5 @@ let g:syntastic_check_on_open = 1 " Check file on open
 
 " Additional Checkers
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_scss_checkers = ['scss_lint']

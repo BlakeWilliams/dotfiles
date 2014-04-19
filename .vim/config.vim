@@ -12,7 +12,7 @@ set laststatus=2                " Always show statusline
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Enable/Disabe unsaved buffers 
-set nonumber                    " Show relative, hide number for 0 instead of current line
+set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
