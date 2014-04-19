@@ -12,6 +12,8 @@
 	whitespace = trailing-space,space-before-tab
 [push]
 	default = current
+[merge]
+  ff = only
 [advice]
 	pushNonFastForward = false
 	statusHints = false
