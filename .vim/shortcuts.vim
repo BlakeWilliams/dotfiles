@@ -5,6 +5,9 @@ let mapleader = " "
 " Ack to leader a
 noremap <leader>a :Ag -i 
 
+" CtrlP to leader p
+noremap <leader>p :CtrlP<cr>
+
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
 

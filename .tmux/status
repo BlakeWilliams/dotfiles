@@ -11,32 +11,33 @@ short_pwd() {
   fi
 }
 
+git_toplevel=$(git rev-parse --show-toplevel)
+
 git_status() {
   local unstaged="$(git diff-files | wc -l)"
   local staged="$(git diff-index --cached HEAD | wc -l)"
-  if [[ "$unstaged" -gt 0 ]]; then
-    printf " #[fg=colour3]%d unstaged " "$unstaged"
-  fi
   if [[ "$staged" -gt 0 ]]; then
-    printf " #[fg=colour1]%d staged " "$staged"
+    printf " #[fg=colour3]%d staged " "$staged"
+  fi
+  if [[ "$unstaged" -gt 0 ]]; then
+    printf " #[fg=colour1]%d unstaged " "$unstaged"
   fi
 }
 
 git_branch() {
-  printf " #[fg=colour7]$(git rev-parse --abbrev-ref HEAD) "
+  local color
+  if [[ -d ${git_toplevel}"/.git/safe" ]]; then
+    color="colour2"
+  else
+    color="colour7"
+  fi
+  printf " #[fg=$color]$(git rev-parse --abbrev-ref HEAD) "
 }
 
 git_pwd() {
-  local color
-  if git trusted; then
-    color="colour9"
-  else
-    color="colour4"
-  fi
-  printf " #[fg=$color]%s" "$(short_pwd)"
+  printf " #[fg=colour5]%s" "$(short_pwd)"
 }
 
-git_toplevel=$(git rev-parse --show-toplevel)
 if [[ $git_toplevel != $HOME || $(pwd) == $HOME ]]; then
   git_status
   git_branch
