@@ -5,3 +5,4 @@ chpwd() {
     tmux refresh-client -S
   fi
 }
+cd .

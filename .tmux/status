@@ -15,7 +15,7 @@ git_status() {
   local unstaged="$(git diff-files | wc -l)"
   local staged="$(git diff-index --cached HEAD | wc -l)"
   if [[ "$unstaged" -gt 0 ]]; then
-    printf " #[fg=colour3]%d waiting " "$unstaged"
+    printf " #[fg=colour3]%d unstaged " "$unstaged"
   fi
   if [[ "$staged" -gt 0 ]]; then
     printf " #[fg=colour1]%d staged " "$staged"
@@ -37,7 +37,7 @@ git_pwd() {
 }
 
 git_toplevel=$(git rev-parse --show-toplevel)
-if [[ $git_toplevel != $HOME ]]; then
+if [[ $git_toplevel != $HOME || $(pwd) == $HOME ]]; then
   git_status
   git_branch
   git_pwd
