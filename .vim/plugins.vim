@@ -23,7 +23,7 @@ let g:airline_theme="base16"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-let g:airline#extensions#whitespace#show_message = 0
+let g:airline#extensions#whitespace#enabled=0
 
 " Syntastic config
 let g:syntastic_check_on_open = 1 " Check file on open
@@ -32,3 +32,5 @@ let g:syntastic_check_on_open = 1 " Check file on open
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_scss_checkers = ['scss_lint']
+
+let g:syntastic_stl_format = " %E{Err: %e}%B{, }%W{Warn: %w}"
