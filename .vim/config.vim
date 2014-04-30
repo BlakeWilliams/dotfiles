@@ -3,12 +3,15 @@ syntax on
 set autoindent                  " Copy indent from previous line
 set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
+set colorcolumn=80              " Highlight line 80
 set gdefault                    " When on a line, replace all matches in line
 set history=100		              " keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
+set list                        " Show listchars
+set listchars=trail:·           " Show trailing spaces as dots
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Enable/Disabe unsaved buffers 
@@ -25,7 +28,6 @@ set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
 set ttyfast                     " Add g flag to search and replace as default
 set undolevels=500              " More undo
-"set wildignore=.*               " Ignore dotfiles
 set wildmenu
 
 " Formatting settings

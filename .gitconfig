@@ -1,22 +1,22 @@
 [user]
-	name = Blake Williams
-	email = blake@blakewilliams.me
+  name = Blake Williams
+  email = blake@blakewilliams.me
 [github]
-	user = BlakeWilliams
+  user = BlakeWilliams
 [format]
-	pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
+  pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
 [color]
-	ui = true
+  ui = true
 [core]
-	excludesfile = ~/.excludes
-	whitespace = trailing-space,space-before-tab
+  excludesfile = ~/.excludes
+  whitespace = trailing-space,space-before-tab
 [push]
-	default = current
+  default = current
 [merge]
   ff = only
 [advice]
-	pushNonFastForward = false
-	statusHints = false
+  pushNonFastForward = false
+  statusHints = false
 [commit]
   template = ~/.gitmessage
 [alias]
@@ -31,6 +31,7 @@
   fuckit = !sh -c 'git add --all && git reset --hard'
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  up = !git fetch origin && git rebase -i origin/master
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f

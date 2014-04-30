@@ -1,2 +1,7 @@
 .DS_Store
 .rbenv-gemsets
+.bundle
+.env
+tmp/**/*
+!tmp/cache/.keep
+log/*.log

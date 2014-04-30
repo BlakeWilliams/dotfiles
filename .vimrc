@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'ervandew/supertab'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -35,6 +36,10 @@ Bundle 'mustache/vim-mode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'elixir-lang/vim-elixir'
+
+" Text Objects
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " Colors
 Bundle 'chriskempson/base16-vim'
