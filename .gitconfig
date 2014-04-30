@@ -4,7 +4,7 @@
 [github]
   user = BlakeWilliams
 [format]
-  pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
+  #pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
 [color]
   ui = true
 [core]

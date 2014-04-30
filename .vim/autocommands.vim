@@ -17,6 +17,8 @@ if has("autocmd")
   autocmd FileType markdown setlocal wrap
   "Disable ctrl+h in netrw for split movement
   autocmd FileType netrw unmap <buffer> <C-h>
+  autocmd FileType netrw setlocal cc=""
+  autocmd FileType qf setlocal cc=""
 
   " Start with tree open
   if isdirectory(argv(0))
