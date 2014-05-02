@@ -11,12 +11,13 @@ endif
 if has("autocmd")
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78
-  autocmd FileType gitcommit setlocal spell number norelativenumber
+  autocmd FileType gitcommit setlocal spell nonumber norelativenumber
   autocmd FileType netrw setlocal nonumber norelativenumber
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal wrap
   "Disable ctrl+h in netrw for split movement
   autocmd FileType netrw unmap <buffer> <C-h>
+  autocmd FileType netrw nnoremap <buffer> ds
   autocmd FileType netrw setlocal cc=""
   autocmd FileType qf setlocal cc=""
 

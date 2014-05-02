@@ -10,8 +10,8 @@ set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
-set list                        " Show listchars
-set listchars=trail:·           " Show trailing spaces as dots
+set nolist                      " Don't show listchars
+set listchars=trail:·,tab:·\    " Show trailing spaces as dots
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Enable/Disabe unsaved buffers 

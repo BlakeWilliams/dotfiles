@@ -3,48 +3,48 @@ set nocompatible  "Remove vi compatibility
 " Setup Vundle
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'gmairik/vundle'
+Plugin 'gmarik/vundle.vim'
 
 " tpope utilities
-Bundle 'tpope/vim-repeat'
-" Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-vinegar'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-vinegar'
 
 " Workflow
-Bundle 'kien/ctrlp.vim'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ervandew/supertab'
 
 " Ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'thoughtbot/vim-rspec'
 
 " Languages and markup
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'zaiste/VimClojure'
-Bundle 'mustache/vim-mode'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'elixir-lang/vim-elixir'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'zaiste/VimClojure'
+Plugin 'mustache/vim-mode'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'elixir-lang/vim-elixir'
 
 " Text Objects
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Colors
-Bundle 'chriskempson/base16-vim'
-Bundle 'bling/vim-airline'
-Bundle 'BlakeWilliams/vim-single-cursor-line'
+Plugin 'chriskempson/base16-vim'
+Plugin 'bling/vim-airline'
+Plugin 'BlakeWilliams/vim-single-cursor-line'
 
 " Split config up for cleanliness
 source $HOME/.vim/config.vim
