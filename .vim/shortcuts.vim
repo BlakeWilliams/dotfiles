@@ -18,10 +18,10 @@ noremap <leader><space> :noh<cr>
 "nnoremap <C-l> <C-w>l
 
 " Map window movements
-noremap <leader>h <C-w>H
-noremap <leader>j <C-w>J
-noremap <leader>k <C-w>K
-noremap <leader>l <C-w>L
+noremap <leader>h <C-w>h
+noremap <leader>j <C-w>j
+noremap <leader>k <C-w>k
+noremap <leader>l <C-w>l
 
 " Window resizing
 noremap <leader>= <C-w>=

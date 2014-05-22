@@ -5,13 +5,13 @@ eval "$(rbenv init -)"
 autoload -U compinit
 compinit
 
-for function in ~/.zsh/*; do
-  source $function
-done
-
 # Load autocomplete
 autoload -U compinit
 compinit
+
+for function in ~/.zsh/*; do
+  source $function
+done
 
 # Case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'

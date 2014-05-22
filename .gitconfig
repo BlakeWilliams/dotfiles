@@ -5,6 +5,7 @@
   user = BlakeWilliams
 [format]
   #pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
+  pretty = "%C(yellow)%h%Creset - %s%nAuthored by %C(green)%an%Creset %ar%n"
 [color]
   ui = true
 [core]
@@ -37,4 +38,3 @@
 	smudge = git-media-smudge %f
 [status]
 	branch = 1
-	short = 1
