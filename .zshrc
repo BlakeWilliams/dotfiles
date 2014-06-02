@@ -1,5 +1,6 @@
 # Rbenv and Brew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
 eval "$(rbenv init -)"
 
 autoload -U compinit
@@ -30,6 +31,10 @@ export LS_COLORS=gxfxcxdxbxegedabagacad
 # Grep gets colors too
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;32'
+
+# Partial match highlighting
+zstyle -e ':completion:*:default' list-colors \
+  'reply=("${PREFIX:+=(#bi)($PREFIX:t)()*==34=34}:${(s.:.)LS_COLORS}")'
 
 export EDITOR=vim
 export VISUAL=$EDITOR
