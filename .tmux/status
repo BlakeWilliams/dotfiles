@@ -3,14 +3,6 @@ set -ue
 
 cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
 
-short_pwd() {
-  if [[ $HOME == $(pwd) ]]; then
-    print "~"
-  else
-    print $(basename $(pwd))
-  fi
-}
-
 git_toplevel=$(git rev-parse --show-toplevel)
 
 git_status() {
@@ -29,19 +21,18 @@ git_branch() {
   if [[ -d ${git_toplevel}"/.git/safe" ]]; then
     color="colour2"
   else
-    color="colour7"
+    color="colour13"
   fi
   printf " #[fg=$color]$(git rev-parse --abbrev-ref HEAD) "
 }
 
-git_pwd() {
-  printf " #[fg=colour5]%s" "$(short_pwd)"
-}
+# git_pwd() {
+#   printf " #[fg=colour5]%s" "$(short_pwd)"
+# }
 
 if [[ $git_toplevel != $HOME || $(pwd) == $HOME ]]; then
   git_status
   git_branch
-  git_pwd
 else
   printf " #[fg=colour4]%s" "$(short_pwd)"
 fi
