@@ -3,9 +3,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 eval "$(rbenv init -)"
 
-autoload -U compinit
-compinit
-
 # Load autocomplete
 autoload -U compinit
 compinit
