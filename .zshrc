@@ -46,18 +46,19 @@ setopt ALWAYS_TO_END
 # Correct me
 setopt CORRECT
 
+# Substitute things in prompt
+setopt PROMPT_SUBST
+
 # Beginning and End line shortcuts
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
-
-# Custom prompt, username:directory lightning bolt
-PROMPT="%1~ %(?.%{$fg[yellow]%}.%{$fg[red]%})λ%{$reset_color%} "
 
 # HISTORY!
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
 
+# Ignore duplicates
 setopt hist_ignore_dups
 
 # Add binstubs to path
