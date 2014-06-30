@@ -7,6 +7,7 @@ eval "$(rbenv init -)"
 autoload -U compinit
 compinit
 
+# Load all files in ~/.zsh
 for function in ~/.zsh/*; do
   source $function
 done
@@ -36,18 +37,12 @@ zstyle -e ':completion:*:default' list-colors \
 export EDITOR=vim
 export VISUAL=$EDITOR
 
-# All terminals append history, immediately
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-
-# Always go to end of line
-setopt ALWAYS_TO_END
-
-# Correct me
-setopt CORRECT
-
-# Substitute things in prompt
-setopt PROMPT_SUBST
+setopt append_history         # Append, not replace
+setopt inc_append_history     # Immediately append history
+setopt always_to_end          # Always go to end of line on complete
+setopt correct                # Correct typos
+setopt prompt_subst           # Substitute commands in prompt
+setopt transientrprompt
 
 # Beginning and End line shortcuts
 bindkey "^A" beginning-of-line

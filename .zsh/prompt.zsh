@@ -12,7 +12,7 @@ _git_branch() {
     else
       color=$(_yellow)
     fi
-    print " on $color$(git rev-parse --abbrev-ref HEAD)$(_reset)"
+    print "/$color$(git rev-parse --abbrev-ref HEAD)$(_reset)"
   fi
 }
 
