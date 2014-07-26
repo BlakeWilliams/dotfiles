@@ -1,8 +1,10 @@
 set nocompatible  "Remove vi compatibility
+filetype off
 
 " Setup Vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 Plugin 'gmarik/vundle.vim'
 
 " tpope utilities
@@ -13,20 +15,20 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-tbone'
+Plugin 'tpope/vim-rsi.git'
 
 " Workflow
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ervandew/supertab'
-Plugin 'majutsushi/tagbar'
 Plugin 'bogado/file-line'
+Plugin 'justinmk/vim-sneak'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
+Plugin 'BlakeWilliams/vim-tbro'
 Plugin 'thoughtbot/vim-rspec'
 
 " Languages and markup
@@ -39,21 +41,18 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
 
-" Text Objects
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-
 " Colors
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 Plugin 'BlakeWilliams/vim-single-cursor-line'
+
+call vundle#end()
+filetype plugin indent on
 
 " Split config up for cleanliness
 source $HOME/.vim/config.vim
 source $HOME/.vim/colors.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/shortcuts.vim
-source $HOME/.vim/statusline.vim
-source $HOME/.vim/tabs.vim
 
 source $HOME/.vim/autocommands.vim

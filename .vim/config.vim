@@ -10,18 +10,18 @@ set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
-set nolist                      " Don't show listchars
-set listchars=trail:·,tab:·\    " Show trailing spaces as dots
+set list                        " Don't show listchars
+set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
-set nohidden                    " Enable/Disabe unsaved buffers 
+set nohidden                    " Don't allow hiding of unsaved buffers 
 set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
-set showmatch                   " Show matching paren/brace/bracket
+set showmatch                   " Highlight matching paren/brace/bracket
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
 set splitbelow                  " Open hsplits below rather than above
