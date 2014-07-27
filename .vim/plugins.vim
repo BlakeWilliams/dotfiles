@@ -10,13 +10,16 @@ endif
 
 " vinegar hide dotfiles
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_retmap=1
+let g:netrw_retmap = 1
 
 " disable left click open
-let g:netrw_retmap=1
+let g:netrw_retmap = 1
 
-" vim-rspec - Use Dispatch to run rspec
-let g:rspec_command="Tbro rspec {spec}"
+" disable netrw history
+let g:netrw_dirhistmax = 0
+
+" vim-rspec - Use Tbro to run rspec
+let g:rspec_command = "Tbro rspec {spec}"
 
 " airline - set theme and remove stupid separators
 let g:airline_theme="base16"
