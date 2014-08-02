@@ -14,7 +14,7 @@ set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
-set nohidden                    " Don't allow hiding of unsaved buffers 
+set hidden                      " Allow hiding of unsaved buffers
 set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
@@ -55,3 +55,6 @@ endif
 if exists("+clipboard")
   set clipboard=unnamed
 endif
+
+" Indent tags properly
+let g:html_indent_tags = 'li\|p'

@@ -3,7 +3,7 @@ noremap <space> <Nop>
 let mapleader = " "
 
 " Ack to leader a
-noremap <leader>a :Ag! -i 
+noremap <leader>a :Ag! 
 
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
@@ -22,13 +22,14 @@ nnoremap <leader>[ :tabp<cr>
 nnoremap <leader>] :tabn<cr>
 
 " Split to current file
+nnoremap <leader>e :Vexplore!<cr>
 nnoremap <leader>eh :Vexplore<cr>
 nnoremap <leader>ej :Hexplore<cr>
 nnoremap <leader>ek :Hexplore!<cr>
 nnoremap <leader>el :Vexplore!<cr>
 
-" Prepend Dispatch for easy commands
-nnoremap <leader>d :Tbro
+" Prepend Tbro for easy commands
+nnoremap <leader>d :Tbro 
 
 " Git shortcuts
 map <leader>gs :Gstatus<cr>

@@ -7,19 +7,16 @@ eval "$(rbenv init -)"
 autoload -U compinit
 compinit
 
-# Load all files in ~/.zsh
-for function in ~/.zsh/*; do
-  source $function
-done
-
 # Case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Load Colors
 autoload -U colors
 colors
-
 export CLICOLOR=1
+
+# Add binstubs to path
+export PATH=".git/safe/../../bin:$PATH"
 
 # Show ls on dark backgrounds well
 unset LSCOLORS
@@ -41,28 +38,28 @@ setopt append_history         # Append, not replace
 setopt inc_append_history     # Immediately append history
 setopt always_to_end          # Always go to end of line on complete
 setopt correct                # Correct typos
-setopt prompt_subst           # Substitute commands in prompt
-setopt transientrprompt
+setopt hist_ignore_dups       # Don't show dupes in history
 
-# Beginning and End line shortcuts
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
+# Load all files in ~/.zsh
+for function in ~/.zsh/*; do
+  source $function
+done
 
 # HISTORY!
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
 
-# Ignore duplicates
-setopt hist_ignore_dups
-
-# Add binstubs to path
-export PATH=".git/safe/../../bin:$PATH"
-
 # Vim like history search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+# Beginning and End line shortcuts
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+

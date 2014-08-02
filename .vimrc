@@ -8,8 +8,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 
 " tpope utilities
+" Plugin 'tpope/vim-surround' " Remove until issues are resolved
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
@@ -23,6 +23,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'bogado/file-line'
 Plugin 'justinmk/vim-sneak'
+Plugin 'ervandew/supertab'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'

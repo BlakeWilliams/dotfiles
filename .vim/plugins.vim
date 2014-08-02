@@ -34,11 +34,14 @@ let g:airline#extensions#whitespace#enabled=0
 
 " Better tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_tab_type = 1
 
 " Don't show modes
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
+
+" Show buffers at top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
 " Single character modes
 let g:airline_mode_map = {
@@ -57,4 +60,10 @@ let g:airline_mode_map = {
 
 " Syntastic config
 let g:syntastic_check_on_open = 1 " Check file on open
+
+" Additional Checkers
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_scss_checkers = ['scss_lint']
+
 let g:syntastic_stl_format = " %E{Err: %e}%B{, }%W{Warn: %w}"

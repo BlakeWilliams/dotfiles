@@ -20,12 +20,14 @@
   statusHints = false
 [commit]
   template = ~/.gitmessage
+[fetch]
+  prune = true
 [alias]
   a  = add
   aa = add --all
   ap = add -i
   ca = commit --amend
-  ci = commit
+  ci = commit -v
   co = checkout
   cb = checkout -b
   db = branch -d
@@ -33,8 +35,10 @@
   ds = diff --staged
   fuckit = !sh -c 'git add --all && git reset --hard'
   up = !git fetch origin && git rebase -i origin/master
+  pr = !hub pull-request
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [status]
-	branch = 1
+  branch = 1
+  short = 1
