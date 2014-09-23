@@ -5,7 +5,7 @@ set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
 set colorcolumn=80              " Highlight line 80
 set gdefault                    " When on a line, replace all matches in line
-set history=100		              " keep 100 lines of command line history
+set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
@@ -14,7 +14,7 @@ set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
-set hidden                      " Allow hiding of unsaved buffers
+set nohidden                    " Don't hide unsaved buffers
 set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap

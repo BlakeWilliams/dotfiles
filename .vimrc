@@ -25,6 +25,8 @@ Plugin 'bogado/file-line'
 Plugin 'justinmk/vim-sneak'
 Plugin 'ervandew/supertab'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/syntastic'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'

@@ -4,7 +4,6 @@
 [github]
   user = BlakeWilliams
 [format]
-  #pretty = "%C(yellow)%h%Creset - %s%nAuthored by %an%n"
   pretty = "%C(yellow)%h%Creset - %s%nAuthored by %C(green)%an%Creset %ar%n"
 [color]
   ui = true
@@ -27,7 +26,7 @@
   aa = add --all
   ap = add -i
   ca = commit --amend
-  ci = commit -v
+  c  = commit -v
   co = checkout
   cb = checkout -b
   db = branch -d
