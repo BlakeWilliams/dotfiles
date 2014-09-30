@@ -8,12 +8,6 @@ noremap <leader>a :Ag!
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
 
-" Map window movements
-" noremap <leader>h <C-w>h
-" noremap <leader>j <C-w>j
-" noremap <leader>k <C-w>k
-" noremap <leader>l <C-w>l
-
 " Window resizing
 noremap <leader>= <C-w>=
 
@@ -26,6 +20,9 @@ nnoremap <leader>eh :Vexplore<cr>
 nnoremap <leader>ej :Hexplore<cr>
 nnoremap <leader>ek :Hexplore!<cr>
 nnoremap <leader>el :Vexplore!<cr>
+
+" Easier OS clipboard map
+nnoremap * "*
 
 " Prepend Tbro for easy commands
 nnoremap <leader>d :Tbro 
@@ -43,9 +40,10 @@ map <Leader>rn :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
 map <Leader>ra :call RunAllSpecs()<CR>
 
+" Make Y act like other capitals
+map Y y$
+
 " Unmap useless keys
 noremap Q <Nop>
 noremap K <Nop>
 
-" Make Y act like other capitals
-map Y y$

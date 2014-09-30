@@ -4,6 +4,7 @@ set autoindent                  " Copy indent from previous line
 set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
 set colorcolumn=80              " Highlight line 80
+set diffopt+=vertical           " Always use vertical diffs
 set gdefault                    " When on a line, replace all matches in line
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
@@ -39,7 +40,7 @@ filetype indent on              " Filetype specific indent
 filetype plugin on              " Filetype specific plugins
 
 if has('mouse')
-  set mouse=a " Enable mouse
+  set mouse=a
 endif
 
 " Use undo file for awesome undo
@@ -47,14 +48,7 @@ if exists("+undofile")
   if isdirectory($HOME . '/.vim/undo') == 0
     :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
   endif
+
   set undofile
   set undodir=~/.vim/undo/
 endif
-
-" Vim and OS share clipboard
-if exists("+clipboard")
-  set clipboard=unnamed
-endif
-
-" Indent tags properly
-let g:html_indent_tags = 'li\|p'

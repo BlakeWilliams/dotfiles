@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+set -ue
+
+cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
+
+git_toplevel=$(git rev-parse --show-toplevel)
+
+git_status() {
+  local unstaged="$(git diff-files | wc -l)"
+  local staged="$(git diff-index --cached HEAD | wc -l)"
+  if [[ "$staged" -gt 0 ]]; then
+    printf "#[fg=colour3]%d staged " "$staged"
+  fi
+  if [[ "$unstaged" -gt 0 ]]; then
+    printf "#[fg=colour1]%d unstaged " "$unstaged"
+  fi
+}
+
+git_branch() {
+  local color
+  if [[ -d ${git_toplevel}"/.git/safe" ]]; then
+    color="colour2"
+  else
+    color="colour7"
+  fi
+  printf "#[fg=$color]$(git rev-parse --abbrev-ref HEAD)"
+}
+
+short_pwd() {
+  if [[ $HOME == $(pwd) ]]; then
+    print "~"
+  else
+    print $(basename $(pwd))
+  fi
+} 
+
+if [[ $git_toplevel != $HOME ]]; then
+  git_status
+  git_branch
+else
+  printf "#[fg=colour5]%s" "$(short_pwd)"
+fi

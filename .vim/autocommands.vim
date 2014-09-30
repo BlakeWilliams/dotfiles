@@ -12,16 +12,16 @@ if has("autocmd")
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78
   autocmd FileType gitcommit setlocal spell nonumber norelativenumber
+  autocmd FileType netrw setl bufhidden=delete
   autocmd FileType netrw setlocal nonumber norelativenumber
   autocmd FileType markdown setlocal spell wrap textwidth=80
-  autocmd FileType netrw setlocal cc=""
   autocmd FileType qf setlocal cc=""
 
   " Go to last known valid cursor position
   autocmd BufReadPost *
-        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 endif
 
 " Makes parent directories if they don't exist
@@ -33,6 +33,7 @@ function! s:MkNonExDir(file, buf)
         endif
     endif
 endfunction
+
 augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))

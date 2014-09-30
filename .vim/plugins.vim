@@ -1,3 +1,6 @@
+" Indent li and p tags properly
+let g:html_indent_tags = 'li\|p'
+
 " ctrlp - Don't cache
 let g:ctrlp_use_caching=0
 let g:ctrlp_map = '<c-p>'
@@ -33,7 +36,6 @@ let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 let g:airline#extensions#whitespace#enabled=0
 
 " Better tabline
-"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_type = 0
@@ -42,8 +44,7 @@ let g:airline#extensions#tabline#tab_min_count = 2
 " Don't show modes
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
-" Show buffers at top
-let g:airline#extensions#tabline#enabled = 1
+" Better line/column information
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
 " Single character modes
@@ -71,6 +72,3 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_html_checkers=['']
 
 let g:syntastic_stl_format = " %E{Err: %e}%B{, }%W{Warn: %w}"
-
-" Always use vertical diffs
-set diffopt+=vertical
