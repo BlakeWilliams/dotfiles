@@ -1,7 +1,7 @@
 set nocompatible  "Remove vi compatibility
 filetype off
 
-" Setup Vundle
+" setup Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -26,7 +26,6 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'ervandew/supertab'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/syntastic'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -39,11 +38,12 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
-Plugin 'zaiste/VimClojure'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
 
 " Colors
 Plugin 'chriskempson/base16-vim'

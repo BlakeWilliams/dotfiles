@@ -16,6 +16,7 @@ if has("autocmd")
   autocmd FileType netrw setlocal nonumber norelativenumber
   autocmd FileType markdown setlocal spell wrap textwidth=80
   autocmd FileType qf setlocal cc=""
+  autocmd FileType rust setlocal cc=90
 
   " Go to last known valid cursor position
   autocmd BufReadPost *

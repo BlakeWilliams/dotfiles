@@ -34,14 +34,15 @@
   db = branch -d
   d  = diff
   ds = diff --staged
+  db = !sh -c 'git push --delete origin $1 && git branch -D $1' -
   up = !git fetch origin && git rebase -i origin/master
+  down = !git checkout master && git merge @{-1} && git push
   fuckit = !sh -c 'git add --all && git reset --hard'
-  standup = log --since=yesterday --author=\"Blake Williams\"
-  pr = !hub pull-request
   safe = !mkdir .git/safe
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+  pr = !hub pull-request --browse
 [status]
   branch = 1
   short = 1
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

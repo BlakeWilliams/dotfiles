@@ -1,6 +1,5 @@
 # Rbenv and Brew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
 eval "$(rbenv init -)"
 
 # Load autocomplete

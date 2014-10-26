@@ -23,6 +23,7 @@ nnoremap <leader>el :Vexplore!<cr>
 
 " Easier OS clipboard map
 nnoremap * "*
+vnoremap * "*
 
 " Prepend Tbro for easy commands
 nnoremap <leader>d :Tbro 
