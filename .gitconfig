@@ -26,7 +26,7 @@
 [alias]
   a  = add
   aa = add --all
-  ap = add -i
+  ap = add -p
   ca = commit --amend
   c  = commit -v
   co = checkout
@@ -44,5 +44,6 @@
   branch = 1
   short = 1
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f

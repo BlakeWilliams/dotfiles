@@ -19,7 +19,7 @@ Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-rsi.git'
 
 " Workflow
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'bogado/file-line'
 Plugin 'justinmk/vim-sneak'

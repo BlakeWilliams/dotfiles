@@ -12,6 +12,7 @@ if executable('ag')
 endif
 
 " vinegar hide dotfiles
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_retmap = 1
 
@@ -45,6 +46,7 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
 " Better line/column information
+let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
 " Single character modes
