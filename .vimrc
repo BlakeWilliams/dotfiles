@@ -15,7 +15,6 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-rsi.git'
 
 " Workflow
@@ -24,14 +23,13 @@ Plugin 'rking/ag.vim'
 Plugin 'bogado/file-line'
 Plugin 'justinmk/vim-sneak'
 Plugin 'ervandew/supertab'
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'BlakeWilliams/vim-tbro'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'BlakeWilliams/vim-tbro'
 Plugin 'thoughtbot/vim-rspec'
 
 " Languages and markup
