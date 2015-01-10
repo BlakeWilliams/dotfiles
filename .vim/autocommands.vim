@@ -17,6 +17,7 @@ if has("autocmd")
   autocmd FileType markdown setlocal spell wrap textwidth=80
   autocmd FileType qf setlocal cc=""
   autocmd FileType rust setlocal cc=90
+  autocmd FileType haskell setlocal shiftwidth=4
 
   " Go to last known valid cursor position
   autocmd BufReadPost *
