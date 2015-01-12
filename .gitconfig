@@ -30,13 +30,14 @@
   ca = commit --amend
   c  = commit -v
   co = checkout
-  cb = checkout -b
+  cb = !sh -c 'git checkout -b $0 && git push -u origin $0'
   db = branch -d
   d  = diff
   ds = diff --staged
   db = !sh -c 'git push --delete origin $1 && git branch -D $1' -
   up = !git fetch origin && git rebase -i origin/master
   down = !git checkout master && git merge @{-1} && git push
+  money = branch -dr @{-1}
   fuckit = !sh -c 'git add --all && git reset --hard'
   safe = !mkdir .git/safe
   pr = !hub pull-request --browse
