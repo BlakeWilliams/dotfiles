@@ -19,6 +19,9 @@ if has("autocmd")
   autocmd FileType rust setlocal cc=90
   autocmd FileType haskell setlocal shiftwidth=4
 
+  " Add ES6 extension
+  autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
   " Go to last known valid cursor position
   autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |

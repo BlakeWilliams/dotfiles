@@ -35,6 +35,14 @@ map <leader>gg :Gbrowse<cr>
 map <leader>gb :Gblame<cr>
 map <leader>gd :Gdiff<cr>
 
+" Tbro mappings
+vmap <silent> <Leader>t :call tbro#run_selection()<cr>
+nmap <silent> <Leader>t :call tbro#run_line()<cr>
+
+" Fast tbro thanks to @jyurek
+nnoremap ! :! :Tbro 
+nnoremap !! :TbroRedo<cr>
+
 " RSpec mappings for vim-rspec
 map <Leader>rc :call RunCurrentSpecFile()<CR>
 map <Leader>rn :call RunNearestSpec()<CR>

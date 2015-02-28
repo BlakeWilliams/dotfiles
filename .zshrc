@@ -38,6 +38,10 @@ setopt inc_append_history     # Immediately append history
 setopt always_to_end          # Always go to end of line on complete
 setopt correct                # Correct typos
 setopt hist_ignore_dups       # Don't show dupes in history
+setopt hist_ignore_space      # Ignore commands starting with space
+setopt prompt_subst
+setopt transientrprompt
+
 
 # Load all files in ~/.zsh
 for function in ~/.zsh/*; do
@@ -61,4 +65,3 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Beginning and End line shortcuts
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
-
