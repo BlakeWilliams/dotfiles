@@ -40,7 +40,7 @@ vmap <silent> <Leader>t :call tbro#run_selection()<cr>
 nmap <silent> <Leader>t :call tbro#run_line()<cr>
 
 " Fast tbro thanks to @jyurek
-nnoremap ! :! :Tbro 
+nnoremap ! :Tbro 
 nnoremap !! :TbroRedo<cr>
 
 " RSpec mappings for vim-rspec

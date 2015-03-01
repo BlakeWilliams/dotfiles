@@ -1,54 +1,52 @@
 set nocompatible  "Remove vi compatibility
 filetype off
 
-" setup Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle.vim'
+" setup Plug
+call plug#begin('~/.vim/bundle')
 
 " tpope utilities
-" Plugin 'tpope/vim-surround' " Remove until issues are resolved
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-rsi.git'
+Plug 'tpope/vim-surround' " Remove until issues are resolved
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-rsi.git'
 
 " Workflow
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'bogado/file-line'
-Plugin 'justinmk/vim-sneak'
-Plugin 'ervandew/supertab'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'BlakeWilliams/vim-tbro'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'bogado/file-line'
+Plug 'justinmk/vim-sneak'
+Plug 'ervandew/supertab'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'BlakeWilliams/vim-tbro'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'thoughtbot/vim-rspec'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'thoughtbot/vim-rspec'
 
 " Languages and markup
-Plugin 'othree/html5.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-haml',                    { 'for': 'haml' }
+Plug 'mustache/vim-mustache-handlebars',  { 'for': 'handlebars' }
+Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
+Plug 'elixir-lang/vim-elixir',            { 'for': 'elixir' }
+Plug 'wting/rust.vim',                    { 'for': 'rust' }
+Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 
 " Colors
-Plugin 'chriskempson/base16-vim'
-Plugin 'bling/vim-airline'
-Plugin 'BlakeWilliams/vim-single-cursor-line'
+Plug 'chriskempson/base16-vim'
+Plug 'bling/vim-airline'
+Plug 'BlakeWilliams/vim-single-cursor-line'
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 " Split config up for cleanliness
