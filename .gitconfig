@@ -39,6 +39,8 @@
   down = !git checkout master && git merge @{-1} && git push
   money = branch -dr @{-1}
   fuckit = !sh -c 'git add --all && git reset --hard'
+  standup = log --since=yesterday --author=\"Blake Williams\"
+  retro = log --since='7 days ago' --author=\"Blake Williams\"
   safe = !mkdir .git/safe
   pr = !hub pull-request --browse
 [status]
