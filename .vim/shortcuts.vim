@@ -56,3 +56,4 @@ map Y y$
 noremap Q <Nop>
 noremap K <Nop>
 
+noremap <2-LeftMouse> *#

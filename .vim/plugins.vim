@@ -8,7 +8,7 @@ let g:ctrlp_map = '<c-p>'
 " Use ag instead of grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 endif
 
 " vinegar hide dotfiles
@@ -74,3 +74,4 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_html_checkers=['']
 
 let g:syntastic_stl_format = " %E{Err: %e}%B{, }%W{Warn: %w}"
+let g:syntastic_mode_map = {  "mode": "passive" }

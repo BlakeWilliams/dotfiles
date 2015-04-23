@@ -5,7 +5,7 @@ filetype off
 call plug#begin('~/.vim/bundle')
 
 " tpope utilities
-Plug 'tpope/vim-surround' " Remove until issues are resolved
+" Plug 'tpope/vim-surround' " Remove until issues are resolved
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -33,12 +33,13 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-markdown'
 Plug 'pangloss/vim-javascript'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-haml',                    { 'for': 'haml' }
-Plug 'mustache/vim-mustache-handlebars',  { 'for': 'handlebars' }
 Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
-Plug 'elixir-lang/vim-elixir',            { 'for': 'elixir' }
+Plug 'elixir-lang/vim-elixir'
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
+Plug 'scrooloose/syntastic'
 
 " Colors
 Plug 'chriskempson/base16-vim'
