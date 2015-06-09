@@ -1,6 +1,9 @@
 " Default colors
-set background=dark
+set background=light
 colorscheme base16-tomorrow
+
+" Hack for better search on light bg's
+hi Search ctermbg=3 ctermfg=13
 
 hi SyntasticErrorSign ctermfg=1 ctermbg=10
 hi CursorLineNr ctermfg=1

@@ -63,15 +63,3 @@ let g:airline_mode_map = {
       \ 'S'  : 'S',
       \ '' : 'S',
       \ }
-
-" Syntastic config
-let g:syntastic_check_on_open = 1 " Check file on open
-
-" Additional Checkers
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_html_checkers=['']
-
-let g:syntastic_stl_format = " %E{Err: %e}%B{, }%W{Warn: %w}"
-let g:syntastic_mode_map = {  "mode": "passive" }

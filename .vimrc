@@ -12,7 +12,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-rsi.git'
+Plug 'tpope/vim-rsi'
 
 " Workflow
 Plug 'ctrlpvim/ctrlp.vim'
@@ -39,7 +39,7 @@ Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
-Plug 'scrooloose/syntastic'
+Plug 'mxw/vim-jsx'
 
 " Colors
 Plug 'chriskempson/base16-vim'
