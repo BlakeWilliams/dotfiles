@@ -3,6 +3,8 @@
   email = blake@blakewilliams.me
 [github]
   user = BlakeWilliams
+[init]
+  templatedir = ~/.git_template
 [color]
   ui = true
 [format]
@@ -43,6 +45,7 @@
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   safe = !mkdir .git/safe
   pr = !hub pull-request --browse
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
 [status]
   branch = 1
   short = 1
