@@ -1,6 +1,9 @@
 # Rbenv and Brew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
+
+# Add binstubs to path
+export PATH=".git/safe/../../bin:$PATH"
 
 # Load autocomplete
 autoload -U compinit
@@ -14,8 +17,6 @@ autoload -U colors
 colors
 export CLICOLOR=1
 
-# Add binstubs to path
-export PATH=".git/safe/../../bin:$PATH"
 
 # Show ls on dark backgrounds well
 unset LSCOLORS
