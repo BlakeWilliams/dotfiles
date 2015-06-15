@@ -9,6 +9,9 @@ export PATH=".git/safe/../../bin:$PATH"
 autoload -U compinit
 compinit
 
+# Load completion functions
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
 # Case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -17,6 +20,8 @@ autoload -U colors
 colors
 export CLICOLOR=1
 
+setopt auto_cd
+cdpath=($HOME/Documents/Projects)
 
 # Show ls on dark backgrounds well
 unset LSCOLORS
@@ -66,3 +71,4 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Beginning and End line shortcuts
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+bindkey "^K" kill-line
