@@ -22,6 +22,7 @@ set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
+set scrolloff=5                 " Always show 5 lines above/blow cursor
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
