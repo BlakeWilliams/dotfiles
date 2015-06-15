@@ -33,13 +33,14 @@
   c  = commit -v
   co = checkout
   cb = !sh -c 'git checkout -b $0 && git push -u origin $0'
+  ci = !hub ci-status
   db = branch -d
   d  = diff
   ds = diff --staged
   db = !sh -c 'git push --delete origin $1 && git branch -D $1' -
   up = !git fetch origin && git rebase -i origin/master
   down = !git checkout master && git merge @{-1} && git push
-  money = branch -dr @{-1}
+  money = !~/.bin/git-money
   fuckit = !sh -c 'git add --all && git reset --hard'
   standup = log --since=yesterday --author=\"Blake Williams\"
   retro = log --since='7 days ago' --author=\"Blake Williams\"
@@ -49,7 +50,7 @@
 [status]
   branch = 1
   short = 1
-[filter "media"]
+[filter "lfs"]
   required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
