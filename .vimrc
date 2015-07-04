@@ -20,8 +20,8 @@ Plug 'rking/ag.vim'
 Plug 'bogado/file-line'
 Plug 'justinmk/vim-sneak'
 Plug 'ervandew/supertab'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'BlakeWilliams/vim-tbro'
+Plug 'SirVer/ultisnips'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -37,9 +37,10 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-haml',                    { 'for': 'haml' }
 Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
 Plug 'elixir-lang/vim-elixir'
-Plug 'wting/rust.vim',                    { 'for': 'rust' }
+Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 Plug 'mxw/vim-jsx'
+Plug 'cakebaker/scss-syntax.vim'
 
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -56,4 +57,5 @@ source $HOME/.vim/colors.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/shortcuts.vim
 
+source $HOME/.vim/notes.vim
 source $HOME/.vim/autocommands.vim
