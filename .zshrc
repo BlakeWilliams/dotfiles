@@ -20,13 +20,16 @@ autoload -U colors
 colors
 export CLICOLOR=1
 
-setopt auto_cd
+# Quick cd to projects
 cdpath=($HOME/Documents/Projects)
 
 # Show ls on dark backgrounds well
 unset LSCOLORS
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS=gxfxcxdxbxegedabagacad
+
+# Disable weird piping behavior
+unsetopt multios
 
 # Grep gets colors too
 export GREP_OPTIONS='--color=auto'
@@ -72,3 +75,8 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^K" kill-line
+
+# Allow backspace after vi mode
+bindkey -v '^?' backward-delete-char
+
+export CLICOLOR=1

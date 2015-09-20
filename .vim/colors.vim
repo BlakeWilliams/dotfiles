@@ -1,11 +1,12 @@
 " Default colors
 set background=dark
-colorscheme base16-tomorrow
+colorscheme solarized
 
-hi SyntasticErrorSign ctermfg=1 ctermbg=10
+" Hack for better search on light bg's
+hi Search ctermbg=3 ctermfg=0
+
+" Show currentline as red
 hi CursorLineNr ctermfg=1
-
-hi SneakPluginTarget ctermbg=3 ctermbg=1
 
 " Tomorrow-Night bg fix
 if has("gui_running")

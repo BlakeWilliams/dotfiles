@@ -32,6 +32,10 @@ set ttyfast                     " Add g flag to search and replace as default
 set undolevels=500              " More undo
 set wildmenu
 
+" Enable italics
+set t_ZH=[3m
+set t_ZR=[23m
+
 " Formatting settings
 set expandtab                   " Make spaces not tabs
 set tabstop=2                   " 2 space tabs

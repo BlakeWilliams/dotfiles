@@ -5,6 +5,9 @@ let mapleader = " "
 " Ack to leader a
 noremap <leader>a :Ag! 
 
+" CtrlP to leader p
+noremap <leader>p :CtrlP<cr>
+
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
 
@@ -21,12 +24,11 @@ nnoremap <leader>ej :Hexplore<cr>
 nnoremap <leader>ek :Hexplore!<cr>
 nnoremap <leader>el :Vexplore!<cr>
 
-" Easier OS clipboard map
-nnoremap * "*
-vnoremap * "*
-
-" Prepend Tbro for easy commands
-nnoremap <leader>d :Tbro 
+" Easy navigation of splits
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
 
 " Git shortcuts
 map <leader>gs :Gstatus<cr>

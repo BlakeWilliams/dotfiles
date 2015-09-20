@@ -25,13 +25,10 @@ let g:netrw_dirhistmax = 0
 " vim-rspec - Use Tbro to run rspec
 let g:rspec_command = "Tbro rspec {spec}"
 
-" airline - set theme and remove stupid separators
+" airline - set theme and remove awful separators
 let g:airline_theme="base16"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-
-" Better col/row information
-let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0

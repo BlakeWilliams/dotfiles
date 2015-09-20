@@ -5,7 +5,6 @@ filetype off
 call plug#begin('~/.vim/bundle')
 
 " tpope utilities
-" Plug 'tpope/vim-surround' " Remove until issues are resolved
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -18,10 +17,10 @@ Plug 'tpope/vim-rsi'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'bogado/file-line'
-Plug 'justinmk/vim-sneak'
 Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
-Plug 'SirVer/ultisnips'
+Plug 'junegunn/vim-easy-align'
+Plug 'mbbill/undotree'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -44,6 +43,7 @@ Plug 'cakebaker/scss-syntax.vim'
 
 " Colors
 Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'BlakeWilliams/vim-single-cursor-line'
 
