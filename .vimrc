@@ -1,4 +1,3 @@
-set nocompatible  "Remove vi compatibility
 filetype off
 
 " setup Plug
@@ -20,7 +19,7 @@ Plug 'bogado/file-line'
 Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'junegunn/vim-easy-align'
-Plug 'mbbill/undotree'
+Plug 'BlakeWilliams/vim-pry'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'

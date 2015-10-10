@@ -1,6 +1,6 @@
 " Default colors
 set background=dark
-colorscheme solarized
+colorscheme base16-solarized
 
 " Hack for better search on light bg's
 hi Search ctermbg=3 ctermfg=0

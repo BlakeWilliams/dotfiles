@@ -31,6 +31,7 @@ set splitright                  " Open vsplits to the right rather than left
 set ttyfast                     " Add g flag to search and replace as default
 set undolevels=500              " More undo
 set wildmenu
+set wildignorecase              " Case insensitive completion
 
 " Enable italics
 set t_ZH=[3m

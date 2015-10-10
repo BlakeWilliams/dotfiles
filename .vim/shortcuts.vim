@@ -59,3 +59,5 @@ noremap Q <Nop>
 noremap K <Nop>
 
 noremap <2-LeftMouse> *#
+
+nmap <Leader>d :call pry#insert()<cr>

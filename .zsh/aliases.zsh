@@ -11,4 +11,7 @@ alias nodeplz="npm cache clear && bower cache clean && npm install && bower inst
 alias fucknode="rm -rf node_modules && rm -rf bower_components"
 alias omgnode="fucknode && nodeplz"
 
-alias fucking=pkill -9 -f
+alias fucking="pkill -9 -f"
+
+alias dc="docker-compose"
+alias dm="docker-machine"
