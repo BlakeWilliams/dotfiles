@@ -1,7 +1,3 @@
-# Rbenv and Brew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-eval "$(rbenv init - --no-rehash)"
-
 # Add binstubs to path
 export PATH=".git/safe/../../bin:$PATH"
 

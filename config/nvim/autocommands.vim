@@ -22,6 +22,8 @@ if has("autocmd")
   " Add ES6 extension
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
+  autocmd BufWritePost * silent Neomake
+
   " Go to last known valid cursor position
   autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |

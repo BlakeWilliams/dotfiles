@@ -60,3 +60,5 @@ let g:airline_mode_map = {
       \ 'S'  : 'S',
       \ '' : 'S',
       \ }
+
+let g:neomake_verbose = 0

@@ -20,6 +20,7 @@ Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'junegunn/vim-easy-align'
 Plug 'BlakeWilliams/vim-pry'
+Plug 'benekastah/neomake'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -40,11 +41,13 @@ Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'slim-template/vim-slim'
+Plug 'cohama/lexima.vim'
 
 " Colors
 Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'BlakeWilliams/vim-single-cursor-line'
 
 call plug#end()
@@ -52,10 +55,10 @@ call plug#end()
 filetype plugin indent on
 
 " Split config up for cleanliness
-source $HOME/.vim/config.vim
-source $HOME/.vim/colors.vim
-source $HOME/.vim/plugins.vim
-source $HOME/.vim/shortcuts.vim
+source $HOME/.config/nvim/config.vim
+source $HOME/.config/nvim/colors.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/shortcuts.vim
 
-source $HOME/.vim/notes.vim
-source $HOME/.vim/autocommands.vim
+source $HOME/.config/nvim/notes.vim
+source $HOME/.config/nvim/autocommands.vim

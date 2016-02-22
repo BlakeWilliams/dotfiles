@@ -13,6 +13,7 @@ set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
 set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
+set matchtime=0                 " Fix neovim match lag
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Don't hide unsaved buffers
