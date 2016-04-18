@@ -6,7 +6,6 @@ call plug#begin('~/.vim/bundle')
 " tpope utilities
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
@@ -34,7 +33,6 @@ Plug 'tpope/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-haml',                    { 'for': 'haml' }
-Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
@@ -44,11 +42,10 @@ Plug 'slim-template/vim-slim'
 Plug 'cohama/lexima.vim'
 
 " Colors
-Plug 'chriskempson/base16-vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'BlakeWilliams/vim-single-cursor-line'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 

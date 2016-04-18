@@ -1,6 +1,7 @@
 " Default colors
+let g:gruvbox_contrast_dark="soft"
 set background=dark
-colorscheme base16-solarized
+colorscheme gruvbox
 
 " Show currentline as red
 hi CursorLineNr ctermfg=1

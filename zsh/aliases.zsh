@@ -7,8 +7,8 @@ alias mkdir="mkdir -p"
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias drop="rake db:drop && rake db:create && rake db:migrate"
 
-alias nodeplz="npm cache clear && bower cache clean && npm install && bower install"
-alias fucknode="rm -rf node_modules && rm -rf bower_components"
+alias nodeplz="npm cache clear && npm install"
+alias fucknode="rm -rf node_modules"
 alias omgnode="fucknode && nodeplz"
 
 alias fucking="pkill -9 -f"

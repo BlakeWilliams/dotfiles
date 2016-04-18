@@ -16,9 +16,6 @@ autoload -U colors
 colors
 export CLICOLOR=1
 
-# Quick cd to projects
-cdpath=($HOME/Documents/Projects)
-
 # Show ls on dark backgrounds well
 unset LSCOLORS
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -46,7 +43,6 @@ setopt hist_ignore_dups       # Don't show dupes in history
 setopt hist_ignore_space      # Ignore commands starting with space
 setopt prompt_subst
 setopt transientrprompt
-
 
 # Load all files in ~/.zsh
 for function in ~/.zsh/*; do

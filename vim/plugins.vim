@@ -26,7 +26,7 @@ let g:netrw_dirhistmax = 0
 let g:rspec_command = "Tbro bundle exec rspec {spec}"
 
 " airline - set theme and remove awful separators
-let g:airline_theme="base16"
+let g:airline_theme="gruvbox"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
