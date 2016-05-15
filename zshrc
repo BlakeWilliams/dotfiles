@@ -41,8 +41,7 @@ setopt always_to_end          # Always go to end of line on complete
 setopt correct                # Correct typos
 setopt hist_ignore_dups       # Don't show dupes in history
 setopt hist_ignore_space      # Ignore commands starting with space
-setopt prompt_subst
-setopt transientrprompt
+setopt prompt_subst           # Necessary for pretty prompts
 
 # Load all files in ~/.zsh
 for function in ~/.zsh/*; do
@@ -60,15 +59,16 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+# Use vi keybindings
+bindkey -v
+
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# Beginning and End line shortcuts
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^K" kill-line
-
 # Allow backspace after vi mode
-bindkey -v '^?' backward-delete-char
+bindkey '^?' backward-delete-char
 
-export CLICOLOR=1
+# Beginning and End line shortcuts
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^k" kill-line
