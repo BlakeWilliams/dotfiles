@@ -46,6 +46,7 @@
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   pr = !hub pull-request --browse
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+  tryhard = commit --amend --author
 [status]
   branch = 1
   short = 1
