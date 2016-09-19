@@ -5,7 +5,8 @@ set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
 set colorcolumn=80              " Highlight line 80
 set diffopt+=vertical           " Always use vertical diffs
-set gdefault                    " When on a line, replace all matches in line
+set fillchars=" "               " Don't use | in split separators
+" set gdefault                  " When on a line, replace all matches in line
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
@@ -30,10 +31,10 @@ set smartindent                 " Auto insert extra indent level in certain case
 set smarttab                    " Prevents tab/space issues
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
-set ttyfast                     " Add g flag to search and replace as default
+set tags=.git/tags
 set undolevels=500              " More undo
+set wildignorecase              " Case insensitive completions
 set wildmenu
-" set wildignore                  " Case insensitive completion
 
 " Enable italics
 set t_ZH=[3m
