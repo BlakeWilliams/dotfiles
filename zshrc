@@ -19,7 +19,7 @@ export CLICOLOR=1
 # Show ls on dark backgrounds well
 unset LSCOLORS
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export LS_COLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS=$LSCOLORS
 
 # Disable weird piping behavior
 unsetopt multios
