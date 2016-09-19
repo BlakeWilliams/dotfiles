@@ -1,7 +1,7 @@
 filetype off
 
 " setup Plug
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 " tpope utilities
 Plug 'tpope/vim-repeat'
