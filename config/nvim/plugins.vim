@@ -4,11 +4,15 @@ let g:html_indent_tags = 'li\|p'
 " ctrlp - Don't cache
 let g:ctrlp_use_caching=0
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_reuse_window = 'netrw'
+let g:ctrlp_types = ['fil', 'mru', 'tags']
+let g:ctrlp_extensions = ['tag']
 
-" Use ag instead of grep
+" Use ag
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 " vinegar hide dotfiles

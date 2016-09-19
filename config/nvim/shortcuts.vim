@@ -3,7 +3,7 @@ noremap <space> <Nop>
 let mapleader = " "
 
 " Ack to leader a
-noremap <leader>a :Ag! 
+noremap <leader>a :Ack! 
 
 " CtrlP to leader p
 noremap <leader>p :CtrlP<cr>
