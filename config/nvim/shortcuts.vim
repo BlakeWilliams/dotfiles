@@ -46,10 +46,11 @@ nnoremap ! :Tbro
 nnoremap !! :TbroRedo<cr>
 
 " RSpec mappings for vim-rspec
-map <Leader>rc :call RunCurrentSpecFile()<CR>
-map <Leader>rn :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
+nmap <silent> <leader>rn :TestNearest<CR>
+nmap <silent> <leader>rc :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rv :TestVisit<CR>
 
 " Make Y act like other capitals
 map Y y$

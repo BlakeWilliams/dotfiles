@@ -67,3 +67,6 @@ let g:airline_mode_map = {
       \ }
 
 let g:neomake_verbose = 0
+
+let g:test#custom_strategies = {'tbro': function('tbro#send')}
+let g:test#strategy = 'tbro'
