@@ -13,33 +13,26 @@ Plug 'tpope/vim-rsi'
 
 " Workflow
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
-Plug 'bogado/file-line'
+Plug 'mileszs/ack.vim'
 Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
-Plug 'junegunn/vim-easy-align'
 Plug 'BlakeWilliams/vim-pry'
 Plug 'benekastah/neomake'
-
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'thoughtbot/vim-rspec'
+Plug 'janko-m/vim-test'
+Plug 'matze/vim-move'
 
 " Languages and markup
+Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'tpope/vim-haml',                    { 'for': 'haml' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'wting/rust.vim'
-Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'slim-template/vim-slim'
-Plug 'cohama/lexima.vim'
+Plug 'cespare/vim-toml',                  { 'for': 'toml' }
+Plug 'hail2u/vim-css3-syntax'
 
 " Colors
 Plug 'vim-airline/vim-airline'
