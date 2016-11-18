@@ -51,6 +51,8 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
+let g:neomake_javascript_eslint_exe="./node_modules/.bin/eslint"
+
 " Single character modes
 let g:airline_mode_map = {
       \ '__' : '-',
