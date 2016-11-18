@@ -49,6 +49,4 @@ source $HOME/.config/nvim/config.vim
 source $HOME/.config/nvim/colors.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/shortcuts.vim
-
-source $HOME/.config/nvim/notes.vim
 source $HOME/.config/nvim/autocommands.vim
