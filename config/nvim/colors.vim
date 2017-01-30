@@ -1,6 +1,7 @@
 " Default colors
 let g:gruvbox_contrast_dark="soft"
-set background=dark
+let g:gruvbox_contrast_light="hard"
+set background=light
 colorscheme gruvbox
 
 " Show currentline as red

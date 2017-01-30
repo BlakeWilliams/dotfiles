@@ -17,9 +17,9 @@ Plug 'mileszs/ack.vim'
 Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'BlakeWilliams/vim-pry'
-Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test'
-Plug 'matze/vim-move'
+Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
 
 " Languages and markup
 Plug 'vim-ruby/vim-ruby'
@@ -36,9 +36,9 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Colors
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'BlakeWilliams/vim-single-cursor-line'
 Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 

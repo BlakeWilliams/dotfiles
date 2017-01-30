@@ -25,13 +25,16 @@ set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
 set scrolloff=5                 " Always show 5 lines above/blow cursor
+set completeopt+=menuone        " Always show menu
+set shortmess=fmnrWIcF          " Customize what vim yells at you
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
-set tags=.git/tags
+set tags=.git/tags              " Where to find tags
+set termguicolors               " 256 colors!
 set undolevels=500              " More undo
 set wildignorecase              " Case insensitive completions
 set wildmenu

@@ -43,6 +43,7 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#ale#enabled = 1
 
 " Don't show modes
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
@@ -51,7 +52,12 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
-let g:neomake_javascript_eslint_exe="./node_modules/.bin/eslint"
+let g:ale_sign_error="△"
+let g:ale_sign_warning="✕"
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " Single character modes
 let g:airline_mode_map = {
@@ -68,7 +74,11 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 
-let g:neomake_verbose = 0
-
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
+
+let g:UltiSnipsSnippetsDir = "~/.config/nvim/snips"
+let g:UltiSnipsSnippetDirectories=["snips"]
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsExpandTrigger="<Nop>"

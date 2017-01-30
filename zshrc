@@ -49,8 +49,8 @@ for function in ~/.zsh/*; do
 done
 
 # HISTORY!
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.history
 
 # Vim like history search
