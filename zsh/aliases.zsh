@@ -18,6 +18,5 @@ alias fucking="pkill -9 -f"
 alias dc="docker-compose"
 alias dm="docker-machine"
 
-alias vim=nvim
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=vim
+export VISUAL=vim

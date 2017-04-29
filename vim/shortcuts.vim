@@ -3,7 +3,7 @@ noremap <space> <Nop>
 let mapleader = " "
 
 " Ack to leader a
-noremap <leader>a :Ag! 
+noremap <leader>a :Ack! 
 
 " CtrlP to leader p
 noremap <leader>p :CtrlP<cr>
@@ -46,10 +46,11 @@ nnoremap ! :Tbro
 nnoremap !! :TbroRedo<cr>
 
 " RSpec mappings for vim-rspec
-map <Leader>rc :call RunCurrentSpecFile()<CR>
-map <Leader>rn :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
+nmap <silent> <leader>rn :TestNearest<CR>
+nmap <silent> <leader>rc :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rv :TestVisit<CR>
 
 " Make Y act like other capitals
 map Y y$
@@ -69,4 +70,26 @@ function! ReverseBackground()
   else
     set bg=light
   endif
+endfunction
+
+nmap <leader>n :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+function! CloseHiddenBuffers()
+  let open_buffers = []
+
+  for i in range(tabpagenr('$'))
+    call extend(open_buffers, tabpagebuflist(i + 1))
+  endfor
+
+  for num in range(1, bufnr("$") + 1)
+    if buflisted(num) && index(open_buffers, num) == -1
+      exec "bdelete ".num
+    endif
+  endfor
 endfunction
