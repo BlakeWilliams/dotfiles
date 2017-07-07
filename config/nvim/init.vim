@@ -14,12 +14,13 @@ Plug 'tpope/vim-rsi'
 " Workflow
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'ervandew/supertab'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'BlakeWilliams/vim-pry'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
 
 " Languages and markup
 Plug 'vim-ruby/vim-ruby'
@@ -33,6 +34,7 @@ Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 Plug 'hail2u/vim-css3-syntax'
+Plug 'leafgarland/typescript-vim'
 
 " Colors
 Plug 'vim-airline/vim-airline'

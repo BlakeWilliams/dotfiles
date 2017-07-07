@@ -5,7 +5,7 @@ set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
 set colorcolumn=80              " Highlight line 80
 set diffopt+=vertical           " Always use vertical diffs
-set fillchars=" "               " Don't use | in split separators
+set fillchars+=vert:│           " Use tall pipe in split separators
 " set gdefault                  " When on a line, replace all matches in line
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
@@ -26,6 +26,7 @@ set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
 set scrolloff=5                 " Always show 5 lines above/blow cursor
 set completeopt+=menuone        " Always show menu
+" set completeopt+=noselect       " Don't select only option
 set shortmess=fmnrWIcF          " Customize what vim yells at you
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present

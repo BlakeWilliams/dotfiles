@@ -71,3 +71,11 @@ function! ReverseBackground()
     set bg=light
   endif
 endfunction
+
+nmap <leader>p :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

@@ -18,6 +18,7 @@ if has("autocmd")
   autocmd FileType qf setlocal cc=""
   autocmd FileType rust setlocal cc=90
   autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
+  autocmd FileType ruby setlocal re=1
 
   " Add ES6 extension
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
