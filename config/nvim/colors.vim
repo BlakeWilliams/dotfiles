@@ -9,16 +9,17 @@ endfunction
 
 function! s:setColors()
   if (&t_Co >= 256)
-    " execute 'highlight jsObjectKey guifg=' . s:getGruvColor('GruvboxAqua')[0]
-    " execute 'highlight jsImport guifg=' . s:getGruvColor('GruvboxRed')[0]
-    " execute 'highlight jsImport guifg=' . s:getGruvColor('GruvboxRed')[0]
-    " execute 'highlight jsFuncCall guifg=' . s:getGruvColor('GruvboxBlue')[0]
-    " execute 'highlight jsonString guifg=' . s:getGruvColor('GruvboxGreen')[0]
-    " execute 'highlight jsonKeyword guifg=' . s:getGruvColor('GruvboxBlue')[0]
-    " execute 'highlight ALEErrorSign guibg=NONE guifg=' s:getGruvColor('GruvboxRed')[0]
-    " execute 'highlight ALEWarningSign guibg=NONE guifg=' s:getGruvColor('GruvboxYellow')[0]
+    execute 'highlight jsObjectKey guifg=' . s:getColor('GruvboxAqua')[0]
+    execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
+    execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
+    execute 'highlight jsFuncCall guifg=' . s:getColor('GruvboxBlue')[0]
+    execute 'highlight jsonString guifg=' . s:getColor('GruvboxGreen')[0]
+    execute 'highlight jsonKeyword guifg=' . s:getColor('GruvboxBlue')[0]
+    execute 'highlight ALEErrorSign guibg=NONE guifg=' s:getColor('GruvboxRed')[0]
+    execute 'highlight ALEWarningSign guibg=NONE guifg=' s:getColor('GruvboxYellow')[0]
+    execute 'highlight CursorLineNr guibg=NONE'
 
-    highlight VertSplit guifg=#073642 guibg=NONE
+    " highlight VertSplit guifg=#073642 guibg=NONE
   endif
 endfunction
 
@@ -26,5 +27,5 @@ autocmd ColorScheme * call s:setColors()
 
 let g:gruvbox_contrast_dark="medium"
 let g:gruvbox_contrast_light="soft"
-set background=light
-colorscheme solarized8_light
+set background=dark
+colorscheme gruvbox

@@ -31,7 +31,7 @@ let g:rspec_command = "Tbro bundle exec rspec {spec}"
 
 " Set airline theme
 " let g:airline_solarized_bg='dark'
-let g:airline_theme="solarized"
+let g:airline_theme="gruvbox"
 let g:airline_solarized_dark_inactive_border=1
 let g:airline_solarized_normal_green=1
 
