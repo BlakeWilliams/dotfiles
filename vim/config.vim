@@ -12,12 +12,14 @@ set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
+set lazyredraw                  " Don't always redraw the screen
 set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set matchtime=0                 " Fix neovim match lag
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set nohidden                    " Don't hide unsaved buffers
+set nofoldenable                " Folding isn't useful and might slow things down
 set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
@@ -27,6 +29,7 @@ set ruler                       " Show the ruler
 set scrolloff=5                 " Always show 5 lines above/blow cursor
 set completeopt+=menuone        " Always show menu
 " set completeopt+=noselect       " Don't select only option
+set complete+=kspell            " autocomplete with dictionary
 set shortmess=fmnrWIcF          " Customize what vim yells at you
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present
@@ -36,6 +39,7 @@ set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
 set tags=.git/tags              " Where to find tags
 set termguicolors               " 256 colors!
+set ttyfast                     " Let vim know we're always on a fast connection
 set undolevels=500              " More undo
 set wildignorecase              " Case insensitive completions
 set wildmenu

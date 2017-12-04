@@ -5,6 +5,10 @@ let mapleader = " "
 " Ack to leader a
 noremap <leader>a :Ack! 
 
+" ALE shortcuts
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
+
 " CtrlP to leader p
 noremap <leader>p :CtrlP<cr>
 

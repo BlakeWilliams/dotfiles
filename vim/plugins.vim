@@ -45,6 +45,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#show_close_button = 1
 
 " Don't show modes
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
@@ -59,6 +60,14 @@ let g:ale_sign_warning="✕"
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
 \}
+
+" ALE linting events
+set updatetime=1000
+let g:ale_lint_on_text_changed = 0
+autocmd CursorHold * call ale#Lint()
+autocmd CursorHoldI * call ale#Lint()
+autocmd InsertEnter * call ale#Lint()
+autocmd InsertLeave * call ale#Lint()
 
 let g:flow#enable = 0
 

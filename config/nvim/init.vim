@@ -6,10 +6,12 @@ call plug#begin('~/.config/nvim/bundle')
 " tpope utilities
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-rails'
 
 " Workflow
 Plug 'ctrlpvim/ctrlp.vim'
@@ -35,9 +37,11 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml',                  { 'for': 'toml' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
+Plug 'flowtype/vim-flow'
 
 " Colors
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'BlakeWilliams/vim-single-cursor-line'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'

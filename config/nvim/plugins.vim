@@ -29,10 +29,14 @@ let g:netrw_dirhistmax = 0
 " vim-rspec - Use Tbro to run rspec
 let g:rspec_command = "Tbro bundle exec rspec {spec}"
 
-" airline - set theme and remove awful separators
-let g:airline_theme="gruvbox"
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" Set airline theme
+" let g:airline_solarized_bg='dark'
+let g:airline_theme="solarized"
+let g:airline_solarized_dark_inactive_border=1
+let g:airline_solarized_normal_green=1
+
+" Don't use new symbols symbols
+let g:airline_symbols_ascii = 1
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0
@@ -56,7 +60,7 @@ let g:ale_sign_error="△"
 let g:ale_sign_warning="✕"
 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
+\   'javascript': ['eslint', 'flow'],
 \}
 
 " Single character modes
