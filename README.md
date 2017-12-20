@@ -26,6 +26,5 @@ for function in ~/.zsh/*; do
 done
 ```
 
-This loop in combination with `gitignore` ignoring all files by default means
-we can add any system specific scripts for `zsh` to `~/.zsh` and they'll be
-sourced.
+This loop in combination with `gitignore` ignoring all files in the `.zsh`
+directory we can add any system specific scripts for and they'll be sourced.
