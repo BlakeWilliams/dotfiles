@@ -45,6 +45,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'BlakeWilliams/vim-single-cursor-line'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
+Plug 'elzr/vim-json'
 
 call plug#end()
 

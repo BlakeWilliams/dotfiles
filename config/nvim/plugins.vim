@@ -86,3 +86,6 @@ let g:UltiSnipsSnippetDirectories=["snips"]
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 let g:UltiSnipsExpandTrigger="<Nop>"
+
+" Don't hide quotes in json
+let g:vim_json_syntax_conceal = 0

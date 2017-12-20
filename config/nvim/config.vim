@@ -32,6 +32,7 @@ set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
+set synmaxcol=180               " Prevents segfaults and slow rendering
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
 set tags=.git/tags              " Where to find tags
