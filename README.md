@@ -7,14 +7,11 @@ Most files are decently documented.
 
 ## Setup / Usage
 
-To get setup clone this repo and then run the included `setup.sh` script. The
-`setup.sh` script should be run when setting up your system, adding new files,
-or when you move this folder locally.
-
-If you're not sure how to run `setup.sh`, use the following:
+To get setup, install [rcm](https://github.com/thoughtbot/rcm) and run the
+following command:
 
 ```
-./setup.sh
+env RCRC=$HOME/dotfiles/rcrc rcup
 ```
 
 ## System specific zsh includes
