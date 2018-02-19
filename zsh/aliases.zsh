@@ -22,3 +22,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 alias vim=nvim
+
+alias 💸="git money"
+alias yolo="git push --force"

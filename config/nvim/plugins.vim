@@ -36,7 +36,7 @@ let g:airline_solarized_dark_inactive_border=1
 let g:airline_solarized_normal_green=1
 
 " Don't use new symbols symbols
-let g:airline_symbols_ascii = 1
+let g:airline_symbols_ascii = 0
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0
@@ -56,12 +56,25 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
-let g:ale_sign_error="△"
+let g:ale_fix_on_save=1
+
+let g:ale_sign_error="✕"
 let g:ale_sign_warning="✕"
 
 let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['tslint', 'tsserver', 'prettier', 'typecheck'],
 \}
+
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+
+let g:ale_lint_on_text_changed = 0
+" autocmd CursorHold * call ale#Lint()
+" autocmd CursorHoldI * call ale#Lint()
+" autocmd InsertEnter * call ale#Lint()
+" autocmd InsertLeave * call ale#Lint()
 
 " Single character modes
 let g:airline_mode_map = {
@@ -89,3 +102,8 @@ let g:UltiSnipsExpandTrigger="<Nop>"
 
 " Don't hide quotes in json
 let g:vim_json_syntax_conceal = 0
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+
+let g:SuperTabDefaultCompletionType = '<c-n>' " use deoplete via supertab

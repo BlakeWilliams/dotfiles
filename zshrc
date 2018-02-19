@@ -39,7 +39,7 @@ setopt append_history         # Append, not replace
 setopt inc_append_history     # Immediately append history
 setopt always_to_end          # Always go to end of line on complete
 setopt correct                # Correct typos
-setopt hist_ignore_dups       # Don't show dupes in history
+setopt hist_ignore_dups       # Do not show dupes in history
 setopt hist_ignore_space      # Ignore commands starting with space
 setopt prompt_subst           # Necessary for pretty prompts
 

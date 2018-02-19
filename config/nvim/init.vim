@@ -20,6 +20,7 @@ Plug 'BlakeWilliams/vim-tbro'
 Plug 'BlakeWilliams/vim-pry'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
+Plug 'ervandew/supertab'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
@@ -34,10 +35,12 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'wting/rust.vim'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'cespare/vim-toml',                  { 'for': 'toml' }
+Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'leafgarland/typescript-vim'
-Plug 'flowtype/vim-flow'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'elzr/vim-json'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Colors
 Plug 'vim-airline/vim-airline'
