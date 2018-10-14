@@ -15,7 +15,6 @@ noremap <C-p> :Files<cr>
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
 
-
 " Window resizing
 noremap <leader>= <C-w>=
 
@@ -84,3 +83,10 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Enter hides menu when open instead of newline
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

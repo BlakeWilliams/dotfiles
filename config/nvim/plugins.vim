@@ -1,18 +1,6 @@
 " Indent li and p tags properly
 let g:html_indent_tags = 'li\|p'
 
-" ctrlp - Don't cache
-let g:ctrlp_use_caching=0
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_reuse_window = 'netrw'
-
-" Use ag
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 " vinegar hide dotfiles
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -27,8 +15,6 @@ let g:netrw_dirhistmax = 0
 " Set airline theme
 let g:airline_theme="gruvbox"
 
-let g:airline_solarized_normal_green=1
-
 " Don't use new symbols symbols
 let g:airline_symbols_ascii = 0
 
@@ -42,9 +28,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#ale#enabled = 1
-
-" Don't show modes
-let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
 " Better line/column information
 let g:airline_section_b = ""
@@ -62,6 +45,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'vue': ['prettier'],
 \}
 
 let g:ale_lint_on_text_changed = 0
@@ -90,8 +74,6 @@ let g:vim_json_syntax_conceal = 0
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0
 
-let g:SuperTabDefaultCompletionType = '<c-n>' " use deoplete via supertab
-
 " Go config
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -111,9 +93,4 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 
-" Enter hides menu when open instead of newline
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+let g:fzf_layout = { 'window': 'enew' }
