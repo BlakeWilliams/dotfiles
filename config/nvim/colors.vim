@@ -19,6 +19,7 @@ function! s:setColors()
     execute 'highlight ALEWarningSign guibg=NONE guifg=' s:getColor('GruvboxYellow')[0]
     execute 'highlight CursorLineNr guibg=NONE'
 
+    execute 'highlight Events guifg=' s:getColor('GruvboxBlue')[0]
     " highlight VertSplit guifg=#073642 guibg=NONE
   endif
 endfunction
@@ -26,7 +27,7 @@ endfunction
 autocmd ColorScheme * call s:setColors()
 
 let g:gruvbox_contrast_dark="medium"
-let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_light="hard"
 let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 set background=light

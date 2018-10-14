@@ -24,6 +24,9 @@ export LS_COLORS=$LSCOLORS
 # Disable weird piping behavior
 unsetopt multios
 
+# Notify before prompt instead of directly on exit
+unsetopt notify
+
 # Grep gets colors too
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;32'

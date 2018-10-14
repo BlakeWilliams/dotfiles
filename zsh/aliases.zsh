@@ -4,7 +4,7 @@ alias b="bundle"
 alias be="bundle exec"
 
 alias mkdir="mkdir -p"
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias migrate="bundle exec rake db:migrate db:rollback && bundle exec rake db:migrate"
 alias drop="rake db:drop && rake db:create && rake db:migrate"
 
 alias nodeplz="npm cache clear && npm install"

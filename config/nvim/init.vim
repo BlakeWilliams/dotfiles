@@ -4,51 +4,60 @@ filetype off
 call plug#begin('~/.config/nvim/bundle')
 
 " tpope utilities
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 
 " Workflow
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
-Plug 'BlakeWilliams/vim-tbro'
 Plug 'BlakeWilliams/vim-pry'
+Plug 'BlakeWilliams/vim-tbro'
+Plug 'RRethy/vim-illuminate'
 Plug 'janko-m/vim-test'
+Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
-Plug 'ervandew/supertab'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Languages and markup
-Plug 'vim-ruby/vim-ruby'
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'elixir-lang/vim-elixir'
-Plug 'wting/rust.vim'
-Plug 'mxw/vim-jsx'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'reasonml-editor/vim-reason-plus'
+Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'fatih/vim-go'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-markdown'
+Plug 'vim-ruby/vim-ruby'
+Plug 'wting/rust.vim'
 
 " Colors
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'BlakeWilliams/vim-single-cursor-line'
-Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
-Plug 'elzr/vim-json'
+Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+
+" autocompletion
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 

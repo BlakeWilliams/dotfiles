@@ -2,18 +2,19 @@
 noremap <space> <Nop>
 let mapleader = " "
 
-" Ack to leader a
-noremap <leader>a :Ack! 
+" FZF Ag to leader a (Ack!)
+noremap <leader>a :Ag<CR>
 
 " ALE shortcuts
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
-" CtrlP to leader p
-noremap <leader>p :CtrlP<cr>
+" FZF Files to leader p
+noremap <C-p> :Files<cr>
 
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
+
 
 " Window resizing
 noremap <leader>= <C-w>=

@@ -17,7 +17,7 @@
   statusHints = false
 [commit]
   template = ~/.gitmessage
-  ; gpgsign = true
+  gpgsign = true
 [fetch]
   prune = true
 [push]
@@ -33,7 +33,7 @@
   ca = commit --amend -v
   c  = commit -v
   co = checkout
-  ci = !hub ci-status
+  ci = !hub ci-status -v
   db = branch -d
   d  = diff
   ds = diff --staged
@@ -54,5 +54,6 @@
   required = true
   clean = git lfs clean %f
   smudge = git lfs smudge %f
+	process = git-lfs filter-process
 [diff]
   colorMoved = zebra

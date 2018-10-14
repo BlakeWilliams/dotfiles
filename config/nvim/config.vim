@@ -6,13 +6,13 @@ set backspace=indent,eol,start  " Adds intuitive backspacing
 set colorcolumn=80              " Highlight line 80
 set diffopt+=vertical           " Always use vertical diffs
 set fillchars+=vert:│           " Use tall pipe in split separators
-set guicursor=i:ver25-iCursor   " Use | cursor when in insert mode
+" set guicursor=i:ver25-iCursor   " Use | cursor when in insert mode
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
 set laststatus=2                " Always show statusline
-" set lazyredraw                  " Boosts performance at times
+set lazyredraw                  " Boosts performance at times
 set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set matchtime=0                 " Fix neovim match lag

@@ -5,8 +5,6 @@ let g:html_indent_tags = 'li\|p'
 let g:ctrlp_use_caching=0
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_reuse_window = 'netrw'
-let g:ctrlp_types = ['fil', 'mru', 'tags']
-let g:ctrlp_extensions = ['tag']
 
 " Use ag
 if executable('ag')
@@ -26,13 +24,9 @@ let g:netrw_retmap = 1
 " disable netrw history
 let g:netrw_dirhistmax = 0
 
-" vim-rspec - Use Tbro to run rspec
-let g:rspec_command = "Tbro bundle exec rspec {spec}"
-
 " Set airline theme
-" let g:airline_solarized_bg='dark'
 let g:airline_theme="gruvbox"
-let g:airline_solarized_dark_inactive_border=1
+
 let g:airline_solarized_normal_green=1
 
 " Don't use new symbols symbols
@@ -71,10 +65,6 @@ let g:ale_fixers = {
 \}
 
 let g:ale_lint_on_text_changed = 0
-" autocmd CursorHold * call ale#Lint()
-" autocmd CursorHoldI * call ale#Lint()
-" autocmd InsertEnter * call ale#Lint()
-" autocmd InsertLeave * call ale#Lint()
 
 " Single character modes
 let g:airline_mode_map = {
@@ -94,16 +84,36 @@ let g:airline_mode_map = {
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
 
-let g:UltiSnipsSnippetsDir = "~/.config/nvim/snips"
-let g:UltiSnipsSnippetDirectories=["snips"]
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-let g:UltiSnipsExpandTrigger="<Nop>"
-
 " Don't hide quotes in json
 let g:vim_json_syntax_conceal = 0
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
+let g:deoplete#disable_auto_complete = 0
 
 let g:SuperTabDefaultCompletionType = '<c-n>' " use deoplete via supertab
+
+" Go config
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:Illuminate_ftblacklist = ['netrw']
+
+let g:LanguageClient_loggingFile = '/tmp/lc.log'
+let g:LanguageClient_loggingLevel = 'DEBUG'
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+
+" Enter hides menu when open instead of newline
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

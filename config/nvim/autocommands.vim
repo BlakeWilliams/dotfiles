@@ -12,15 +12,29 @@ if has("autocmd")
   " Language Specific Settings
   autocmd FileType text setlocal textwidth=78
   autocmd FileType gitcommit setlocal spell " nonumber norelativenumber
+  autocmd BufNewFile,BufRead PULLREQ_EDITMSG set syntax=gitcommit
   autocmd FileType netrw setl bufhidden=delete
   autocmd FileType netrw setlocal nonumber relativenumber
   autocmd FileType markdown setlocal spell wrap textwidth=80
   autocmd FileType qf setlocal cc=""
   autocmd FileType rust setlocal cc=90
+  autocmd FileType go setlocal noexpandtab
+  autocmd FileType go setlocal shiftwidth=4
+  autocmd FileType go setlocal softtabstop=4
+  autocmd FileType go setlocal tabstop=4
+  autocmd FileType go setlocal nolist
+  autocmd Filetype json let g:indentLine_setConceal = 0
+  autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript syntax=typescript.jsx
   autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
-  " Add ES6 extension
-  autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+  " Hide terminal prompt when using fzf
+  if has('nvim') || has('gui_running')
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+          \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  endif
 
   " Go to last known valid cursor position
   autocmd BufReadPost *
