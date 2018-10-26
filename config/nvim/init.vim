@@ -25,19 +25,8 @@ Plug 'junegunn/fzf.vim'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'cespare/vim-toml'
-Plug 'elixir-lang/vim-elixir'
-Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mxw/vim-jsx'
-Plug 'mxw/vim-jsx'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-markdown'
-Plug 'vim-ruby/vim-ruby'
-Plug 'wting/rust.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Colors
 Plug 'Yggdroot/indentLine'
@@ -46,11 +35,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 
 " autocompletion
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -58,6 +42,11 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 call plug#end()
 

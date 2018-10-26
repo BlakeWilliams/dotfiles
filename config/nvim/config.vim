@@ -27,7 +27,8 @@ set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
 set scrolloff=5                 " Always show 5 lines above/blow cursor
 set completeopt+=menuone        " Always show menu
-" set completeopt+=noselect       " Don't select only option
+set completeopt+=noselect       " Don't select only option
+set completeopt+=noinsert        " Don't select only option
 set shortmess=fmnrWIcF          " Customize what vim yells at you
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present

@@ -94,3 +94,25 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 let g:fzf_layout = { 'window': 'enew' }
+
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=7 ctermbg=2
+  highlight fzf2 ctermfg=7 ctermbg=2
+  highlight fzf3 ctermfg=7 ctermbg=2
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }

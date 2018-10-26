@@ -29,13 +29,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
-  " Hide terminal prompt when using fzf
-  if has('nvim') || has('gui_running')
-    autocmd! FileType fzf
-    autocmd  FileType fzf set laststatus=0 noshowmode noruler
-          \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-  endif
-
   " Go to last known valid cursor position
   autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
