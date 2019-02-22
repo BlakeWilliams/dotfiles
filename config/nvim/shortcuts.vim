@@ -83,18 +83,3 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" Enter hides menu when open instead of newline
-" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <expr><C-n> pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ deoplete#mappings#manual_complete()
-        function! s:check_back_space() abort "{{{
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~ '\s'
-        endfunction"}}}

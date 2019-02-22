@@ -18,10 +18,12 @@ Plug 'BlakeWilliams/vim-pry'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'RRethy/vim-illuminate'
 Plug 'janko-m/vim-test'
+Plug 'bswinnerton/vim-test-github'
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-grepper'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
@@ -29,11 +31,12 @@ Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 
 " Colors
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 
+Plug 'ervandew/supertab'
 " autocompletion
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

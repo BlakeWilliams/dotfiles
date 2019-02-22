@@ -15,7 +15,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead PULLREQ_EDITMSG set syntax=gitcommit
   autocmd FileType netrw setl bufhidden=delete
   autocmd FileType netrw setlocal nonumber relativenumber
-  autocmd FileType markdown setlocal spell wrap textwidth=80
+  autocmd FileType markdown setlocal spell wrap textwidth=80 conceallevel=0
   autocmd FileType qf setlocal cc=""
   autocmd FileType rust setlocal cc=90
   autocmd FileType go setlocal noexpandtab

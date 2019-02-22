@@ -40,11 +40,12 @@ let g:ale_sign_warning="✕"
 
 let g:ale_linters = {
 \   'javascript': ['eslint', 'prettier'],
-\   'typescript': ['tslint', 'tsserver', 'prettier', 'typecheck'],
+\   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'vue': ['prettier'],
 \}
 
@@ -65,6 +66,7 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 
+let g:test#runners = {'Ruby': ['GitHub']}
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
 
@@ -72,7 +74,7 @@ let g:test#strategy = 'tbro'
 let g:vim_json_syntax_conceal = 0
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 0
+let g:deoplete#disable_auto_complete = 1
 
 " Go config
 let g:go_highlight_build_constraints = 1
@@ -116,3 +118,5 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
