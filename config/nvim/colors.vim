@@ -26,10 +26,11 @@ endfunction
 
 autocmd ColorScheme * call s:setColors()
 
-let g:gruvbox_contrast_dark="medium"
-let g:gruvbox_contrast_light="hard"
+let g:gruvbox_contrast_dark="hard"
+" let g:gruvbox_contrast_light="hard"
+" let g:gruvbox_contrast_light="medium"
 let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
-set background=light
-" set background=dark
+" set background=light
+set background=dark
 colorscheme gruvbox

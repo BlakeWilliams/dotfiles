@@ -25,3 +25,4 @@ alias vim=nvim
 
 alias 💸="git money"
 alias yolo="git push --force"
+alias ag="ag --path-to-ignore ~/.ignore"
