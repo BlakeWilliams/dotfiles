@@ -5,6 +5,7 @@ let g:html_indent_tags = 'li\|p'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_retmap = 1
+let g:netrw_fastbrowse = 0
 
 " disable left click open
 let g:netrw_retmap = 1
@@ -23,10 +24,12 @@ let g:airline#extensions#whitespace#enabled=0
 
 " Better tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#tab_min_count = 1
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#ale#enabled = 1
 
 " Better line/column information
@@ -121,3 +124,17 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+" Use tab to trigger CoC
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Allow enter for CoC
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

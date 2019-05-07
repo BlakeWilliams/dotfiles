@@ -29,6 +29,15 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
+  " delete netrw buffers when hidden
+  autocmd FileType netrw setl bufhidden=wipe
+
+  augroup CursorLineOnlyInActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+  augroup END
+
   " Go to last known valid cursor position
   autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |

@@ -9,6 +9,8 @@ endfunction
 
 function! s:setColors()
   if (&t_Co >= 256)
+    hi illuminatedWord cterm=underline gui=underline
+
     execute 'highlight jsObjectKey guifg=' . s:getColor('GruvboxAqua')[0]
     execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
     execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
@@ -27,8 +29,7 @@ endfunction
 autocmd ColorScheme * call s:setColors()
 
 let g:gruvbox_contrast_dark="hard"
-" let g:gruvbox_contrast_light="hard"
-" let g:gruvbox_contrast_light="medium"
+let g:gruvbox_contrast_light="hard"
 let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 " set background=light

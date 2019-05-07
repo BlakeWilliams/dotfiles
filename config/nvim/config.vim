@@ -3,10 +3,9 @@ syntax on
 set autoindent                  " Copy indent from previous line
 set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
-set colorcolumn=80              " Highlight line 80
 set diffopt+=vertical           " Always use vertical diffs
 set fillchars+=vert:│           " Use tall pipe in split separators
-" set guicursor=i:ver25-iCursor   " Use | cursor when in insert mode
+set cursorline                  " highlight current line
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
@@ -18,7 +17,7 @@ set listchars=tab:»·,trail:·    " Show trailing spaces as dots
 set matchtime=0                 " Fix neovim match lag
 set nobackup                    " No Backup files
 set noerrorbells                " Obvious
-set nohidden                    " Don't hide unsaved buffers
+set hidden                      " hide unsaved buffers
 set number                      " Show regular numbers
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
@@ -28,7 +27,6 @@ set ruler                       " Show the ruler
 set scrolloff=5                 " Always show 5 lines above/blow cursor
 set completeopt+=menuone        " Always show menu
 set completeopt+=noselect       " Don't select only option
-set completeopt+=noinsert        " Don't select only option
 set shortmess=fmnrWIcF          " Customize what vim yells at you
 set showmatch                   " Highlight matching paren/brace/bracket
 set smartcase                   " Enable case sensetive search only when uppsercase characters present

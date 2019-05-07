@@ -23,10 +23,6 @@ nnoremap <leader>[ :tabp<cr>
 nnoremap <leader>] :tabn<cr>
 
 " Split to current file
-nnoremap <leader>eh :Vexplore<cr>
-nnoremap <leader>ej :Hexplore<cr>
-nnoremap <leader>ek :Hexplore!<cr>
-nnoremap <leader>el :Vexplore!<cr>
 
 " Easy navigation of splits
 nnoremap <leader>j <C-w>j
@@ -67,14 +63,15 @@ noremap <2-LeftMouse> *#
 
 nmap <Leader>d :call pry#insert()<cr>
 
-nmap <Leader>b :cal ReverseBackground()<cr>
-function! ReverseBackground()
-  if &bg=="light"
-    set bg=dark
-  else
-    set bg=light
-  endif
-endfunction
+nmap <Leader>b :Buffers<cr>
+" nmap <Leader>b :cal ReverseBackground()<cr>
+" function! ReverseBackground()
+"   if &bg=="light"
+"     set bg=dark
+"   else
+"     set bg=light
+"   endif
+" endfunction
 
 nmap <leader>p :call <SID>SynStack()<CR>
 function! <SID>SynStack()

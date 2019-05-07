@@ -24,6 +24,7 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'sjl/gundo.vim'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
@@ -32,24 +33,11 @@ Plug 'sheerun/vim-polyglot'
 
 " Colors
 " Plug 'Yggdroot/indentLine'
-Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 
-Plug 'ervandew/supertab'
 " autocompletion
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 
