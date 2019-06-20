@@ -3,9 +3,11 @@ syntax on
 set autoindent                  " Copy indent from previous line
 set backupcopy=yes              " Keeps original creator code
 set backspace=indent,eol,start  " Adds intuitive backspacing
+" set colorcolumn=80              " Highlight line 80
 set diffopt+=vertical           " Always use vertical diffs
 set fillchars+=vert:│           " Use tall pipe in split separators
 set cursorline                  " highlight current line
+set guicursor=i:ver25-iCursor   " Use | cursor when in insert mode
 set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches

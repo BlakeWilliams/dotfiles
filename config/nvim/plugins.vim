@@ -14,22 +14,24 @@ let g:netrw_retmap = 1
 let g:netrw_dirhistmax = 0
 
 " Set airline theme
-let g:airline_theme="gruvbox"
+let g:airline_theme="nord"
 
 " Don't use new symbols symbols
-let g:airline_symbols_ascii = 0
+let g:airline_symbols_ascii = 1
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0
 
 " Better tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#show_tabs = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#tab_min_count = 1
-let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#tab_min_count = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#ale#enabled = 1
 
 " Better line/column information
@@ -42,7 +44,7 @@ let g:ale_sign_error="✕"
 let g:ale_sign_warning="✕"
 
 let g:ale_linters = {
-\   'javascript': ['eslint', 'prettier'],
+\   'javascript': ['eslint'],
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \}
 
@@ -53,21 +55,6 @@ let g:ale_fixers = {
 \}
 
 let g:ale_lint_on_text_changed = 0
-
-" Single character modes
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ }
 
 let g:test#runners = {'Ruby': ['GitHub']}
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
@@ -138,3 +125,13 @@ endfunction
 
 " Allow enter for CoC
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'}
+            \ }
+let g:pear_tree_ft_disabled = []
+
+let g:pear_tree_timeout = 60

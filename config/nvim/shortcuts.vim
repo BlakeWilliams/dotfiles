@@ -15,15 +15,6 @@ noremap <C-p> :Files<cr>
 " Double <space> to noh
 noremap <leader><space> :noh<cr>
 
-" Window resizing
-noremap <leader>= <C-w>=
-
-" Easy navigation of tabs
-nnoremap <leader>[ :tabp<cr>
-nnoremap <leader>] :tabn<cr>
-
-" Split to current file
-
 " Easy navigation of splits
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
@@ -45,7 +36,7 @@ nmap <silent> <Leader>t :call tbro#run_line()<cr>
 nnoremap ! :Tbro 
 nnoremap !! :TbroRedo<cr>
 
-" RSpec mappings for vim-rspec
+" Test mappings for vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
 nmap <silent> <leader>rc :TestFile<CR>
 nmap <silent> <leader>ra :TestSuite<CR>
@@ -64,14 +55,6 @@ noremap <2-LeftMouse> *#
 nmap <Leader>d :call pry#insert()<cr>
 
 nmap <Leader>b :Buffers<cr>
-" nmap <Leader>b :cal ReverseBackground()<cr>
-" function! ReverseBackground()
-"   if &bg=="light"
-"     set bg=dark
-"   else
-"     set bg=light
-"   endif
-" endfunction
 
 nmap <leader>p :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -80,3 +63,8 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

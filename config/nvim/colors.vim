@@ -7,31 +7,21 @@ function! s:getColor(group)
   return [guiColor, termColor]
 endfunction
 
-function! s:setColors()
+function! s:setNordColors()
   if (&t_Co >= 256)
-    hi illuminatedWord cterm=underline gui=underline
+    execute 'highlight typescriptVariable guifg=' s:getColor('Keyword')[0]
+    execute 'highlight typescriptTypeReference guifg=' s:getColor('Type')[0]
+    execute 'highlight typescriptImport guifg=' s:getColor('Type')[0]
+    execute 'highlight typescriptImport guifg=' s:getColor('Type')[0]
 
-    execute 'highlight jsObjectKey guifg=' . s:getColor('GruvboxAqua')[0]
-    execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
-    execute 'highlight jsImport guifg=' . s:getColor('GruvboxRed')[0]
-    execute 'highlight jsFuncCall guifg=' . s:getColor('GruvboxBlue')[0]
-    execute 'highlight jsonString guifg=' . s:getColor('GruvboxGreen')[0]
-    execute 'highlight jsonKeyword guifg=' . s:getColor('GruvboxBlue')[0]
-    execute 'highlight ALEErrorSign guibg=NONE guifg=' s:getColor('GruvboxRed')[0]
-    execute 'highlight ALEWarningSign guibg=NONE guifg=' s:getColor('GruvboxYellow')[0]
-    execute 'highlight CursorLineNr guibg=NONE'
-
-    execute 'highlight Events guifg=' s:getColor('GruvboxBlue')[0]
-    " highlight VertSplit guifg=#073642 guibg=NONE
+    execute 'highlight CocInfoHighlight gui=underline guifg=' s:getColor('TODO')[0]
+    execute 'highlight CocWarningHighlight gui=underline guifg=' s:getColor('Error')[0]
+    execute 'highlight CocErrorHighlight gui=underline guifg=' s:getColor('SpellBad')[0]
   endif
 endfunction
 
-autocmd ColorScheme * call s:setColors()
+autocmd ColorScheme * call s:setNordColors()
 
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_contrast_light="hard"
-let g:gruvbox_italic=1
-let g:gruvbox_undercurl=1
-" set background=light
+let g:nord_italic_comments = 1
 set background=dark
-colorscheme gruvbox
+colorscheme nord

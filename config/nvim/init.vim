@@ -9,7 +9,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
-" Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 
@@ -25,6 +24,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
+Plug 'tmsvg/pear-tree'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
@@ -34,9 +34,11 @@ Plug 'sheerun/vim-polyglot'
 " Colors
 " Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 
 " autocompletion
+" Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
