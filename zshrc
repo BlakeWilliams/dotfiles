@@ -47,7 +47,7 @@ setopt hist_ignore_space      # Ignore commands starting with space
 setopt prompt_subst           # Necessary for pretty prompts
 
 # Load all files in ~/.zsh
-for function in ~/.zsh/*; do
+for function in ~/.zsh/*.zsh; do
   source $function
 done
 

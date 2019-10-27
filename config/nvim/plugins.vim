@@ -1,6 +1,9 @@
 " Indent li and p tags properly
 let g:html_indent_tags = 'li\|p'
 
+" Ruby indents
+let g:ruby_indent_assignment_style = 'variable'
+
 " vinegar hide dotfiles
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -14,7 +17,7 @@ let g:netrw_retmap = 1
 let g:netrw_dirhistmax = 0
 
 " Set airline theme
-let g:airline_theme="nord"
+let g:airline_theme="gruvbox"
 
 " Don't use new symbols symbols
 let g:airline_symbols_ascii = 1
@@ -35,6 +38,7 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#ale#enabled = 1
 
 " Better line/column information
+let g:airline_section_a = ""
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
@@ -59,12 +63,10 @@ let g:ale_lint_on_text_changed = 0
 let g:test#runners = {'Ruby': ['GitHub']}
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
+" let g:test#strategy = 'make'
 
 " Don't hide quotes in json
 let g:vim_json_syntax_conceal = 0
-
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
 
 " Go config
 let g:go_fmt_fail_silently = 1
@@ -79,8 +81,6 @@ let g:go_highlight_types = 1
 
 let g:Illuminate_ftblacklist = ['netrw']
 
-let g:LanguageClient_loggingFile = '/tmp/lc.log'
-let g:LanguageClient_loggingLevel = 'DEBUG'
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['solargraph', 'stdio'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
@@ -112,26 +112,19 @@ let g:fzf_action = {
 
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" Use tab to trigger CoC
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Allow enter for CoC
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-let g:pear_tree_pairs = {
-            \ '(': {'closer': ')'},
-            \ '[': {'closer': ']'},
-            \ '{': {'closer': '}'},
-            \ "'": {'closer': "'"},
-            \ '"': {'closer': '"'}
-            \ }
-let g:pear_tree_ft_disabled = []
-
-let g:pear_tree_timeout = 60
+" custom projections
+let g:rails_projections = {
+\ "test/integration/*_test.rb": {
+\   "type": "integration test",
+\   "alternate": "app/controllers/{}.rb"
+\ },
+\ "app/controllers/*_controller.rb": {
+\    "affinity": "controller",
+\    "template": [
+\      "class {camelcase|capitalize|colons}Controller < ApplicationController",
+\      "end"
+\    ],
+\    "type": "controller",
+\    "alternate": "test/integration/{}_controller_test.rb"
+\ }
+\}

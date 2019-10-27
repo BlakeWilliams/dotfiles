@@ -19,12 +19,11 @@ Plug 'RRethy/vim-illuminate'
 Plug 'janko-m/vim-test'
 Plug 'bswinnerton/vim-test-github'
 Plug 'tomtom/tcomment_vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
-Plug 'tmsvg/pear-tree'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
@@ -32,14 +31,14 @@ Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 
 " Colors
-" Plug 'Yggdroot/indentLine'
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'joshdick/onedark.vim'
 
 " autocompletion
-" Plug 'ervandew/supertab'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'ervandew/supertab'
 
 call plug#end()
 

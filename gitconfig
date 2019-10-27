@@ -17,7 +17,7 @@
   statusHints = false
 [commit]
   template = ~/.gitmessage
-  gpgsign = true
+  gpgsign = false
 [fetch]
   prune = true
 [push]
@@ -28,19 +28,8 @@
   ff = only
 [alias]
   a  = add
-  aa = add --all
-  ap = add -p
-  ca = commit --amend -v
-  c  = commit -v
-  co = checkout
   ci = !hub ci-status -v
-  db = branch -d
-  d  = diff
-  ds = diff --staged
-  db = !sh -c 'git push --delete origin $1 && git branch -D $1' -
   up = !git fetch origin && git rebase -i origin/master
-  down = !git checkout master && git merge @{-1} && git push
-  money = !~/.bin/git-money
   fuckit = !sh -c 'git add --all && git reset --hard'
   standup = log --since=yesterday --author=\"Blake Williams\"
   retro = log --since='7 days ago' --author=\"Blake Williams\"
@@ -57,3 +46,5 @@
   process = git-lfs filter-process
 [diff]
   colorMoved = zebra
+[credential]
+  helper = osxkeychain
