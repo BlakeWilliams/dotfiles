@@ -37,7 +37,7 @@ set smarttab                    " Prevents tab/space issues
 set synmaxcol=180               " Prevents segfaults and slow rendering
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
-set tags=.git/tags              " Where to find tags
+set tags^=.git/tags             " where to find tags
 set termguicolors               " 256 colors!
 set undolevels=500              " More undo
 set wildignorecase              " Case insensitive completions
@@ -62,4 +62,9 @@ if exists("+undofile")
 
   set undofile
   set undodir=~/.vim/undo/
+endif
+
+" Better diffing
+if has("patch-8.1.0360")
+  set diffopt+=internal,algorithm:patience
 endif

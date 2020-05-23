@@ -27,21 +27,6 @@ function! s:setColors()
   endif
 endfunction
 
-function! s:setNordColors()
-  if (&t_Co >= 256)
-    execute 'highlight typescriptVariable guifg=' s:getColor('Keyword')[0]
-    execute 'highlight typescriptTypeReference guifg=' s:getColor('Type')[0]
-    execute 'highlight typescriptImport guifg=' s:getColor('Type')[0]
-    execute 'highlight typescriptImport guifg=' s:getColor('Type')[0]
-
-    execute 'highlight CocInfoHighlight gui=underline guifg=' s:getColor('TODO')[0]
-    execute 'highlight CocWarningHighlight gui=underline guifg=' s:getColor('Error')[0]
-    execute 'highlight CocErrorHighlight gui=underline guifg=' s:getColor('SpellBad')[0]
-  endif
-endfunction
-
-
-autocmd ColorScheme * call s:setColors()
 
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_contrast_light="medium"
@@ -49,4 +34,6 @@ let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 let g:nord_italic_comments = 1
 set background=dark
-colorscheme gruvbox
+
+colorscheme iceberg
+let g:airline_theme="iceberg"

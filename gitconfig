@@ -18,6 +18,7 @@
 [commit]
   template = ~/.gitmessage
   gpgsign = false
+  verbose = true
 [fetch]
   prune = true
 [push]
@@ -27,7 +28,6 @@
 [merge]
   ff = only
 [alias]
-  a  = add
   ci = !hub ci-status -v
   up = !git fetch origin && git rebase -i origin/master
   fuckit = !sh -c 'git add --all && git reset --hard'

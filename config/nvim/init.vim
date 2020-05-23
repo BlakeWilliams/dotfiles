@@ -33,12 +33,11 @@ Plug 'sheerun/vim-polyglot'
 " Colors
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'joshdick/onedark.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'cocopon/iceberg.vim'
 
 " autocompletion
-Plug 'ervandew/supertab'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 

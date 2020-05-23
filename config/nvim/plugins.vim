@@ -16,8 +16,6 @@ let g:netrw_retmap = 1
 " disable netrw history
 let g:netrw_dirhistmax = 0
 
-" Set airline theme
-let g:airline_theme="gruvbox"
 
 " Don't use new symbols symbols
 let g:airline_symbols_ascii = 1
@@ -38,7 +36,7 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#ale#enabled = 1
 
 " Better line/column information
-let g:airline_section_a = ""
+" let g:airline_section_a = ""
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
@@ -63,7 +61,6 @@ let g:ale_lint_on_text_changed = 0
 let g:test#runners = {'Ruby': ['GitHub']}
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
-" let g:test#strategy = 'make'
 
 " Don't hide quotes in json
 let g:vim_json_syntax_conceal = 0
@@ -86,7 +83,8 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 
-let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_preview_window = 'right:60%'
+let g:fzf_layout = { 'down': '40%' }
 
 function! s:fzf_statusline()
   " Override statusline as you like
@@ -128,3 +126,17 @@ let g:rails_projections = {
 \    "alternate": "test/integration/{}_controller_test.rb"
 \ }
 \}
+
+" Use tab to trigger CoC
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Allow enter for CoC
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

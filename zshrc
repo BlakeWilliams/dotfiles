@@ -46,11 +46,6 @@ setopt hist_ignore_dups       # Do not show dupes in history
 setopt hist_ignore_space      # Ignore commands starting with space
 setopt prompt_subst           # Necessary for pretty prompts
 
-# Load all files in ~/.zsh
-for function in ~/.zsh/*.zsh; do
-  source $function
-done
-
 # HISTORY!
 HISTSIZE=10000
 SAVEHIST=10000
@@ -75,3 +70,9 @@ bindkey '^?' backward-delete-char
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
+export PATH="/usr/local/sbin:$PATH"
+
+# Load all files in ~/.zsh
+for function in ~/.zsh/*.zsh; do
+  source $function
+done
