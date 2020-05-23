@@ -1,0 +1,7 @@
+.git/
+.tags
+/log
+/node_modules/
+/tmp
+/vendor
+.byebug_history
