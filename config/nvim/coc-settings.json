@@ -1,0 +1,10 @@
+{
+  "suggest.enablePreview": true,
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.errorSign": "✕",
+  "diagnostic.infoSign": "✕",
+  "diagnostic.hintSign": "✕",
+  "solargraph.env": {
+    "RBENV_VERSION": "2.6.0"
+  }
+}
