@@ -5,10 +5,11 @@
   user = BlakeWilliams
 [init]
   templatedir = ~/.git_template
+  defaultBranch = main
 [color]
   ui = true
 [format]
-  pretty = "%C(yellow)%h%Creset - %s%nAuthored by %C(green)%an%Creset %ar%n"
+  pretty = oneline
 [core]
   excludesfile = ~/.excludes
   whitespace = trailing-space,space-before-tab
@@ -28,6 +29,13 @@
 [merge]
   ff = only
 [alias]
+  aa = !git add --all
+  ap = !git add --all --intent-to-add && git add -p
+  co = checkout
+  ca = commit --amend
+  ds = diff --staged
+  longer = log --pretty='%C(yellow)%h%Creset - %s%n%C(green)%an%Creset commited %ar%n'
+  p = push -u
   ci = !hub ci-status -v
   up = !git fetch origin && git rebase -i origin/master
   fuckit = !sh -c 'git add --all && git reset --hard'
@@ -35,7 +43,6 @@
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   pr = !hub pull-request --browse
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
-  tryhard = commit --amend --author
 [status]
   branch = 1
   short = 1
@@ -48,3 +55,6 @@
   colorMoved = zebra
 [credential]
   helper = osxkeychain
+[log]
+  decorate = short
+  abbrevCommit = true

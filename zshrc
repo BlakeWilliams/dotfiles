@@ -51,6 +51,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.history
 
+# Disable history expansion
+# This allows usage of ! without escaping, eg: `git commit -m "yes!"`
+unsetopt BANG_HIST
+
 # Vim like history search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

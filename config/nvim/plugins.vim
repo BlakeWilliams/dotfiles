@@ -16,9 +16,9 @@ let g:netrw_retmap = 1
 " disable netrw history
 let g:netrw_dirhistmax = 0
 
-
 " Don't use new symbols symbols
-let g:airline_symbols_ascii = 1
+let g:airline_symbols_ascii = 0
+" let g:airline_symbols_ascii = 1
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0
@@ -58,7 +58,8 @@ let g:ale_fixers = {
 
 let g:ale_lint_on_text_changed = 0
 
-let g:test#runners = {'Ruby': ['GitHub']}
+" only run rubocop if ruby code has opted in
+let g:ale_ruby_rubocop_executable = "bundle exec rubocop"
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
 
@@ -140,3 +141,8 @@ endfunction
 
 " Allow enter for CoC
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+let g:grepper = {}
+let g:grepper.tools =
+  \ ['ag', 'git', 'ack-grep']

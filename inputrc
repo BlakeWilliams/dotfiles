@@ -11,8 +11,8 @@ set keymap vi-insert
 set completion-ignore-case on
 
 # Vim style history search
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
 
 # Beginning and end of line shortcut 
 "\C-a": beginning-of-line
