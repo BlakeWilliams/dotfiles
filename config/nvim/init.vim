@@ -36,7 +36,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'cocopon/iceberg.vim'
 
 " autocompletion
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
