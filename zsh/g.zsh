@@ -5,3 +5,5 @@ g() {
     git status
   fi
 }
+
+compdef g=git
