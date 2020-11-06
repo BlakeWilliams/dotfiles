@@ -32,11 +32,13 @@ Plug 'sheerun/vim-polyglot'
 " Colors
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
 Plug 'cocopon/iceberg.vim'
 
 " autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" writing
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
