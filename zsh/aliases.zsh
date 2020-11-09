@@ -10,3 +10,4 @@ export VISUAL=nvim
 alias vim=nvim
 
 alias ag="ag --path-to-ignore ~/.ignore"
+alias be="bundle exec"
