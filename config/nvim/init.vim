@@ -26,13 +26,15 @@ Plug 'sjl/gundo.vim'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 
 " Colors
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'cocopon/iceberg.vim'
+Plug 'blakewilliams/numetal.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
 
 " autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -50,3 +52,8 @@ source $HOME/.config/nvim/colors.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/shortcuts.vim
 source $HOME/.config/nvim/autocommands.vim
+
+if has('nvim-0.5')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  source $HOME/.config/nvim/experimental.vim
+endif

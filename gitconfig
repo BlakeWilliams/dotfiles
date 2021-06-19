@@ -29,7 +29,7 @@
 [merge]
   ff = only
 [alias]
-  aa = !git add --all
+  aa = add --all
   ap = !git add --all --intent-to-add && git add -p
   c = commit
   ca = commit --amend

@@ -26,7 +26,7 @@ set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
-set scrolloff=5                 " Always show 5 lines above/blow cursor
+set scrolloff=10                " Always keep current line in center
 set completeopt+=menuone        " Always show menu
 set completeopt+=noselect       " Don't select only option
 set shortmess=fmnrWIcF          " Customize what vim yells at you

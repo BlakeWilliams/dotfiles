@@ -18,6 +18,8 @@ let g:netrw_dirhistmax = 0
 
 " Don't use new symbols symbols
 let g:airline_symbols_ascii = 0
+" Don't use scrollbar
+let g:airline#extensions#scrollbar#enabled = 0
 " let g:airline_symbols_ascii = 1
 
 " Disable annoying whitespace indicator
