@@ -3,9 +3,11 @@ hi CursorLineNr ctermfg=1
 
 set background=dark
 
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_current_word = 'underline'
 
-colorscheme sonokai
-let g:airline_theme="sonokai"
+colorscheme gruvbox-material
+let g:airline_theme="gruvbox_material"
 
+hi link CocErrorVirtualText Error
+highlight! link TSString Yellow

@@ -42,6 +42,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " writing
 Plug 'junegunn/goyo.vim'
 
+" neovim specific plugins
+if has('nvim-0.5')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
+
 call plug#end()
 
 filetype plugin indent on
@@ -54,6 +59,5 @@ source $HOME/.config/nvim/shortcuts.vim
 source $HOME/.config/nvim/autocommands.vim
 
 if has('nvim-0.5')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   source $HOME/.config/nvim/experimental.vim
 endif
