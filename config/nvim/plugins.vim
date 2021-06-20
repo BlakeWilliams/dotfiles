@@ -86,9 +86,6 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 
-let g:fzf_preview_window = 'right:60%'
-let g:fzf_layout = { 'down': '40%' }
-
 function! s:fzf_statusline()
   " Override statusline as you like
   highlight fzf1 ctermfg=7 ctermbg=2
@@ -111,7 +108,12 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep(
+      \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+      \ 1,
+      \ {'options': '--delimiter : --nth 2.. --with-nth 1,4 --preview="bat {1} --style=numbers,changes --theme=ansi-light -H {2}" --preview-window +{2}-/2'},
+      \ <bang>0
+      \)
 
 " custom projections
 let g:rails_projections = {

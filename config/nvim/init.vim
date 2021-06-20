@@ -23,6 +23,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
+Plug 'justinmk/vim-sneak'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'

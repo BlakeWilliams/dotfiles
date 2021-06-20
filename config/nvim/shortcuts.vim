@@ -2,8 +2,8 @@
 noremap <space> <Nop>
 let mapleader = " "
 
-" FZF Ag to leader a (Ack!)
-noremap <leader>a :Ag<CR>
+" FZF Rg to leader a (Ack)
+noremap <leader>a :Rg<CR>
 
 " ALE shortcuts
 nnoremap ]r :ALENextWrap<CR>
