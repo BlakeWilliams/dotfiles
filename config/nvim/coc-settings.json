@@ -4,7 +4,7 @@
   "diagnostic.errorSign": "✕",
   "diagnostic.infoSign": "✕",
   "diagnostic.hintSign": "✕",
-  "solargraph.env": {
-    "RBENV_VERSION": "2.6.0"
-  }
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextPrefix": "✕ "
 }
