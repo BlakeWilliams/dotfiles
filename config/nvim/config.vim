@@ -22,6 +22,7 @@ set number                      " Show regular numbers
 set nofoldenable                " Disable folds
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
+"set noautoread                  " Don't automatically read files when they are changed
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler

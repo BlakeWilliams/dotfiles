@@ -35,8 +35,10 @@
   ca = commit --amend
   ci = !hub ci-status -v
   co = checkout
+  conflicts = diff --diff-filter=U
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
   d = diff
+  deets = show --pretty=full
   ds = diff --staged
   fuckit = !sh -c 'git add --all && git reset --hard'
   longer = log --pretty='%C(yellow)%h%Creset - %s%n%C(green)%an%Creset commited %ar%n'

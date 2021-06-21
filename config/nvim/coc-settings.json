@@ -8,6 +8,8 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "✕ ",
   "coc.preferences.formatOnSaveFiletypes": [
-    "go"
+    "go",
+    "javascript",
+    "typescript"
   ]
 }

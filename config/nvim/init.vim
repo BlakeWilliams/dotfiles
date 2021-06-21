@@ -32,6 +32,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Colors
+Plug 'blakewilliams/numetal.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'cocopon/iceberg.vim'

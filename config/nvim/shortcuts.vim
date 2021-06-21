@@ -25,7 +25,7 @@ nnoremap <leader>l <C-w>l
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 map <leader>gg :Gbrowse<cr>
-map <leader>gb :Gblame<cr>
+map <leader>gb :Git blame<cr>
 map <leader>gd :Gdiff<cr>
 
 " Tbro mappings
