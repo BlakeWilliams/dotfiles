@@ -24,6 +24,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'

@@ -16,8 +16,14 @@ let g:netrw_retmap = 1
 " disable netrw history
 let g:netrw_dirhistmax = 0
 
+" Render signify as lines
+let g:signify_sign_add = "│ "
+let g:signify_sign_delete = "│ "
+let g:signify_sign_change = "│ "
+let g:signify_sign_change_delete = "│ "
+let g:signify_sign_show_count = 1
+
 " Don't use new symbols symbols
-let g:airline_symbols_ascii = 0
 " Don't use scrollbar
 let g:airline#extensions#scrollbar#enabled = 0
 " let g:airline_symbols_ascii = 1
@@ -36,6 +42,10 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#ale#enabled = 1
+
+" Disable airline search
+let g:airline#extensions#localsearch#enabled = 0
+let g:airline#extensions#searchcount#enabled = 0
 
 " Better line/column information
 " let g:airline_section_a = ""
@@ -173,3 +183,5 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
+
+let g:startify_custom_header =  startify#fortune#boxed()

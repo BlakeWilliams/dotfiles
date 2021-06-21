@@ -24,6 +24,7 @@ set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
+set signcolumn=yes:1            " Always show sign column with a width of 1
 set scrolloff=10                " Always keep current line in center
 set completeopt+=menuone        " Always show menu
 set completeopt+=noselect       " Don't select only option
