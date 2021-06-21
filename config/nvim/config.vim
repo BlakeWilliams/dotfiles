@@ -19,6 +19,7 @@ set nobackup                    " No Backup files
 set noerrorbells                " Obvious
 set hidden                      " hide unsaved buffers
 set number                      " Show regular numbers
+set nofoldenable                " Disable folds
 set noshowcmd                   " Don't show command in the last line of the screen
 set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines

@@ -156,11 +156,8 @@ endfunction
 " Allow enter for CoC
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-
 let g:grepper = {}
-let g:grepper.tools =
-  \ ['ag', 'git', 'ack-grep']
-
+let g:grepper.tools = ['rg', 'git']
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
