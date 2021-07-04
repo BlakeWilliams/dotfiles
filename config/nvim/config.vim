@@ -25,7 +25,6 @@ set noswapfile                  " No swap
 set nowrap                      " Don't wrap lines
 set relativenumber              " Show relative line numbers
 set ruler                       " Show the ruler
-set signcolumn=yes:1            " Always show sign column with a width of 1
 set scrolloff=10                " Always keep current line in center
 set completeopt+=menuone        " Always show menu
 set completeopt+=noselect       " Don't select only option
@@ -43,6 +42,11 @@ set undolevels=500              " More undo
 set wildignorecase              " Case insensitive completions
 set wildmenu
 
+" neovim specific configuration
+if has('nvim')
+  set signcolumn=yes:1          " Always show sign column with a width of 1
+endif
+
 " Formatting settings
 set expandtab                   " Make spaces not tabs
 set shiftwidth=2                " 2 spaces when indented
@@ -56,12 +60,12 @@ endif
 
 " Use undo file for awesome undo
 if exists("+undofile")
-  if isdirectory($HOME . '/.vim/undo') == 0
-    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  if isdirectory($HOME . '/.config/nvim/undo') == 0
+    :silent !mkdir -p ~/.config/nvim/undo > /dev/null 2>&1
   endif
 
   set undofile
-  set undodir=~/.vim/undo/
+  set undodir=~/.config/nvim/undo/
 endif
 
 " Better diffing
