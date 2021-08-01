@@ -8,6 +8,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 if g:dotfiles_use_lsp_client == 1
+  autocmd BufWritePre * lua vim.lsp.buf.formatting()
   set completeopt-=preview " Disable LSP preview windows, use floats instead
 
   autocmd BufEnter * lua require'completion'.on_attach()
