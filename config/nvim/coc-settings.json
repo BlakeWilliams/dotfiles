@@ -6,5 +6,8 @@
   "diagnostic.hintSign": "✕",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.virtualTextPrefix": "✕ "
+  "diagnostic.virtualTextPrefix": "✕ ",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go"
+  ]
 }

@@ -38,15 +38,25 @@ Plug 'cocopon/iceberg.vim'
 Plug 'blakewilliams/numetal.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'sainnhe/everforest'
+
+let g:dotfiles_use_lsp_client = 1
 
 " autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if g:dotfiles_use_lsp_client == 0
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 " writing
 Plug 'junegunn/goyo.vim'
 
 " neovim specific plugins
 if has('nvim-0.5')
+  if g:dotfiles_use_lsp_client == 1
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+  endif
+
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
