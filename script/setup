@@ -1,0 +1,88 @@
+#!/usr/bin/env sh
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Ensure we're working from the root directory
+cd $SCRIPT_DIR && cd ..
+
+if [ "$(uname)" == "Darwin" ]; then
+  export MACOS=1
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  export LINUX=1
+fi
+
+if [ $MACOS ]; then
+  VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+elif [ $LINUX ]; then
+  VSCODE_DIR="$HOME/.config/Code/User"
+fi
+
+function copy_file() {
+  local source="$(pwd)/$1"
+  local target=$2
+
+  mkdir -p $(dirname "$target")
+
+  if [[ -f $target ]]; then
+    if [[ ! -L $target ]]; then
+      echo "$target already exists but is not a symlink!"
+    else
+      echo "$target already exists"
+    fi
+  else
+    ln -svf $source $target
+  fi
+}
+
+# Standard dotfiles
+copy_file excludes ~/.excludes
+copy_file gitconfig ~/.gitconfig
+copy_file gitmessage ~/.gitmessage
+copy_file gvimrc ~/.gvimrc
+copy_file hushlogin ~/.hushlogin
+copy_file iex.exs ~/.iex.exs
+copy_file ignore ~/.ignore
+copy_file inputrc ~/.inputrc
+copy_file irbrc ~/.irbrc
+copy_file nethackrc ~/.nethackrc
+copy_file slashemrc ~/.slashemrc
+copy_file tmux.conf ~/.tmux.conf
+copy_file tmux.overmind.conf ~/.tmux.overmind.conf
+copy_file vimrc ~/.vimrc
+copy_file zlogin ~/.zlogin
+copy_file zshrc ~/.zshrc
+
+# Bat
+copy_file config/bat/config ~/.config/bat/config
+
+# Neovim
+copy_file config/nvim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
+copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim
+copy_file config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
+copy_file config/nvim/config.vim ~/.config/nvim/config.vim
+copy_file config/nvim/experimental.vim ~/.config/nvim/experimental.vim
+copy_file config/nvim/init.vim ~/.config/nvim/init.vim
+copy_file config/nvim/plugins.vim ~/.config/nvim/plugins.vim
+copy_file config/nvim/shortcuts.vim.vim ~/.config/nvim/shortcuts.vim
+
+# Git template
+copy_file git_template/hooks/ctags ~/.git_template/hooks/ctags
+copy_file git_template/hooks/post-checkout ~/.git_template/hooks/post-checkout
+copy_file git_template/hooks/post-commit ~/.git_template/hooks/post-commit
+copy_file git_template/hooks/post-merge ~/.git_template/hooks/post-merge
+copy_file git_template/hooks/post-rewrite ~/.git_template/hooks/post-rewrite
+
+# Zsh
+copy_file zsh/aliases.zsh ~/.zsh/aliases.zsh
+copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
+copy_file zsh/g.zsh ~/.zsh/g.zsh
+copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
+
+if [ MACOS ]; then
+  copy_file VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  copy_file VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+elif [ LINUX ]; then
+  copy_file VSCode/settings.json ~/.config/Code/User/settings.json
+  copy_file VSCode/keybindings.json ~/.config/Code/User/keybindings.json
+fi
