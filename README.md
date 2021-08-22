@@ -7,11 +7,8 @@ Most files are decently documented.
 
 ## Setup / Usage
 
-To get setup, install [rcm](https://github.com/thoughtbot/rcm) and run the
-following command:
-
 ```
-env RCRC=$HOME/dotfiles/rcrc rcup
+script/setup
 ```
 
 ## System specific zsh includes

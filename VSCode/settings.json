@@ -1,0 +1,70 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "gitlens.blame.heatmap.enabled": false,
+    "gitlens.blame.separateLines": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.defaultGravatarsStyle": "retro",
+    "editor.cursorSurroundingLines": 8,
+    "editor.rulers": [],
+    "[git-commit]": {
+        "editor.rulers": [
+            50,
+            72
+        ]
+    },
+    "editor.minimap.enabled": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.scrollbar.verticalScrollbarSize": 6,
+    "editor.scrollbar.horizontalScrollbarSize": 6,
+    "vim.hlsearch": true,
+    "vim.leader": " ",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>"],
+            "commands": [
+                ":noh"
+            ]
+        },
+    ],
+    "vim.timeout": 0,
+    "timeline.excludeSources": [
+        "git-history"
+    ],
+    "gitlens.blame.highlight.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.gitCommands.closeOnFocusOut": false,
+    "gitlens.gitCommands.search.matchRegex": false,
+    "gitlens.hovers.avatars": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.menus": false,
+    "editor.lineNumbers": "relative",
+    "notebook.breadcrumbs.showCodeCells": false,
+    "breadcrumbs.enabled": false,
+    "editor.folding": false,
+    "explorer.openEditors.visible": 0,
+    "breadcrumbs.icons": false,
+    "workbench.editor.tabCloseButton": "off",
+    "gruvboxMaterial.darkWorkbench": "flat",
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "git.suggestSmartCommit": false,
+    "editor.fontLigatures": true,
+    "editor.highlightActiveIndentGuide": false,
+    "vim.showcmd": false,
+    "workbench.startupEditor": "none",
+    "editor.suggest.showIcons": false,
+    "workbench.editor.showIcons": false,
+    "debug.showInlineBreakpointCandidates": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.overviewRulerBorder": false,
+    "editor.formatOnSave": true,
+    "files.enableTrash": false,
+    "files.insertFinalNewline": true,
+    "editor.glyphMargin": false,
+    "debug.javascript.autoAttachFilter": "onlyWithFlag",
+    "workbench.enableExperiments": false,
+}

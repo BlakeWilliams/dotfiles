@@ -80,3 +80,8 @@ export PATH="/usr/local/sbin:$PATH"
 for function in ~/.zsh/*.zsh; do
   source $function
 done
+
+# Reset pane names in tmux to "" instead of "hostname"
+if [[ -n "$TMUX" ]]; then
+  echo -ne "\033]2;\033\\"
+fi

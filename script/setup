@@ -5,15 +5,15 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 # Ensure we're working from the root directory
 cd $SCRIPT_DIR && cd ..
 
-if [ "$(uname)" == "Darwin" ]; then
+if [[ "$(uname)" == "Darwin" ]]; then
   export MACOS=1
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
   export LINUX=1
 fi
 
-if [ $MACOS ]; then
+if [[ $MACOS ]]; then
   VSCODE_DIR="$HOME/Library/Application Support/Code/User"
-elif [ $LINUX ]; then
+elif [[ $LINUX ]]; then
   VSCODE_DIR="$HOME/.config/Code/User"
 fi
 
@@ -30,7 +30,7 @@ function copy_file() {
       echo "$target already exists"
     fi
   else
-    ln -svf $source $target
+    ln -svf "$source" "$target"
   fi
 }
 
@@ -79,10 +79,15 @@ copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
 
-if [ MACOS ]; then
+if [[ $MACOS ]]; then
   copy_file VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-elif [ LINUX ]; then
+elif [[ $LINUX ]]; then
   copy_file VSCode/settings.json ~/.config/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/.config/Code/User/keybindings.json
 fi
+
+  for EXTENSION in $(cat VSCode/extensions)
+  do
+    code --install-extension $EXTENSION
+  done
