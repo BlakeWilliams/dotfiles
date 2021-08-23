@@ -87,7 +87,7 @@ elif [[ $LINUX ]]; then
   copy_file VSCode/keybindings.json ~/.config/Code/User/keybindings.json
 fi
 
-  for EXTENSION in $(cat VSCode/extensions)
-  do
-    code --install-extension $EXTENSION
-  done
+for EXTENSION in $(cat VSCode/extensions)
+do
+  code --install-extension $EXTENSION
+done

@@ -1,74 +1,76 @@
 {
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Gruvbox Material Dark",
-    "gitlens.blame.heatmap.enabled": false,
-    "gitlens.blame.separateLines": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.defaultGravatarsStyle": "retro",
-    "editor.cursorSurroundingLines": 8,
-    "editor.rulers": [],
-    "[git-commit]": {
-        "editor.rulers": [
-            50,
-            72
-        ]
-    },
-    "editor.minimap.enabled": false,
-    "editor.hideCursorInOverviewRuler": true,
-    "editor.scrollbar.verticalScrollbarSize": 6,
-    "editor.scrollbar.horizontalScrollbarSize": 6,
-    "vim.hlsearch": true,
-    "vim.leader": " ",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["<leader>"],
-            "commands": [
-                ":noh"
-            ]
-        },
-    ],
-    "vim.timeout": 0,
-    "timeline.excludeSources": [
-        "git-history"
-    ],
-    "gitlens.blame.highlight.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.gitCommands.closeOnFocusOut": false,
-    "gitlens.gitCommands.search.matchRegex": false,
-    "gitlens.hovers.avatars": false,
-    "gitlens.mode.statusBar.enabled": false,
-    "gitlens.showWelcomeOnInstall": false,
-    "gitlens.menus": false,
-    "editor.lineNumbers": "relative",
-    "notebook.breadcrumbs.showCodeCells": false,
-    "breadcrumbs.enabled": false,
-    "editor.folding": false,
-    "explorer.openEditors.visible": 0,
-    "breadcrumbs.icons": false,
-    "workbench.editor.tabCloseButton": "off",
-    "gruvboxMaterial.darkWorkbench": "flat",
-    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
-    "git.suggestSmartCommit": false,
-    "editor.fontLigatures": false,
-    "editor.highlightActiveIndentGuide": false,
-    "vim.showcmd": false,
-    "workbench.startupEditor": "none",
-    "editor.suggest.showIcons": false,
-    "workbench.editor.showIcons": false,
-    "debug.showInlineBreakpointCandidates": false,
-    "editor.minimap.renderCharacters": false,
-    "editor.overviewRulerBorder": false,
-    "editor.formatOnSave": true,
-    "files.enableTrash": false,
-    "files.insertFinalNewline": true,
-    "editor.glyphMargin": false,
-    "debug.javascript.autoAttachFilter": "onlyWithFlag",
-    "workbench.enableExperiments": false,
-    "gitlens.liveshare.allowGuestAccess": false,
-    "material-icon-theme.saturation": 1,
-    "scm.alwaysShowRepositories": true,
-    "scm.autoReveal": false,
-    "material-icon-theme.opacity": 0.6,
+  "[git-commit]": {
+    "editor.rulers": [
+      50,
+      72
+    ]
+  },
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.icons": false,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "debug.showInlineBreakpointCandidates": false,
+  "editor.cursorSurroundingLines": 8,
+  "editor.folding": false,
+  "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": false,
+  "editor.formatOnSave": true,
+  "editor.glyphMargin": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.highlightActiveIndentGuide": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.overviewRulerBorder": false,
+  "editor.rulers": [],
+  "editor.scrollbar.horizontalScrollbarSize": 6,
+  "editor.scrollbar.verticalScrollbarSize": 6,
+  "editor.suggest.showIcons": false,
+  "explorer.openEditors.visible": 0,
+  "files.enableTrash": false,
+  "files.insertFinalNewline": true,
+  "git.suggestSmartCommit": false,
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.blame.separateLines": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.defaultGravatarsStyle": "retro",
+  "gitlens.gitCommands.closeOnFocusOut": false,
+  "gitlens.gitCommands.search.matchRegex": false,
+  "gitlens.hovers.avatars": false,
+  "gitlens.liveshare.allowGuestAccess": false,
+  "gitlens.menus": false,
+  "gitlens.mode.statusBar.enabled": false,
+  "gitlens.showWelcomeOnInstall": false,
+  "gruvboxMaterial.darkWorkbench": "flat",
+  "material-icon-theme.opacity": 0.6,
+  "material-icon-theme.saturation": 1,
+  "notebook.breadcrumbs.showCodeCells": false,
+  "scm.alwaysShowRepositories": true,
+  "scm.autoReveal": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "timeline.excludeSources": [
+    "git-history"
+  ],
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>"
+      ],
+      "commands": [
+        ":noh"
+      ]
+    }
+  ],
+  "vim.showcmd": false,
+  "vim.timeout": 0,
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
 }
