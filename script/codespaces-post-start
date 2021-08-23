@@ -1,5 +1,10 @@
 #!/bin/sh
 
-chsh -s /bin/zsh root
+chsh -s /bin/zsh $USERNAME
 
-apt-get install ripgrep neovim
+sudo apt-get install ripgrep neovim
+
+for EXTENSION in $(cat VSCode/extensions)
+do
+  code --install-extension $EXTENSION
+done
