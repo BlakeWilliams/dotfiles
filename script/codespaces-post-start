@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chsh -s /bin/zsh root
+
+apt-get install ripgrep neovim
