@@ -87,9 +87,9 @@ if [[ $MACOS ]]; then
   copy_file VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 elif [[ -n "$CODESPACES" ]]; then
-  sudo rm /home/codespace/.vscode-remote/data/Machine/settings.json
-  copy_file VSCode/settings.json /home/codespace/.vscode-remote/data/Machine/settings.json
-  copy_file VSCode/keybindings.json /home/codespace/.vscode-remote/data/Machine/keybindings.json
+  # sudo rm /home/codespace/.vscode-remote/data/Machine/settings.json
+  # copy_file VSCode/settings.json /home/codespace/.vscode-remote/data/Machine/settings.json
+  # copy_file VSCode/keybindings.json /home/codespace/.vscode-remote/data/Machine/keybindings.json
 elif [[ $LINUX ]]; then
   copy_file VSCode/settings.json ~/.config/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/.config/Code/User/keybindings.json
