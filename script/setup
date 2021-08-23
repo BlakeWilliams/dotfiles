@@ -34,6 +34,10 @@ function copy_file() {
   fi
 }
 
+if [[ -n "$CODESPACES" ]]; then
+  rm ~/.zshrc
+fi
+
 # Standard dotfiles
 copy_file excludes ~/.excludes
 copy_file gitconfig ~/.gitconfig
