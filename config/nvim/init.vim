@@ -11,6 +11,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-projectionist'
 
 " Workflow
 Plug 'BlakeWilliams/vim-pry'
@@ -41,7 +42,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 
-let g:dotfiles_use_lsp_client = 1
+let g:dotfiles_use_lsp_client = 0
 
 " autocompletion
 if g:dotfiles_use_lsp_client == 0

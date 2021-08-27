@@ -60,6 +60,7 @@ let g:ale_sign_warning="✕"
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
+\   'go': ['golangci-lint', 'govet', 'gofmt', 'gopls'],
 \}
 
 let g:ale_fixers = {
@@ -139,6 +140,19 @@ let g:rails_projections = {
 \    ],
 \    "type": "controller",
 \    "alternate": "test/integration/{}_controller_test.rb"
+\ }
+\}
+
+let g:projectionist_heuristics = {
+\ '*.go': {
+\   '*.go': {
+\       'alternate': '{}_test.go',
+\       'type': 'source'
+\   },
+\   '*_test.go': {
+\       'alternate': '{}.go',
+\       'type': 'test'
+\   },
 \ }
 \}
 

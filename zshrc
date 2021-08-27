@@ -74,14 +74,19 @@ bindkey '^?' backward-delete-char
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
-export PATH="/usr/local/sbin:$PATH"
+
+# Export editor preference
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Reset pane names in tmux to "" instead of "hostname"
+if [[ -n "$TMUX" ]]; then
+  echo -ne "\033]2;\033\\"
+fi
 
 # Load all files in ~/.zsh
 for function in ~/.zsh/*.zsh; do
   source $function
 done
 
-# Reset pane names in tmux to "" instead of "hostname"
-if [[ -n "$TMUX" ]]; then
-  echo -ne "\033]2;\033\\"
-fi
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"

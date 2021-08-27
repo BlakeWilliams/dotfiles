@@ -4,6 +4,7 @@ let mapleader = " "
 
 " FZF Rg to leader a (Ack)
 noremap <leader>a :Rg<CR>
+noremap <leader>f :Grepper<CR>
 
 " ALE shortcuts
 nnoremap ]r :ALENextWrap<CR>
