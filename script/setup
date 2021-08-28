@@ -63,6 +63,7 @@ copy_file config/bat/config ~/.config/bat/config
 copy_file config/nvim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim
 copy_file config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+copy_file config/nvim/coc.vim ~/.config/nvim/coc.vim
 copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
 copy_file config/nvim/config.vim ~/.config/nvim/config.vim
 copy_file config/nvim/experimental.vim ~/.config/nvim/experimental.vim
@@ -86,10 +87,6 @@ copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
 if [[ $MACOS ]]; then
   copy_file VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-elif [[ -n "$CODESPACES" ]]; then
-  # sudo rm /home/codespace/.vscode-remote/data/Machine/settings.json
-  # copy_file VSCode/settings.json /home/codespace/.vscode-remote/data/Machine/settings.json
-  # copy_file VSCode/keybindings.json /home/codespace/.vscode-remote/data/Machine/keybindings.json
 elif [[ $LINUX ]]; then
   copy_file VSCode/settings.json ~/.config/Code/User/settings.json
   copy_file VSCode/keybindings.json ~/.config/Code/User/keybindings.json

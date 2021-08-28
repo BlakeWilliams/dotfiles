@@ -52,6 +52,9 @@ let g:airline#extensions#searchcount#enabled = 0
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
+" Disable ALE's LSP support, it is for linters
+let g:ale_disable_lsp = 1
+
 let g:ale_fix_on_save=1
 
 let g:ale_sign_error="✕"
@@ -62,6 +65,8 @@ let g:ale_linters = {
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \   'go': ['golangci-lint', 'govet', 'gofmt', 'gopls'],
 \}
+let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_golangci_lint_package=1
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
@@ -80,25 +85,10 @@ let g:test#strategy = 'tbro'
 let g:vim_json_syntax_conceal = 0
 
 " Go config
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
 
 let g:Illuminate_ftblacklist = ['netrw']
 
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['solargraph', 'stdio'],
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
-
 function! s:fzf_statusline()
-  " Override statusline as you like
   highlight fzf1 ctermfg=7 ctermbg=2
   highlight fzf2 ctermfg=7 ctermbg=2
   highlight fzf3 ctermfg=7 ctermbg=2
@@ -157,7 +147,8 @@ let g:projectionist_heuristics = {
 \}
 
 let g:grepper = {}
-let g:grepper.tools = ['rg', 'git']
+" rg is broken until neovim 0.5.1 or 0.6.0
+let g:grepper.tools = ['ag', 'rg', 'git']
 
 if g:dotfiles_use_lsp_client == 0
   " Use tab to trigger CoC

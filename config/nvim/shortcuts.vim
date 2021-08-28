@@ -23,11 +23,12 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 
 " Git shortcuts
-map <leader>gs :Gstatus<cr>
-map <leader>gc :Gcommit<cr>
-map <leader>gg :Gbrowse<cr>
+map <leader>gs :Git<cr>
+map <leader>gc :Git commit<cr>
+map <leader>gg :GBrowse<cr>
 map <leader>gb :Git blame<cr>
 map <leader>gd :Gdiff<cr>
+map <leader>gb :BCommits<cr>
 
 " Tbro mappings
 vmap <silent> <Leader>t :call tbro#run_selection()<cr>

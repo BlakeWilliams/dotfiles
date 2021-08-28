@@ -7,9 +7,18 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "✕ ",
+  "coc.preferences.floatActions": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "javascript",
     "typescript"
-  ]
+  ],
+  "coc.source.buffer.enable": false,
+  "signature.preferShownAbove": true,
+  "codeLens.enable": true,
+  "hover.target": "float",
+  "suggest.disableMenu": true,
+  "suggest.detailField": "preview",
+  "suggest.noselect": false,
+  "suggest.removeDuplicateItems": true
 }

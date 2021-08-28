@@ -16,31 +16,30 @@ Plug 'tpope/vim-projectionist'
 " Workflow
 Plug 'BlakeWilliams/vim-pry'
 Plug 'BlakeWilliams/vim-tbro'
-Plug 'RRethy/vim-illuminate'
 Plug 'janko-m/vim-test'
 Plug 'tomtom/tcomment_vim'
 Plug 'dense-analysis/ale'
+Plug 'sjl/gundo.vim'
+
+" Searching
+Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'RRethy/vim-illuminate'
 Plug 'mhinz/vim-grepper'
-Plug 'sjl/gundo.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
 
 " Languages and markup
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'sheerun/vim-polyglot'
 
-" Colors
-Plug 'blakewilliams/numetal.vim'
+" Colors / Theme
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'cocopon/iceberg.vim'
-Plug 'blakewilliams/numetal.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
 
 let g:dotfiles_use_lsp_client = 0
 
@@ -72,6 +71,7 @@ source $HOME/.config/nvim/colors.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/shortcuts.vim
 source $HOME/.config/nvim/autocommands.vim
+source $HOME/.config/nvim/coc.vim
 
 if has('nvim-0.5')
   source $HOME/.config/nvim/experimental.vim
