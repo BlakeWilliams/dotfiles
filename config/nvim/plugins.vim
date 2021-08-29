@@ -187,3 +187,4 @@ if g:dotfiles_use_lsp_client == 0
 endif
 
 let g:startify_custom_header =  startify#fortune#boxed()
+let g:startify_change_to_dir =  0

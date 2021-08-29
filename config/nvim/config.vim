@@ -45,7 +45,7 @@ set wildmenu
 
 " neovim specific configuration
 if has('nvim')
-  set signcolumn=yes:1          " Always show sign column with a width of 1
+  set signcolumn=number
 endif
 
 " Formatting settings

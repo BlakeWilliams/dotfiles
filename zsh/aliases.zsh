@@ -8,3 +8,9 @@ alias vim=nvim
 
 alias rg="rg --ignore-file ~/.ignore"
 alias be="bundle exec"
+
+
+alias popup="tmux popup -E -w 60% -h 60%"
+
+alias nethackbreak="tmux popup -E -w 60% -h 60% nethack"
+alias slashembreak="tmux popup -E -w 60% -h 60% slashem"
