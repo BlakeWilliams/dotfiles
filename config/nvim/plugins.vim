@@ -23,10 +23,8 @@ let g:signify_sign_change = "│ "
 let g:signify_sign_change_delete = "│ "
 let g:signify_sign_show_count = 0
 
-" Don't use new symbols symbols
 " Don't use scrollbar
 let g:airline#extensions#scrollbar#enabled = 0
-" let g:airline_symbols_ascii = 1
 
 " Disable annoying whitespace indicator
 let g:airline#extensions#whitespace#enabled=0

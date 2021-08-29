@@ -7,8 +7,8 @@ Most files are decently documented.
 
 ## Setup / Usage
 
-```
-script/setup
+```bash
+./script/setup
 ```
 
 ## System specific zsh includes
