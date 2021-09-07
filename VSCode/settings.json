@@ -1,9 +1,17 @@
 {
+  "[erb]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
   "[git-commit]": {
     "editor.rulers": [
       50,
       72
     ]
+  },
+  "[ruby]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
   },
   "breadcrumbs.enabled": false,
   "breadcrumbs.icons": false,
@@ -24,10 +32,17 @@
   "editor.rulers": [],
   "editor.scrollbar.horizontalScrollbarSize": 6,
   "editor.scrollbar.verticalScrollbarSize": 6,
+  "editor.suggest.preview": true,
   "editor.suggest.showIcons": false,
+  "everforest.darkContrast": "hard",
+  "everforest.darkWorkbench": "high-contrast",
+  "explorer.incrementalNaming": "smart",
+  "explorer.openEditors.sortOrder": "alphabetical",
   "explorer.openEditors.visible": 0,
   "files.enableTrash": false,
   "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "git.inputValidation": "always",
   "git.suggestSmartCommit": false,
   "gitlens.blame.heatmap.enabled": false,
   "gitlens.blame.highlight.enabled": false,
@@ -42,10 +57,11 @@
   "gitlens.menus": false,
   "gitlens.mode.statusBar.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
-  "gruvboxMaterial.darkWorkbench": "flat",
+  "gruvboxMaterial.darkWorkbench": "high-contrast",
   "material-icon-theme.opacity": 0.6,
   "material-icon-theme.saturation": 1,
   "notebook.breadcrumbs.showCodeCells": false,
+  "redhat.telemetry.enabled": false,
   "scm.alwaysShowRepositories": true,
   "scm.autoReveal": false,
   "telemetry.enableCrashReporter": false,
@@ -65,9 +81,14 @@
       ]
     }
   ],
-  "vim.showcmd": false,
+  "vim.showmodename": false,
   "vim.timeout": 0,
   "workbench.colorTheme": "Gruvbox Material Dark",
+  "vim.visualstar": true,
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "scrollbar.shadow": "#ffffff00"
+  },
   "workbench.editor.showIcons": false,
   "workbench.editor.tabCloseButton": "off",
   "workbench.enableExperiments": false,
