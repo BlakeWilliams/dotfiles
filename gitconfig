@@ -42,8 +42,8 @@
   ds = diff --staged
   fuckit = !sh -c 'git add --all && git reset --hard'
   longer = log --pretty='%C(yellow)%h%Creset - %s%n%C(green)%an%Creset commited %ar%n'
-  p = push -u
-  pf = push -u --force-with-lease
+  p = ![[ $(git config "branch.$(git symbolic-ref --short HEAD).merge") = '' ]] && git push -u || git push
+  pf = p --force-with-lease
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   standup = log --since=yesterday --author=\"Blake Williams\"
   up = !git fetch origin && git rebase -i origin/master
