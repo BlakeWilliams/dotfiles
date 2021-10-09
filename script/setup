@@ -78,6 +78,9 @@ copy_file zshrc ~/.zshrc
 # Bat
 copy_file config/bat/config ~/.config/bat/config
 
+# Alacritty
+copy_file config/alacritty.yml ~/.config/alacritty.yml
+
 # Neovim
 copy_file config/nvim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim

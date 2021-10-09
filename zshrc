@@ -90,3 +90,14 @@ for function in ~/.zsh/*.zsh; do
 done
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
+# Report basic title
+function precmd {
+  local escaped_home=$(echo $HOME | sed -e 's|/|\\/|'g)
+  local title=$(pwd | sed "s/^$escaped_home/~/")
+  print -Pn "\e]0;$title\a"
+}
+
+# function preexec {
+#   printf "\033]0;%s\a" "$1"
+# }
