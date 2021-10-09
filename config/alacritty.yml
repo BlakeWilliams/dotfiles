@@ -1,7 +1,8 @@
 window:
   padding:
-    x: 6
-    y: 6
+    x: 2
+    y: 2
+  dynamic_padding: true
 
   # Window decorations
   #
