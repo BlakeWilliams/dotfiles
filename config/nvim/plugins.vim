@@ -185,6 +185,3 @@ if g:dotfiles_use_lsp_client == 0
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
   endif
 endif
-
-let g:startify_custom_header =  startify#fortune#boxed()
-let g:startify_change_to_dir =  0

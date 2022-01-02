@@ -29,7 +29,6 @@ Plug 'RRethy/vim-illuminate'
 Plug 'mhinz/vim-grepper'
 
 " Languages and markup
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Colors / Theme
@@ -38,7 +37,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
-Plug 'mhinz/vim-startify'
 
 let g:dotfiles_use_lsp_client = 0
 

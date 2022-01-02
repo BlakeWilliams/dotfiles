@@ -1,4 +1,7 @@
 {
+  "typescript.referencesCodeLens.enable": false,
+  "javascript.implementationsCodeLens.enable": false,
+  "javascript.referencesCodeLens.enable": false,
   "suggest.enablePreview": true,
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "✕",
@@ -11,7 +14,8 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "javascript",
-    "typescript"
+    "typescript",
+    "typescriptreact"
   ],
   "coc.source.buffer.enable": false,
   "signature.preferShownAbove": true,
@@ -21,31 +25,6 @@
   "suggest.detailField": "preview",
   "suggest.noselect": false,
   "suggest.removeDuplicateItems": true,
-  "suggest.completionItemKindLabels": {
-    "module": "\ufa72",
-    "method": "\uf794",
-    "function": "\uf794",
-    "variable": "\uf155",
-    "constant": "\uf8ff",
-    "struct": "\uf036",
-    "class": "\uf719",
-    "interface": "\ufb85",
-    "text": "\uf783",
-    "enum": "\uf435",
-    "enumMember": "\uf02b",
-    "color": "\ue22b",
-    "property": "\ufab6",
-    "field": "\uf93d",
-    "unit": "\uf475",
-    "file": "\uf471",
-    "value": "\uf82e",
-    "event": "\ufacd",
-    "folder": "\uf115",
-    "keyword": "\uf80a",
-    "snippet": "\uf64d",
-    "operator": "\uf915",
-    "reference": "\uf87a",
-    "typeParameter": "\uf278",
-    "default": "\uf29c"
-  }
+  "typescript.format.enabled": false,
+  "javascript.format.enabled": false
 }

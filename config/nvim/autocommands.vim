@@ -25,7 +25,8 @@ if has("autocmd")
   autocmd FileType go setlocal nolist
   autocmd Filetype json let g:indentLine_setConceal = 0
   autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
-  autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript syntax=typescript.jsx
+  autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
+  autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
   " delete netrw buffers when hidden
