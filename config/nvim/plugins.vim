@@ -108,7 +108,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 command! -bang -nargs=* Rg call fzf#vim#grep(
-      \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+      \ "rg --hidden --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
       \ 1,
       \ {'options': '--delimiter : --nth 2.. --with-nth 1,4 --preview="bat {1} -H {2}" --preview-window +{2}-/2'},
       \ <bang>0

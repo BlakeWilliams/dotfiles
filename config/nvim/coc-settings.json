@@ -11,6 +11,7 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "✕ ",
   "coc.preferences.floatActions": true,
+  "coc.preferences.messageLevel": "warning",
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "javascript",
