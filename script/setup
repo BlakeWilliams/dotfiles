@@ -51,7 +51,7 @@ if [[ -n "$CODESPACES" ]]; then
   if ! [ -x "$(command -v pip3)" ]; then
     echo 'Could not install python neovim plugin' >&2
   else
-    pip3 install -g neovim
+    pip3 install neovim
   fi
 
   # Install neovim plugins
@@ -69,6 +69,7 @@ copy_file ignore ~/.ignore
 copy_file inputrc ~/.inputrc
 copy_file irbrc ~/.irbrc
 copy_file nethackrc ~/.nethackrc
+copy_file ripgreprc ~/.ripgreprc
 copy_file slashemrc ~/.slashemrc
 copy_file tmux.conf ~/.tmux.conf
 copy_file tmux.overmind.conf ~/.tmux.overmind.conf
