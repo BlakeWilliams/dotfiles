@@ -11,6 +11,16 @@ elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
   export LINUX=1
 fi
 
+# Codespaces setup
+if [[ -n "$CODESPACES" ]]; then
+  chsh -s $(which zsh)
+
+  rm ~/.zshrc
+  mv ~/.gitconfig ~/.gitconfig.old
+
+  apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev
+fi
+
 function copy_file() {
   local source="$(pwd)/$1"
   local target=$2
@@ -78,15 +88,8 @@ copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
 
-# Codespaces setup
+# Codespaces nvim install
 if [[ -n "$CODESPACES" ]]; then
-  chsh -s $(which zsh)
-
-  rm ~/.zshrc
-  mv ~/.gitconfig ~/.gitconfig.old
-
-  apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev
-
   # Install the latest neovim
   wget https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage
   chmod u+x nvim.appimage
