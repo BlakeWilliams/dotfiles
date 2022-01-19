@@ -28,36 +28,6 @@ function copy_file() {
   fi
 }
 
-# Codespaces setup
-if [[ -n "$CODESPACES" ]]; then
-  chsh -s $(which zsh)
-
-  rm ~/.zshrc
-  mv ~/.gitconfig ~/.gitconfig.old
-
-  apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev
-
-  # Install the latest neovim
-  wget https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage
-  chmod u+x nvim.appimage
-  mv nvim.appimage /usr/local/bin/nvim
-
-  if ! [ -x "$(command -v npm)" ]; then
-    echo 'Could not install node neovim plugin' >&2
-  else
-    npm install -g neovim
-  fi
-
-  if ! [ -x "$(command -v pip3)" ]; then
-    echo 'Could not install python neovim plugin' >&2
-  else
-    pip3 install neovim
-  fi
-
-  # Install neovim plugins
-  nvim --headless +PlugInstall +qall
-fi
-
 # Standard dotfiles
 copy_file excludes ~/.excludes
 copy_file gitconfig ~/.gitconfig
@@ -107,3 +77,34 @@ copy_file zsh/aliases.zsh ~/.zsh/aliases.zsh
 copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
+
+# Codespaces setup
+if [[ -n "$CODESPACES" ]]; then
+  chsh -s $(which zsh)
+
+  rm ~/.zshrc
+  mv ~/.gitconfig ~/.gitconfig.old
+
+  apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev
+
+  # Install the latest neovim
+  wget https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv nvim.appimage /usr/local/bin/nvim
+
+  if ! [ -x "$(command -v npm)" ]; then
+    echo 'Could not install node neovim plugin' >&2
+  else
+    npm install -g neovim
+  fi
+
+  if ! [ -x "$(command -v pip3)" ]; then
+    echo 'Could not install python neovim plugin' >&2
+  else
+    pip3 install neovim
+  fi
+
+  # Install neovim plugins
+  nvim --headless +PlugInstall +qall
+fi
+
