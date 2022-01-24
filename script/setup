@@ -5,20 +5,15 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 # Ensure we're working from the root directory
 cd $SCRIPT_DIR && cd ..
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  export MACOS=1
-elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
-  export LINUX=1
-fi
-
-# Codespaces setup
+# Clean up codespaces environment
 if [[ -n "$CODESPACES" ]]; then
-  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
 
   rm ~/.zshrc
   mv ~/.gitconfig ~/.gitconfig.old
+  rm ~/.gitconfig
 
-  apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev
+  sudo apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev tmux
 fi
 
 function copy_file() {
@@ -110,4 +105,3 @@ if [[ -n "$CODESPACES" ]]; then
   # Install neovim plugins
   nvim --headless +PlugInstall +qall
 fi
-
