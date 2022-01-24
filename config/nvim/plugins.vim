@@ -46,9 +46,11 @@ let g:airline#extensions#localsearch#enabled = 0
 let g:airline#extensions#searchcount#enabled = 0
 
 " Better line/column information
-" let g:airline_section_a = ""
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
+
+" Hide coc info
+let g:airline#extensions#coc#show_coc_status = 0
 
 " Disable ALE's LSP support, it is for linters
 let g:ale_disable_lsp = 1

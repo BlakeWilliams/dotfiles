@@ -29,6 +29,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'mhinz/vim-grepper'
 
 " Languages and markup
+" Plug 'HerringtonDarkholme/yats.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Colors / Theme

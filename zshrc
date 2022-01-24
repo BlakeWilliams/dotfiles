@@ -35,9 +35,6 @@ export GREP_COLOR='3;32'
 zstyle -e ':completion:*:default' list-colors \
   'reply=("${PREFIX:+=(#bi)($PREFIX:t)()*==34=34}:${(s.:.)LS_COLORS}")'
 
-export EDITOR=vim
-export VISUAL=$EDITOR
-
 setopt append_history         # Append, not replace
 setopt inc_append_history     # Immediately append history
 setopt always_to_end          # Always go to end of line on complete
@@ -75,10 +72,6 @@ bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
 
-# Export editor preference
-export EDITOR=nvim
-export VISUAL=nvim
-
 # Reset pane names in tmux to "" instead of "hostname"
 if [[ -n "$TMUX" ]]; then
   echo -ne "\033]2;\033\\"
@@ -98,6 +91,10 @@ function precmd {
   print -Pn "\e]0;$title\a"
 }
 
-# function preexec {
-#   printf "\033]0;%s\a" "$1"
-# }
+# Export editor preference
+export EDITOR=nvim
+export VISUAL=nvim
+
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  export VISUAL="code --wait"
+fi
