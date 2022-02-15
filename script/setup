@@ -111,4 +111,7 @@ if [[ -n "$CODESPACES" ]]; then
 
   # Install neovim plugins
   nvim --headless +PlugInstall +qall
+
+  echo 'alias open="rdm open"' >> ~/.zshenv
+  echo 'alias xdg-open="rdm open"' >> ~/.zshenv
 fi
