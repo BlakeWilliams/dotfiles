@@ -63,6 +63,8 @@ bindkey -v
 
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "$key[Up]" up-line-or-beginning-search # Up
+bindkey "$key[Down]" down-line-or-beginning-search # Down
 
 # Allow backspace after vi mode
 bindkey '^?' backward-delete-char
@@ -96,5 +98,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  export EDITOR=vim
   export VISUAL="code --wait"
 fi
