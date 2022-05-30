@@ -12,15 +12,6 @@ if [[ -n "$CODESPACES" ]]; then
   rm ~/.zshrc
   mv ~/.gitconfig ~/.gitconfig.old
   rm ~/.gitconfig
-
-  sudo apt-get install -y ripgrep shellcheck fuse npm fzf ruby-dev tmux
-
-  # Use RDM for copy/paste and open support
-  wget https://github.com/BlakeWilliams/remote-development-manager/releases/download/v0.0.3/rdm-linux-amd64
-  sudo mv rdm-linux-amd64 /usr/bin/local/rdm
-  chmod +x /usr/bin/local/rdm
-
-  gh config set browser "rdm open"
 fi
 
 function copy_file() {
@@ -89,6 +80,16 @@ copy_file zsh/aliases.zsh ~/.zsh/aliases.zsh
 copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
+
+# Setup RDM
+if [[ -n "$CODESPACES" ]]; then
+  # Use RDM for copy/paste and open support
+  wget https://github.com/BlakeWilliams/remote-development-manager/releases/download/v0.0.3/rdm-linux-amd64
+  sudo mv rdm-linux-amd64 /usr/bin/local/rdm
+  chmod +x /usr/bin/local/rdm
+
+  gh config set browser "rdm open"
+fi
 
 # Codespaces nvim install
 if [[ -n "$CODESPACES" ]]; then
