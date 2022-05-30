@@ -78,6 +78,9 @@ let g:ale_lint_on_text_changed = 0
 
 " only run rubocop if ruby code has opted in
 let g:ale_ruby_rubocop_executable = "bundle exec rubocop"
+
+let g:ale_virtualtext_cursor = 1
+
 let g:test#custom_strategies = {'tbro': function('tbro#send')}
 let g:test#strategy = 'tbro'
 

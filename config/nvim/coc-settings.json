@@ -27,5 +27,16 @@
   "suggest.noselect": false,
   "suggest.removeDuplicateItems": true,
   "typescript.format.enabled": false,
-  "javascript.format.enabled": false
+  "javascript.format.enabled": false,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
+  "workspace.workspaceFolderCheckCwd": true
 }

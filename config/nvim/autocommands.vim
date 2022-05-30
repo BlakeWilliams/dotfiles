@@ -59,3 +59,43 @@ augroup BWCCreateDir
   autocmd!
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
+function! s:SetTermColors()
+  let tty='/dev/'.system('ps -o tty= $(ps -o ppid= $(ps -o ppid= $$))')
+
+  let cmd = s:SetColor('11', synIDattr(synIDtrans(hlID("Normal")), "bg#"))
+  let cmd = cmd . " " . s:SetColor('10', synIDattr(synIDtrans(hlID("Normal")), "fg#"))
+  let cmd = cmd . " " . s:SetColor('12', synIDattr(synIDtrans(hlID("TermCursor")), "fg#"))
+  let cmd = cmd . " " . s:SetColor('4;0', g:terminal_color_0)
+  let cmd = cmd . " " . s:SetColor('4;1', g:terminal_color_1)
+  let cmd = cmd . " " . s:SetColor('4;2', g:terminal_color_2)
+  let cmd = cmd . " " . s:SetColor('4;3', g:terminal_color_3)
+  let cmd = cmd . " " . s:SetColor('4;4', g:terminal_color_4)
+  let cmd = cmd . " " . s:SetColor('4;5', g:terminal_color_5)
+  let cmd = cmd . " " . s:SetColor('4;6', g:terminal_color_6)
+  let cmd = cmd . " " . s:SetColor('4;7', g:terminal_color_7)
+  let cmd = cmd . " " . s:SetColor('4;8', g:terminal_color_8)
+  let cmd = cmd . " " . s:SetColor('4;9', g:terminal_color_9)
+  let cmd = cmd . " " . s:SetColor('4;10', g:terminal_color_10)
+  let cmd = cmd . " " . s:SetColor('4;11', g:terminal_color_11)
+  let cmd = cmd . " " . s:SetColor('4;12', g:terminal_color_12)
+  let cmd = cmd . " " . s:SetColor('4;13', g:terminal_color_13)
+  let cmd = cmd . " " . s:SetColor('4;14', g:terminal_color_14)
+  let cmd = cmd . " " . s:SetColor('4;15', g:terminal_color_15)
+
+
+  silent execute ":!" . 'printf "' . cmd . '" > ' . tty
+  echon ''
+  redraw
+endfunction
+
+function! s:SetColor(i, color)
+  let printcmdstart = '\033Ptmux;\033\033]'
+  let printcmdend = '\007\033\\'
+
+  return printcmdstart . a:i . ";\\" . a:color . printcmdend
+endfunction
+
+augroup AutoColor
+  autocmd ColorScheme * :call s:SetTermColors()
+augroup END

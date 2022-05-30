@@ -10,7 +10,11 @@ set history=100                 " Keep 100 lines of command line history
 set hlsearch                    " Highlights search
 set ignorecase                  " Ignore case in searches
 set incsearch                   " Searches for text as entered
-set laststatus=2                " Always show statusline
+if has('nvim-0.7.0')
+  set laststatus=3                " Always show one statusline
+else
+  set laststatus=2                " Always show statusline
+endif
 set lazyredraw                  " Boosts performance at times
 set list                        " Don't show listchars
 set listchars=tab:»·,trail:·    " Show trailing spaces as dots
