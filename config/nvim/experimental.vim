@@ -4,6 +4,44 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
   }
 }
+
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'filetype'},
+    lualine_y = {},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {
+    lualine_a = {
+      {
+        'tabs',
+        mode = 1
+      }
+    },
+  lualine_b = {'windows'}
+  },
+  extensions = {}
+}
 EOF
 
 if g:dotfiles_use_lsp_client == 1

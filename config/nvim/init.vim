@@ -34,10 +34,11 @@ Plug 'sheerun/vim-polyglot'
 
 " Colors / Theme
 Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'nvim-lualine/lualine.nvim'
 
 let g:dotfiles_use_lsp_client = 0
 
