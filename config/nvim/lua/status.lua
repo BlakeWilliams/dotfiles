@@ -81,6 +81,7 @@ function setup_status()
       },
       lualine_b = {},
       lualine_c = {},
+      lualine_z = {'windows'},
     },
     extensions = { netrw_ext }
   }

@@ -39,8 +39,6 @@ Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'nvim-lualine/lualine.nvim'
 
-let g:dotfiles_use_lsp_client = 0
-
 " writing
 Plug 'junegunn/goyo.vim'
 
@@ -76,8 +74,6 @@ source $HOME/.config/nvim/shortcuts.vim
 source $HOME/.config/nvim/autocommands.vim
 
 lua require('lsp')
+lua require('signs')
 lua require('status')
-
-if has('nvim-0.5')
-  source $HOME/.config/nvim/experimental.vim
-endif
+lua require('treesitter')
