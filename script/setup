@@ -59,8 +59,6 @@ copy_file config/alacritty.yml ~/.config/alacritty.yml
 # Neovim
 copy_file config/nvim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim
-copy_file config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-copy_file config/nvim/coc.vim ~/.config/nvim/coc.vim
 copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
 copy_file config/nvim/config.vim ~/.config/nvim/config.vim
 copy_file config/nvim/experimental.vim ~/.config/nvim/experimental.vim
