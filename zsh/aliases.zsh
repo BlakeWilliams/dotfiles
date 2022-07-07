@@ -10,7 +10,7 @@ alias rg="rg --ignore-file ~/.ignore"
 alias be="bundle exec"
 
 if [[ -n "$TMUX" ]] then
-  alias clear="clear && tmux clear"
+  alias clear="clear && tmux clear-history"
 fi
 
 alias popup="tmux popup -E -w 60% -h 60%"

@@ -29,6 +29,9 @@ map <leader>gg :GBrowse<cr>
 map <leader>gb :Git blame<cr>
 map <leader>gd :Gdiff<cr>
 
+" Select last inserted text
+nnoremap gp `[v`]
+
 " Tbro mappings
 vmap <silent> <Leader>t :call tbro#run_selection()<cr>
 nmap <silent> <Leader>t :call tbro#run_line()<cr>

@@ -67,6 +67,9 @@ copy_file config/nvim/experimental.vim ~/.config/nvim/experimental.vim
 copy_file config/nvim/init.vim ~/.config/nvim/init.vim
 copy_file config/nvim/plugins.vim ~/.config/nvim/plugins.vim
 copy_file config/nvim/shortcuts.vim ~/.config/nvim/shortcuts.vim
+copy_file config/nvim/lua/lsp.lua ~/.config/nvim/lua/lsp.lua
+copy_file config/nvim/lua/signs.lua ~/.config/nvim/lua/signs.lua
+copy_file config/nvim/lua/status.lua ~/.config/nvim/lua/status.lua
 
 # Git template
 copy_file git_template/hooks/ctags ~/.git_template/hooks/ctags

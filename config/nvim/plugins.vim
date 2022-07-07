@@ -49,9 +49,6 @@ let g:airline#extensions#searchcount#enabled = 0
 let g:airline_section_b = ""
 let g:airline_section_z = "%#__accent_bold#%l%#__restore__#:%c"
 
-" Hide coc info
-let g:airline#extensions#coc#show_coc_status = 0
-
 " Disable ALE's LSP support, it is for linters
 let g:ale_disable_lsp = 1
 
@@ -68,11 +65,11 @@ let g:ale_linters = {
 let g:ale_go_golangci_lint_options = '--fast'
 let g:ale_go_golangci_lint_package=1
 
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'vue': ['prettier'],
-\}
+" let g:ale_fixers = {
+" \   'javascript': ['prettier'],
+" \   'typescript': ['prettier'],
+" \   'vue': ['prettier'],
+" \}
 
 let g:ale_lint_on_text_changed = 0
 
@@ -152,41 +149,3 @@ let g:projectionist_heuristics = {
 let g:grepper = {}
 " rg is broken until neovim 0.5.1 or 0.6.0
 let g:grepper.tools = ['ag', 'rg', 'git']
-
-if g:dotfiles_use_lsp_client == 0
-  " Use tab to trigger CoC
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-
-  " Allow enter for CoC
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-  " Use K to show documentation in preview window.
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    elseif (coc#rpc#ready())
-      call CocActionAsync('doHover')
-    else
-      execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
-  endfunction
-
-  " Allow ctrl+f and ctrl+b in float windows to scroll
-  if has('nvim-0.4.0') || has('patch-8.2.0750')
-    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  endif
-endif

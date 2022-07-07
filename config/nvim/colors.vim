@@ -21,21 +21,27 @@ colorscheme everforest
 let s:bgFile = expand("~/.config/nvim/background")
 let s:modeFile = expand("~/.config/nvim/colormode")
 
-function! s:SyncBG()
+function! SyncBG(timer)
   if filereadable(s:bgFile)
-    exec 'colorscheme ' . readfile(s:bgFile)[0]
+    let value = readfile(s:bgFile)[0]
+    if g:colors_name != value
+      exec 'colorscheme ' . value
+    endif
   endif
 
   if filereadable(s:modeFile)
-    if readfile(s:modeFile)[0] == "light"
+    let value = readfile(s:modeFile)[0]
+    if value == "light" && &background != value
       set background=light
-    else
+    elseif &background != value
       set background=dark
     endif
   endif
 endfunction
 
-call s:SyncBG()
+exec timer_start(5000, 'SyncBG', {'repeat': -1})
+
+call SyncBG(0)
 
 function! s:SetTermColors()
   let tty='/dev/'.system('ps -o tty= $(ps -o ppid= $(ps -o ppid= $$))')
@@ -61,7 +67,6 @@ function! s:SetTermColors()
   let cmd = cmd . " " . s:SetColor('4;15', g:terminal_color_15)
 
   silent execute ":!" . 'printf "' . cmd . '" > ' . tty
-  silent execute ":!" . 'for pid in $(pgrep nvim); do kill -SIGUSR1 $pid; done'
 
   echon ''
   redraw
@@ -84,5 +89,4 @@ endfunction
 
 augroup AutoColor
   autocmd ColorScheme * silent call s:SetTermColors()
-  autocmd Signal SIGUSR1 call s:SyncBG()
 augroup END

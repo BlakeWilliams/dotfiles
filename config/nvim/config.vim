@@ -47,10 +47,7 @@ set undolevels=500              " More undo
 set wildignorecase              " Case insensitive completions
 set wildmenu
 
-" neovim specific configuration
-if has('nvim')
-  set signcolumn=number
-endif
+set signcolumn=yes:1
 
 " Formatting settings
 set expandtab                   " Make spaces not tabs
