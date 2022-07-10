@@ -18,9 +18,10 @@ Plug 'BlakeWilliams/vim-pry'
 Plug 'BlakeWilliams/vim-tbro'
 Plug 'janko-m/vim-test'
 Plug 'tomtom/tcomment_vim'
-Plug 'dense-analysis/ale'
 Plug 'sjl/gundo.vim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'folke/which-key.nvim'
+Plug 'goolord/alpha-nvim'
 
 " Searching
 Plug 'justinmk/vim-sneak'
@@ -77,3 +78,5 @@ lua require('lsp')
 lua require('signs')
 lua require('status')
 lua require('treesitter')
+lua require('whichkey')
+lua require('welcome')

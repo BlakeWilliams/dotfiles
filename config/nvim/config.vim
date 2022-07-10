@@ -48,6 +48,10 @@ set wildignorecase              " Case insensitive completions
 set wildmenu
 
 set signcolumn=yes:1
+" neovim specific configuration
+if has('nvim')
+  set signcolumn=auto:1-2
+endif
 
 " Formatting settings
 set expandtab                   " Make spaces not tabs

@@ -8,6 +8,14 @@ local function make_rel(full_path)
   if path == vim.fn.getcwd() then
     return '[No Name]'
   elseif path:match("^/") then
+    if vim.bo.modified then
+      path = path .. "[+]"
+    end
+
+    if vim.bo.modifiable == false or vim.bo.readonly then
+      path = path .. "[-]"
+    end
+
     return path
   else
     return "./" .. path
@@ -38,7 +46,7 @@ function setup_status()
     options = {
       icons_enabled = false,
       theme = 'auto',
-      component_separators = { left = '', right = ''},
+      component_separators = { left = '', right = ''},
       section_separators = { left = '', right = ''},
       disabled_filetypes = {},
       always_divide_middle = true,
@@ -57,6 +65,7 @@ function setup_status()
             hint = { fg = extract_color("String", "fg") },
             error = { fg = extract_color("ErrorMsg", "fg") },
           },
+          symbols = {error = 'E:', warn = 'W:', info = 'I:', hint = 'H:'},
           sources = {'nvim_lsp', 'ale'},
         },
         'filetype',
@@ -67,7 +76,7 @@ function setup_status()
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = {'filename'},
+      lualine_c = {rel_file},
       lualine_x = {'location'},
       lualine_y = {},
       lualine_z = {}

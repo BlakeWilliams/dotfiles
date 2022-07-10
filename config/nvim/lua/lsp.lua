@@ -66,6 +66,12 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
+  local signs = { Error = "✕", Warn = "! ", Hint = "★ ", Info = "i " }
+  for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  end
+
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -78,6 +84,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 
   vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+
+  vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float({focus=false, border = "rounded"})]]
+  vim.cmd [[autocmd CursorHoldI * lua vim.diagnostic.open_float({focus=false, border = "rounded" })]]
 end
 
 require'lspconfig'.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
@@ -107,3 +116,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       end
     end,
   })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = {
+      spacing = 0,
+      prefix = "»",
+
+    },
+    signs = true,
+  }
+)
