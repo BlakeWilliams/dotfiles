@@ -11,6 +11,15 @@ hi! link LspDiagnosticsVirtualTextWarning Yellow
 hi! link LspDiagnosticsVirtualTextInformation Green
 hi! link LspDiagnosticsVirtualTextHint Green
 
+hi! link LspDiagnosticsVirtualTextHint Green
+
+hi! link lualine_b_diagnostics_error_normal Yellow
+hi! link lualine_b_diagnostics_error_insert Green
+
+hi! link LspReferenceRead Error
+hi! link LspReferenceText Yellow
+hi! link LspReferenceWrite Yellow
+
 let g:everforest_enable_italic = 1
 let g:everforest_material_background = 'hard'
 let g:airline_theme="everforest"

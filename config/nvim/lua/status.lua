@@ -65,6 +65,8 @@ function setup_status()
             hint = { fg = extract_color("String", "fg") },
             error = { fg = extract_color("ErrorMsg", "fg") },
           },
+                sections = { 'error', 'warn' },
+
           symbols = {error = 'E:', warn = 'W:', info = 'I:', hint = 'H:'},
           sources = {'nvim_lsp', 'ale'},
         },
@@ -90,6 +92,7 @@ function setup_status()
       },
       lualine_b = {},
       lualine_c = {},
+      -- lualine_z = {'windows'},
       lualine_z = {'windows'},
     },
     extensions = { netrw_ext }

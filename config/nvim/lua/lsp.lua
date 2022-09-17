@@ -85,12 +85,11 @@ local on_attach = function(client, bufnr)
 
   vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
-  vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float({focus=false, border = "rounded"})]]
-  vim.cmd [[autocmd CursorHoldI * lua vim.diagnostic.open_float({focus=false, border = "rounded" })]]
+  vim.cmd [[autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded"})]]
+  vim.cmd [[autocmd CursorHoldI <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded" })]]
 end
 
 require'lspconfig'.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
-require'lspconfig'.golangci_lint_ls.setup{ on_attach = on_attach, capabilities = capabilities }
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
@@ -128,3 +127,23 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     signs = true,
   }
 )
+
+require("null-ls").setup({
+  sources = {
+    require("null-ls").builtins.formatting.stylua,
+    require("null-ls").builtins.diagnostics.golangci_lint,
+    require("null-ls").builtins.diagnostics.eslint,
+    require("null-ls").builtins.diagnostics.shellcheck,
+    require("null-ls").builtins.diagnostics.erb_lint,
+    require("null-ls").builtins.diagnostics.rubocop,
+    -- require("null-ls").builtins.formatting.vale,
+  },
+})
+
+vim.defer_fn(function()
+  require("copilot").setup()
+end, 100)
+
+require("copilot_cmp").setup {
+  method = "getCompletionsCycling",
+}

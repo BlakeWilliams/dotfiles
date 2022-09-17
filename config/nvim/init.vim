@@ -39,17 +39,26 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim'
+Plug 'catppuccin/vim'
 
 " writing
 Plug 'junegunn/goyo.vim'
 
 " neovim specific plugins
 if has('nvim-0.5')
+  "ugh
+  Plug 'nvim-lua/plenary.nvim'
+  " Syntax highlighting and formatting
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'sbdchd/neoformat'
+
+  " LSP
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'jose-elias-alvarez/null-ls.nvim'
 
-  Plug 'neovim/nvim-lspconfig'
+  " Completion
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
@@ -61,6 +70,11 @@ if has('nvim-0.5')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
   Plug 'golang/vscode-go'
+
+  " Copilot
+  Plug 'github/copilot.vim'
+  Plug 'zbirenbaum/copilot-cmp'
+  Plug 'zbirenbaum/copilot.lua'
 endif
 
 call plug#end()
