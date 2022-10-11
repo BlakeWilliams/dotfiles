@@ -41,6 +41,7 @@ Plug 'sainnhe/everforest'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'catppuccin/vim'
+Plug 'folke/tokyonight.nvim'
 
 " writing
 Plug 'junegunn/goyo.vim'
