@@ -85,6 +85,9 @@ copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
 
+# Weechat
+copy_file weechat/weechat.conf ~/.config/weechat/weechat.conf
+
 # Setup RDM
 if [[ -n "$CODESPACES" ]]; then
   # Use RDM for copy/paste and open support
