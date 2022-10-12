@@ -38,13 +38,18 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "show references" })
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "next diagnostic" })
 
-  vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-    callback = function()
-      format()
-    end,
-  })
-  -- vim.cmd [[autocmd BufWritePre <buffer> lua function() format() end]]
+
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+      callback = function()
+        format()
+      end,
+    })
+  end
 
   vim.cmd [[autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded"})]]
   vim.cmd [[autocmd CursorHoldI <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded" })]]
@@ -90,7 +95,7 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.shellcheck,
     require("null-ls").builtins.diagnostics.erb_lint,
     require("null-ls").builtins.diagnostics.rubocop,
-    -- require("null-ls").builtins.formatting.vale,
+    require("null-ls").builtins.formatting.vale,
   },
 })
 
