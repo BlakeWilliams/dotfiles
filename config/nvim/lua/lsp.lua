@@ -1,62 +1,9 @@
--- Setup nvim-cmp.
-local cmp = require'cmp'
+-- Setup copilot
+require("copilot").setup()
 
-cmp.setup({
-    snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-      end,
-    },
-    window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
-      }),
-    sources = cmp.config.sources(
-      {
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-        { name = 'nvim_lsp_signature_help' },
-      },
-      {
-        { name = 'buffer' },
-      }
-    )
-  })
-
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        {
-          name = 'path',
-          option = { trailing_slash = true },
-        }
-      }, {
-        { name = 'cmdline' }
-      })
-  })
-
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require("copilot_cmp").setup {
+  method = "getCompletionsCycling",
+}
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
@@ -72,6 +19,15 @@ local on_attach = function(client, bufnr)
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
+  local format = function()
+    vim.lsp.buf.format {
+      async = true,
+      filter = function(client)
+        return client.name ~= "tsserver"
+      end
+    }
+  end
+
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -83,18 +39,16 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 
-  vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+  vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+    callback = function()
+      format()
+    end,
+  })
+  -- vim.cmd [[autocmd BufWritePre <buffer> lua function() format() end]]
 
   vim.cmd [[autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded"})]]
   vim.cmd [[autocmd CursorHoldI <buffer> lua vim.diagnostic.open_float({focus=false, border = "rounded" })]]
 end
-
-require'lspconfig'.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
-require'lspconfig'.gopls.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require'lspconfig'.solargraph.setup{ on_attach = on_attach, capabilities = capabilities }
 
 -- Go autoimport
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -140,10 +94,71 @@ require("null-ls").setup({
   },
 })
 
-vim.defer_fn(function()
-  require("copilot").setup()
-end, 100)
+-- Setup nvim-cmp.
+local cmp = require'cmp'
 
-require("copilot_cmp").setup {
-  method = "getCompletionsCycling",
+cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+      end,
+    },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+      }),
+    sources = cmp.config.sources(
+      {
+        { name = "copilot" },
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },
+        { name = 'nvim_lsp_signature_help' },
+      },
+      {
+        { name = 'buffer' },
+      }
+    )
+  })
+
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        {
+          name = 'path',
+          option = { trailing_slash = true },
+        }
+      }, {
+        { name = 'cmdline' }
+      })
+  })
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+require'lspconfig'.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+require'lspconfig'.gopls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
+require'lspconfig'.solargraph.setup{ on_attach = on_attach, capabilities = capabilities }
+
