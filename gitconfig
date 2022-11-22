@@ -24,6 +24,7 @@
   prune = true
 [push]
   default = current
+  autoSetupRemote = true
 [pull]
   rebase = true
 [merge]
