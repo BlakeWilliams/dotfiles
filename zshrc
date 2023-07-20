@@ -101,3 +101,6 @@ if [[ "$TERM_PROGRAM" == "vscode" ]]; then
   export EDITOR=vim
   export VISUAL="code --wait"
 fi
+
+# Explicitly set XDG_CACHE_HOME for rubocop so it will stop littering tmp files everywhere
+export $XDG_CACHE_HOME="~/.cache"
