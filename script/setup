@@ -12,6 +12,7 @@ if [[ -n "$CODESPACES" ]]; then
   rm ~/.zshrc
   mv ~/.gitconfig ~/.gitconfig.old
   rm ~/.gitconfig
+  mkdir ~/.cache
 fi
 
 function copy_file() {
