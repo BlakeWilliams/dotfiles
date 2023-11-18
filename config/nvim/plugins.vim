@@ -148,5 +148,4 @@ let g:projectionist_heuristics = {
 \}
 
 let g:grepper = {}
-" rg is broken until neovim 0.5.1 or 0.6.0
-let g:grepper.tools = ['ag', 'rg', 'git']
+let g:grepper.tools = ['rg', 'git']

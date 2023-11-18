@@ -1,3 +1,4 @@
+require('mason').setup()
 -- Setup copilot
 require("copilot").setup()
 
@@ -21,19 +22,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     signs = true,
   }
 )
-
-require("null-ls").setup({
-  sources = {
-    require("null-ls").builtins.formatting.stylua,
-    require("null-ls").builtins.diagnostics.golangci_lint,
-    require("null-ls").builtins.diagnostics.eslint,
-    require("null-ls").builtins.diagnostics.shellcheck,
-    require("null-ls").builtins.diagnostics.erb_lint,
-    require("null-ls").builtins.diagnostics.rubocop,
-    -- require("null-ls").builtins.formatting.vale,
-    require("null-ls").builtins.formatting.prettier,
-  },
-})
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -97,8 +85,6 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-
   local signs = { Error = "✕", Warn = "! ", Hint = "★ ", Info = "i " }
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -109,10 +95,12 @@ local on_attach = function(client, bufnr)
     vim.lsp.buf.format {
       async = false,
       filter = function(client)
-        return client.name ~= "tsserver"
+        return client.name ~= "tsserver" and client.name ~= "solargraph"
       end
     }
   end
+
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -120,14 +108,13 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<space>cf', format, bufopts)
   vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "show references" })
   vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "next diagnostic" })
-
 
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
@@ -162,14 +149,44 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
   })
 
-
 require'lspconfig'.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
-require'lspconfig'.golangci_lint_ls.setup{ on_attach = on_attach, capabilities = capabilities }
+-- require'lspconfig'.golangci_lint_ls.setup{ on_attach = on_attach, capabilities = capabilities }
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
 require'lspconfig'.solargraph.setup{ on_attach = on_attach, capabilities = capabilities }
+
+-- require("null-ls").setup({
+--   sources = {
+--     require("null-ls").builtins.formatting.stylua,
+--     require("null-ls").builtins.diagnostics.golangci_lint,
+--     require("null-ls").builtins.diagnostics.eslint,
+--     require("null-ls").builtins.diagnostics.shellcheck,
+--     require("null-ls").builtins.diagnostics.erb_lint,
+--     require("null-ls").builtins.diagnostics.rubocop,
+--     -- require("null-ls").builtins.formatting.vale,
+--     require("null-ls").builtins.formatting.prettier,
+--   },
+-- })
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    -- debug = true,
+    on_attach = on_attach,
+    capabilities = capabilities,
+    sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.diagnostics.erb_lint,
+        null_ls.builtins.diagnostics.rubocop,
+        null_ls.builtins.diagnostics.vale,
+        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.golangci_lint,
+    },
+})

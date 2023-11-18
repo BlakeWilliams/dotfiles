@@ -1,4 +1,4 @@
---theme="base16"
+--theme="ansi"
 --style="header,numbers,changes,grid"
 --italic-text="always"
 --color="always"

@@ -67,7 +67,7 @@ local buttons = {
     type = "group",
     val = {
         button("e", "- Explore", "<Plug>VinegarUp"),
-        button("u", "- Update plugins", ":PlugInstall<cr>"),
+        button("u", "- Update plugins", ":PlugUpdate<cr>"),
         button("q", "- Quit", ":q!<cr>"),
     },
     opts = {

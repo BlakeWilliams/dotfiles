@@ -48,6 +48,7 @@
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   standup = log --since=yesterday --author=\"Blake Williams\"
   up = !git fetch origin && git rebase -i origin/master
+  squash = "!f() { git reset --soft $(git merge-base HEAD \"$@\") && git commit; }; f"
 [status]
   branch = 1
   short = 1

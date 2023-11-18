@@ -42,6 +42,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'catppuccin/vim'
 Plug 'folke/tokyonight.nvim'
+Plug 'rose-pine/neovim'
 
 " writing
 Plug 'junegunn/goyo.vim'
@@ -58,6 +59,9 @@ if has('nvim-0.5')
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
+  " Plug 'mfussenegger/nvim-lint'
+  " Plug 'dense-analysis/ale'
+  Plug 'williamboman/mason.nvim'
 
   " Completion
   Plug 'hrsh7th/cmp-nvim-lsp'
