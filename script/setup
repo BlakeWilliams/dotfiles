@@ -96,7 +96,11 @@ if [[ -n "$CODESPACES" ]]; then
   sudo mv rdm-linux-amd64 /usr/bin/local/rdm
   chmod +x /usr/bin/local/rdm
 
-  gh config set browser "rdm open"
+  if [[ "$TERM_PROGRAM" != 'vscode' ]]; then
+    gh config set browser "rdm open"
+    echo 'alias open="rdm open"' >> ~/.zshenv
+    echo 'alias xdg-open="rdm open"' >> ~/.zshenv
+  fi
 fi
 
 # Codespaces nvim install
@@ -122,7 +126,4 @@ if [[ -n "$CODESPACES" ]]; then
 
   # Install neovim plugins
   nvim --headless +PlugInstall +qall
-
-  echo 'alias open="rdm open"' >> ~/.zshenv
-  echo 'alias xdg-open="rdm open"' >> ~/.zshenv
 fi
