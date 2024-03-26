@@ -106,7 +106,7 @@ fi
 # Codespaces nvim install
 if [[ -n "$CODESPACES" ]]; then
   sudo apt-get install -y ripgrep shellcheck fuse fzf ruby-dev tmux fuse
-  echo "export SERVICEOWNERS_SKIP=1" >> ~/.zshrc
+  echo "export SKIP_GH_PRE_PUSH_HOOKS" >> ~/.zshrc
 
   # Install the latest neovim
   wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
