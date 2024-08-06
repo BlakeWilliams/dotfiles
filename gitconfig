@@ -55,7 +55,7 @@
 [diff]
   colorMoved = zebra
 [credential]
-  helper = osxkeychain
+  helper = store
 [log]
   decorate = short
   abbrevCommit = true
@@ -64,5 +64,3 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
-[url "git@github.com:"]
-  insteadOf = https://github.com/
