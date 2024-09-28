@@ -48,10 +48,6 @@ set wildignorecase              " Case insensitive completions
 set wildmenu
 
 set signcolumn=yes:1
-" neovim specific configuration
-if has('nvim')
-  set signcolumn=auto:1-2
-endif
 
 " Formatting settings
 set expandtab                   " Make spaces not tabs
@@ -77,13 +73,4 @@ endif
 " Better diffing
 if &diff && has("patch-8.1.0360")
   set diffopt+=internal,algorithm:patience,vertical
-endif
-
-" Forward clipboard in a codespace
-if !empty($CODESPACES)
-  let g:clipboard = {"name": "rdm", "copy": {}, "paste": {}}
-  let g:clipboard.copy["+"] = ["rdm", "copy"]
-  let g:clipboard.paste["+"] = ["rdm", "paste"]
-  let g:clipboard.copy["*"] = ["rdm", "copy"]
-  let g:clipboard.paste["*"] = ["rdm", "paste"]
 endif

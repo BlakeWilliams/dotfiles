@@ -58,20 +58,30 @@ copy_file config/bat/config ~/.config/bat/config
 copy_file config/alacritty.yml ~/.config/alacritty.yml
 
 # Neovim
-copy_file config/nvim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim
 copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
 copy_file config/nvim/config.vim ~/.config/nvim/config.vim
-copy_file config/nvim/experimental.vim ~/.config/nvim/experimental.vim
-copy_file config/nvim/init.vim ~/.config/nvim/init.vim
-copy_file config/nvim/plugins.vim ~/.config/nvim/plugins.vim
-copy_file config/nvim/shortcuts.vim ~/.config/nvim/shortcuts.vim
-copy_file config/nvim/lua/lsp.lua ~/.config/nvim/lua/lsp.lua
-copy_file config/nvim/lua/signs.lua ~/.config/nvim/lua/signs.lua
-copy_file config/nvim/lua/status.lua ~/.config/nvim/lua/status.lua
-copy_file config/nvim/lua/treesitter.lua ~/.config/nvim/lua/treesitter.lua
-copy_file config/nvim/lua/whichkey.lua ~/.config/nvim/lua/whichkey.lua
-copy_file config/nvim/lua/welcome.lua ~/.config/nvim/lua/welcome.lua
+copy_file config/nvim/lua/init.lua ~/.config/nvim/lua/init.lua
+copy_file config/nvim/lua/lazy-setup.lua ~/.config/nvim/lua/lazy-setup.lua
+
+copy_file config/nvim/lua/plugins/welcome.lua ~/.config/nvim/lua/plugins/welcome.lua
+copy_file config/nvim/lua/plugins/whichkey.lua ~/.config/nvim/lua/plugins/whichkey.lua
+copy_file config/nvim/lua/plugins/legacy.lua ~/.config/nvim/lua/plugins/legacy.lua
+copy_file config/nvim/lua/plugins/cmp.lua ~/.config/nvim/lua/plugins/cmp.lua
+copy_file config/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins/lsp.lua
+copy_file config/nvim/lua/plugins/treesitter.lua ~/.config/nvim/lua/plugins/treesitter.lua
+copy_file config/nvim/lua/plugins/formatter.lua ~/.config/nvim/lua/plugins/formatter.lua
+copy_file config/nvim/lua/plugins/status.lua ~/.config/nvim/lua/plugins/status.lua
+copy_file config/nvim/lua/plugins/gitsigns.lua ~/.config/nvim/lua/plugins/gitsigns.lua
+copy_file config/nvim/lua/plugins/test.lua ~/.config/nvim/lua/plugins/test.lua
+copy_file config/nvim/lua/plugins/fugitive.lua ~/.config/nvim/lua/plugins/fugitive.lua
+copy_file config/nvim/lua/plugins/fzf.lua ~/.config/nvim/lua/plugins/fzf.lua
+copy_file config/nvim/lua/plugins/tbro.lua ~/.config/nvim/lua/plugins/tbro.lua
+copy_file config/nvim/lua/plugins/pry.lua ~/.config/nvim/lua/plugins/pry.lua
+copy_file config/nvim/lua/plugins/copilot.lua ~/.config/nvim/lua/plugins/copilot.lua
+
+copy_file config/nvim/lua/plugins/langs/go.lua ~/.config/nvim/lua/plugins/langs/go.lua
+copy_file config/nvim/lua/plugins/langs/ruby.lua ~/.config/nvim/lua/plugins/langs/ruby.lua
 
 # Git template
 copy_file git_template/hooks/ctags ~/.git_template/hooks/ctags

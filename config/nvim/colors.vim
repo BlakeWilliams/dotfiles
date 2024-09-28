@@ -1,7 +1,6 @@
 " Show currentline as red
 hi CursorLineNr ctermfg=1
 
-
 hi! link CocErrorVirtualText Error
 hi! link TSString Yellow
 hi! link netrwSymLink Comment
