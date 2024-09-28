@@ -86,7 +86,7 @@ local footer = {
 return {
   {
     'goolord/alpha-nvim',
-    lazy = false,
+    lazy = vim.fn.argc(-1) ~= 0,
     priority = 1000,
     config = {
       layout = {
