@@ -8,6 +8,7 @@ return {
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
     init = function()
+      require("telescope").load_extension("fzf")
       require("which-key").add({
         { "<leader>f", group = "File" },
         { "<leader>s", group = "Search" },
@@ -41,6 +42,14 @@ return {
           colorscheme = {
             enable_preview = true,
             ignore_builtin = true,
+          }
+        },
+        extensions      = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
           }
         }
       }

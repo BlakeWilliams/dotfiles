@@ -1,11 +1,36 @@
 GlobalConfig = {}
 GlobalConfig.icons = {
   Error = "✕ ",
-  Warn = "! ",
-  Hint = "★ ",
+  Warn = "▼ ",
+  Hint = "● ",
   Info = "i ",
 }
 
+-- Specify how the border looks like
+GlobalConfig.border = {
+  { '┌', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '┐', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '┘', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '└', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+}
+vim.diagnostic.config({
+  float = { border = GlobalConfig.border },
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = GlobalConfig.border })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = GlobalConfig.border
+  }
+)
+for name, icon in pairs(GlobalConfig.icons) do
+  local hl = "DiagnosticSign" .. name
+  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+end
 
 require('lazy-setup')
 
@@ -17,13 +42,19 @@ vim.api.nvim_set_keymap('n', 'K', '<Nop>', { noremap = true, silent = true })
 vim.g.html_indent_tags = 'li|p'
 vim.g.vim_json_syntax_conceal = 0 -- todo extract into json or lang file
 
--- Vinegar hide dotfiles
-vim.g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
-vim.g.netrw_list_hide = '\\(^\\|\\s\\s\\)\\zs\\.\\S\\+'
-vim.g.netrw_retmap = 1
-vim.g.netrw_fastbrowse = 0
-vim.g.netrw_retmap = 1     -- Disable left click open
-vim.g.netrw_dirhistmax = 0 -- Disable netrw history
+vim.cmd [[
+  " vinegar hide dotfiles
+  let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro nonumber'
+  let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+  let g:netrw_retmap = 1
+  let g:netrw_fastbrowse = 0
+
+  " disable left click open
+  let g:netrw_retmap = 1
+
+  " disable netrw history
+  let g:netrw_dirhistmax = 0
+]]
 
 -- TODO extract into plugin file
 vim.cmd [[
@@ -59,7 +90,7 @@ vim.opt.errorbells = false                      -- Obvious
 vim.opt.hidden = true                           -- Hide unsaved buffers
 vim.opt.number = true                           -- Show regular numbers
 vim.opt.foldenable = false                      -- Disable folds
-vim.opt.showcmd = false                         -- Don't show command in the last line of the screen
+-- vim.opt.showcmd = false                      -- Don't show command in the last line of the screen
 vim.opt.swapfile = false                        -- No swap
 vim.opt.autoread = false                        -- Don't automatically read files when they are changed
 vim.opt.wrap = false                            -- Don't wrap lines

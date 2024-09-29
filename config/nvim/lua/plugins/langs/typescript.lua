@@ -84,4 +84,44 @@ return {
       })
     end,
   },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        javascript = { "prettierd", "prettier" },
+        typescript = { "prettierd", "prettier" },
+      },
+    },
+  },
+  {
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        servers = {
+          eslint = {
+            settings = {
+              workingDirectories = { mode = "auto" },
+            },
+            on_init = function(client)
+              client.request('workspace/configuration', {
+                items = {
+                  {
+                    section = 'eslint.options',
+                  },
+                },
+              }, function(err, result)
+                if err or not result or not result[1] then
+                  -- No ESLint config found, stop the LSP client
+                  vim.notify('No ESLint configuration found. ESLint LSP will not run.', vim.log.levels.WARN)
+                  client.stop() -- Stop the LSP client if no config is found
+                else
+                  vim.notify('ESLint configuration found. ESLint LSP is running.', vim.log.levels.INFO)
+                end
+              end)
+            end
+          },
+        },
+      },
+    },
+  }
 }
