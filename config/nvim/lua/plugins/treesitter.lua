@@ -37,6 +37,7 @@ return {
         "git_config",
         "gitignore",
         "graphql",
+        "kdl",
         "mermaid",
         "markdown",
         "markdown_inline",

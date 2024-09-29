@@ -1,7 +1,7 @@
 GlobalConfig = {}
 GlobalConfig.icons = {
   Error = "✕ ",
-  Warn = "▼ ",
+  Warn = "△ ",
   Hint = "● ",
   Info = "i ",
 }

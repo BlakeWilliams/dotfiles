@@ -39,18 +39,23 @@ return {
     "MunifTanjim/nui.nvim",
   },
   {
-    'stevearc/dressing.nvim',
-    opts = {
-
-    },
+    'nvim-telescope/telescope-ui-select.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    init = function()
+      require("telescope").load_extension("ui-select")
+    end,
   },
   {
     {
       "rcarriga/nvim-notify",
       opts = {
-        -- stages = "static", -- necessary until they fix flickering in tmux/zellij
+        stages = "static", -- necessary until they fix flickering in tmux/zellij
         renderer = "compact"
       },
+
+      init = function()
+        vim.notify = require("notify")
+      end,
     }
   }
 }
