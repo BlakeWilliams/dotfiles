@@ -1,85 +1,68 @@
 return {
   {
-    'junegunn/fzf.vim',
-
+    'nvim-telescope/telescope.nvim',
+    cmd = { 'Telescope' },
+    version = false,
     dependencies = {
-      { 'junegunn/fzf' }
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
-
-    cmd = {
-      'Files',
-      'GitFiles',
-      'Buffers',
-      'History',
-      'BLines',
-      'Rg',
-      'Tags',
-      'Marks',
-      'OldFiles',
-      'Quickfix',
-      'Windows',
-      'Colors',
-      'Commands',
-      'BLines',
-      'Commands',
-    },
-
-    keys = {
-      { "<C-p>",      "<cmd>Files<cr>",    desc = "Find files" },
-      { "<leader>ff", "<cmd>RG<cr>",       desc = "Find files" },
-      { "<leader>fg", "<cmd>GitFiles<cr>", desc = "Find git files" },
-      { "<leader>fb", "<cmd>Buffers<cr>",  desc = "Find buffers" },
-      { "<leader>fh", "<cmd>History<cr>",  desc = "Find history" },
-      { "<leader>fl", "<cmd>BLines<cr>",   desc = "Find lines" },
-      { "<leader>fr", "<cmd>Rg<cr>",       desc = "Find rg" },
-      { "<leader>ft", "<cmd>Tags<cr>",     desc = "Find tags" },
-      { "<leader>fm", "<cmd>Marks<cr>",    desc = "Find marks" },
-      { "<leader>fo", "<cmd>OldFiles<cr>", desc = "Find old files" },
-      { "<leader>fq", "<cmd>Quickfix<cr>", desc = "Find quickfix" },
-      { "<leader>fw", "<cmd>Windows<cr>",  desc = "Find windows" },
-      { "<leader>fc", "<cmd>Colors<cr>",   desc = "Find colors" },
-      { "<leader>fd", "<cmd>Commands<cr>", desc = "Find commands" },
-      { "<leader>fs", "<cmd>BLines<cr>",   desc = "Find lines" },
-      { "<leader>fx", "<cmd>Commands<cr>", desc = "Find commands" },
-    },
-
     init = function()
       require("which-key").add({
-        { "<leader>f", group = "fzf" },
+        { "<leader>f", group = "File" },
+        { "<leader>s", group = "Search" },
       })
+    end,
 
-      local function build_quickfix_list(lines)
-        vim.fn.setqflist(vim.fn.map(vim.fn.copy(lines), function(val) return { filename = val } end))
-        vim.cmd('copen')
-        vim.cmd('cc')
-      end
-
-      vim.g.fzf_action = {
-        ['ctrl-q'] = build_quickfix_list,
-        ['ctrl-t'] = 'tab split',
-        ['ctrl-x'] = 'split',
-        ['ctrl-v'] = 'vsplit'
+    opts = function(_, opts)
+      local actions = require("telescope.actions")
+      return {
+        prompt_prefix   = "",
+        selection_caret = "",
+        defaults        = {
+          mappings = {
+            i = {
+              ["<esc>"] = actions.close,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
+            },
+          },
+          vim_grep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+          }
+        },
+        pickers         = {
+          colorscheme = {
+            enable_preview = true,
+            ignore_builtin = true,
+          }
+        }
       }
     end,
 
-    setup = function()
-      -- vim.g.fzf_layout = { down = '~40%' }
-      -- vim.g.fzf_action = {
-      --   ['ctrl-t'] = 'tab split',
-      --   ['ctrl-x'] = 'split',
-      --   ['ctrl-v'] = 'vsplit',
-      -- }
-      local function ripgrep_fzf(query, fullscreen)
-        local command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-        local initial_command = string.format(command_fmt, vim.fn.shellescape(query))
-        local reload_command = string.format(command_fmt, '{q}')
-        local spec = { options = { '--phony', '--query', query, '--bind', 'change:reload:' .. reload_command } }
-        vim.call('fzf#vim#grep', initial_command, 1, vim.call('fzf#vim#with_preview', spec), fullscreen)
-      end
-
-      vim.api.nvim_create_user_command('RG', function(opts)
-        ripgrep_fzf(opts.args, opts.bang == true and 1 or 0)
-      end, { nargs = '*', bang = true })
-    end
+    keys = {
+      { "<C-p>",      "<cmd>Telescope find_files<cr>",                desc = "Find files" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>",                desc = "Find files" },
+      { "<leader>/",  "<cmd>Telescope live_grep<cr>",                 desc = "Live grep" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>",                 desc = "Live grep" },
+      { "<leader>fb", "<cmd>Telescope buffers<cr>",                   desc = "Find Buffers" },
+      { "<leader>sh", "<cmd>Telescope help_tags<cr>",                 desc = "Help tags" },
+      { "<leader>fl", "<cmd>Telescope lsp_references<cr>",            desc = "LSP references" },
+      { "<leader>fo", "<cmd>Telescope lsp_document_symbols<cr>",      desc = "LSP document symbols" },
+      { "<leader>fq", "<cmd>Telescope quickfix<cr>",                  desc = "Quickfix" },
+      { "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer fuzzy find" },
+      { "<leader>:",  "<cmd>Telescope command_history<cr>",           desc = "Command History" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                  desc = "Recent" },
+      { "<leader>fs", "<cmd>Telescope git_status<CR>",                desc = "Status" },
+      { "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",               desc = "Workspace Diagnostics" },
+      { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
+    }
   },
 }

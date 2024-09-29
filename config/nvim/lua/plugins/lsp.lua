@@ -12,20 +12,20 @@ end
 
 local function lspkeymap()
   return {
-      { "gD", vim.lsp.buf.declaration, desc = "Go to Declaration" },
-      { "gd", vim.lsp.buf.definition, desc = "Go to Definition", has = "definition" },
-      { "K", vim.lsp.buf.hover, desc = "Hover" },
-      { "gi", vim.lsp.buf.implementation, desc = "Go to Implementation" },
-      { "<C-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-      { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
-      { "gy", vim.lsp.buf.type_definition, desc = "Go to T[y]pe Definition" },
-      { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
-      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
-      { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "v" }, has = "codeLens" },
-      { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
-      -- { "<leader>cR", LazyVim.lsp.rename_file, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
-      { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-      { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
+    { "gD",         vim.lsp.buf.declaration,     desc = "Go to Declaration" },
+    { "gd",         vim.lsp.buf.definition,      desc = "Go to Definition",           has = "definition" },
+    { "K",          vim.lsp.buf.hover,           desc = "Hover" },
+    { "gi",         vim.lsp.buf.implementation,  desc = "Go to Implementation" },
+    { "<C-k>",      vim.lsp.buf.signature_help,  mode = "i",                          desc = "Signature Help", has = "signatureHelp" },
+    { "gr",         vim.lsp.buf.references,      desc = "References",                 nowait = true },
+    { "gy",         vim.lsp.buf.type_definition, desc = "Go to T[y]pe Definition" },
+    { "gK",         vim.lsp.buf.signature_help,  desc = "Signature Help",             has = "signatureHelp" },
+    { "<leader>ca", vim.lsp.buf.code_action,     desc = "Code Action",                mode = { "n", "v" },     has = "codeAction" },
+    { "<leader>cc", vim.lsp.codelens.run,        desc = "Run Codelens",               mode = { "n", "v" },     has = "codeLens" },
+    { "<leader>cC", vim.lsp.codelens.refresh,    desc = "Refresh & Display Codelens", mode = { "n" },          has = "codeLens" },
+    -- { "<leader>cR", LazyVim.lsp.rename_file, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
+    { "<leader>cr", vim.lsp.buf.rename,          desc = "Rename",                     has = "rename" },
+    { "<leader>cl", "<cmd>LspInfo<cr>",          desc = "Lsp Info" },
   }
 end
 
@@ -49,16 +49,13 @@ return {
             -- source = "if_many",
             prefix = "●",
           },
-          float = {
-            border = "rounded",
-          },
           severity_sort = true,
           signs = {
             text = {
-              [vim.diagnostic.severity.ERROR] = "✕ ",
-              [vim.diagnostic.severity.WARN] = "! ",
-              [vim.diagnostic.severity.HINT] = "★ ",
-              [vim.diagnostic.severity.INFO] = "i ",
+              [vim.diagnostic.severity.ERROR] = GlobalConfig.icons.Error,
+              [vim.diagnostic.severity.WARN] = GlobalConfig.icons.Warn,
+              [vim.diagnostic.severity.HINT] = GlobalConfig.icons.Hint,
+              [vim.diagnostic.severity.INFO] = GlobalConfig.icons.Info
             },
           },
         },
@@ -74,7 +71,6 @@ return {
           },
         },
         format = { formatting_options = nil, timeout_ms = nil, },
-        servers = {},
         setup = {},
       }
       return ret
@@ -111,7 +107,7 @@ return {
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
-      local servers = opts.servers
+      local servers = opts.servers or {}
       local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
       local capabilities = vim.tbl_deep_extend(
         "force",

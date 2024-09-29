@@ -29,7 +29,7 @@ return {
 
           return path
         else
-          return "./" .. path
+          return path
         end
       end
 
@@ -43,29 +43,32 @@ return {
 
       local netrw_ext = {
         sections = {
-          lualine_a = {function () return 'NETRW' end},
-          lualine_c = {rel_netrw},
-          lualine_z = {'location'},
+          lualine_a = { function() return 'NETRW' end },
+          lualine_c = { rel_netrw },
+          lualine_z = { 'location' },
         },
-        filetypes = {'netrw'}
+        filetypes = { 'netrw' }
       }
 
-      local extract_color = require'lualine.utils.utils'.extract_highlight_colors
+      local extract_color = require 'lualine.utils.utils'.extract_highlight_colors
 
       return {
         options = {
-          icons_enabled = false,
+          icons_enabled = true,
           theme = 'auto',
-          component_separators = { left = '', right = ''},
-          section_separators = { left = '', right = ''},
+          -- component_separators = { left = '', right = '' },
+          -- section_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          -- component_separators = { left = '', right = '' },
           disabled_filetypes = {},
           always_divide_middle = true,
-          globalstatus = false,
+          globalstatus = true,
         },
+
         sections = {
-          lualine_a = {'mode'},
+          lualine_a = { 'mode' },
           lualine_b = {},
-          lualine_c = {rel_file},
+          lualine_c = { rel_file },
           lualine_x = {
             {
               'diagnostics',
@@ -75,21 +78,26 @@ return {
                 hint = { fg = extract_color("String", "fg") },
                 error = { fg = extract_color("ErrorMsg", "fg") },
               },
-                    sections = { 'error', 'warn' },
+              sections = { 'error', 'warn' },
 
-              symbols = {error = 'E:', warn = 'W:', info = 'I:', hint = 'H:'},
-              sources = {'nvim_lsp', 'ale'},
+              symbols = {
+                error = GlobalConfig.icons.Error,
+                warn = GlobalConfig.icons.Warn,
+                info = GlobalConfig.icons.Info,
+                hint = GlobalConfig.icons.Hint,
+              },
+              sources = { 'nvim_lsp', },
             },
             'filetype',
           },
           lualine_y = {},
-          lualine_z = {'location'}
+          lualine_z = { 'location' }
         },
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = {rel_file},
-          lualine_x = {'location'},
+          lualine_c = { rel_file },
+          lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {}
         },
@@ -103,7 +111,7 @@ return {
           lualine_b = {},
           lualine_c = {},
           -- lualine_z = {'windows'},
-          lualine_z = {'windows'},
+          lualine_z = { 'windows' },
         },
         extensions = { netrw_ext }
       }

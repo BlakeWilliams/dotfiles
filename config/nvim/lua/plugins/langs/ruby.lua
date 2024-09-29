@@ -26,10 +26,10 @@ return {
     opts = {
       servers = {
         solargraph = {
-          enabled = lsp == "solargraph",
+          enabled = "solargraph",
         },
         rubocop = {
-          enabled = formatter == "rubocop",
+          enabled = "rubocop",
         },
       },
     },
@@ -38,13 +38,4 @@ return {
     "williamboman/mason.nvim",
     opts = { ensure_installed = { "erb-formatter", "erb-lint" } },
   },
-  -- {
-  --   "stevearc/conform.nvim",
-  --   opts = {
-  --     formatters_by_ft = {
-  --       -- ruby = { formatter },
-  --       -- eruby = { "erb-format" },
-  --     },
-  --   },
-  -- },
 }
