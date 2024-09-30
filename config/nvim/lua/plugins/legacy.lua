@@ -8,11 +8,9 @@ return {
   { 'tpope/vim-projectionist',   lazy = false },
 
   -- Workflow
-  { 'tomtom/tcomment_vim',       lazy = false },
   { 'sjl/gundo.vim',             lazy = false },
 
   -- Searching
-  { 'justinmk/vim-sneak',        lazy = false },
   { 'RRethy/vim-illuminate',     lazy = false },
   { 'mhinz/vim-grepper',         lazy = false },
 

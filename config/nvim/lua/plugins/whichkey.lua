@@ -2,7 +2,7 @@ return {
   {
     'folke/which-key.nvim',
     opts = {
-      icons     = { mappings = false, },
+      preset    = "helix",
       marks     = true,
       registers = true,
       spelling  = { enabled = true },

@@ -39,6 +39,7 @@ set smartcase                   " Enable case sensetive search only when uppserc
 set smartindent                 " Auto insert extra indent level in certain cases
 set smarttab                    " Prevents tab/space issues
 set synmaxcol=180               " Prevents segfaults and slow rendering
+set noshowmode              " Don't show mode since lualine handles it
 set splitbelow                  " Open hsplits below rather than above
 set splitright                  " Open vsplits to the right rather than left
 set tags^=.git/tags             " where to find tags

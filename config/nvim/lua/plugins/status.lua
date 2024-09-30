@@ -1,3 +1,23 @@
+local modes = {
+  ['NORMAL'] = 'N',
+  ['O-PENDING'] = 'N?',
+  ['INSERT'] = 'I',
+  ['VISUAL'] = 'V',
+  ['V-BLOCK'] = 'VB',
+  ['V-LINE'] = 'VL',
+  ['V-REPLACE'] = 'VR',
+  ['REPLACE'] = 'R',
+  ['COMMAND'] = '!',
+  ['SHELL'] = 'SH',
+  ['TERMINAL'] = 'T',
+  ['EX'] = 'X',
+  ['S-BLOCK'] = 'SB',
+  ['S-LINE'] = 'SL',
+  ['SELECT'] = 'S',
+  ['CONFIRM'] = 'Y?',
+  ['MORE'] = 'M',
+}
+
 return {
   {
     'nvim-lualine/lualine.nvim',
@@ -66,7 +86,7 @@ return {
         },
 
         sections = {
-          lualine_a = { 'mode' },
+          lualine_a = { { 'mode', fmt = function(s) return modes[s] or s end } },
           lualine_b = {},
           lualine_c = { rel_file },
           lualine_x = {

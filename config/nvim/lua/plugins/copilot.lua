@@ -2,6 +2,8 @@ return {
   {
     'zbirenbaum/copilot.lua',
     event = "InsertEnter",
+    cmd = { "Copilot" },
+    build = ":Copilot auth",
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
@@ -10,6 +12,7 @@ return {
         gitcommit = true,
         help = true,
       },
+      float = { border = GlobalConfig.border },
     }
   },
 
@@ -19,6 +22,9 @@ return {
       {
         'zbirenbaum/copilot-cmp',
         dependencies = "copilot.lua",
+        opts = {
+          fix_pairs = true
+        },
         config = function(_, opts)
           local copilot_cmp = require("copilot_cmp")
           copilot_cmp.setup(opts)
