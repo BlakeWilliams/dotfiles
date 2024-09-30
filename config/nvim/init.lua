@@ -8,13 +8,13 @@ GlobalConfig.icons = {
 
 -- Specify how the border looks like
 GlobalConfig.border = {
-  { '┌', 'FloatBorder' },
+  { '╭', 'FloatBorder' },
   { '─', 'FloatBorder' },
-  { '┐', 'FloatBorder' },
+  { '╮', 'FloatBorder' },
   { '│', 'FloatBorder' },
-  { '┘', 'FloatBorder' },
+  { '╯', 'FloatBorder' },
   { '─', 'FloatBorder' },
-  { '└', 'FloatBorder' },
+  { '╰', 'FloatBorder' },
   { '│', 'FloatBorder' },
 }
 vim.diagnostic.config({
