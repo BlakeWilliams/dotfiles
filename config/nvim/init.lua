@@ -97,6 +97,7 @@ vim.opt.wrap = false                            -- Don't wrap lines
 vim.opt.relativenumber = true                   -- Show relative line numbers
 vim.opt.ruler = true                            -- Show the ruler
 vim.opt.scrolloff = 10                          -- Always keep current line in center
+vim.opt.completeopt = "menu,menuone,preview,noinsert,popup"
 vim.opt.completeopt:append('menuone')           -- Always show menu
 vim.opt.completeopt:append('noselect')          -- Don't select only option
 vim.opt.shortmess:append('fmnrWIcF')            -- Customize what vim yells at you

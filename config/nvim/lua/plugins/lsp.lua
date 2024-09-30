@@ -1,3 +1,8 @@
+function lsp_get_clients(opts)
+  local clients = vim.lsp.get_clients(opts)
+  return opts and opts.filter and vim.tbl_filter(opts.filter, clients) or clients
+end
+
 function lsp_on_attach(on_attach, name)
   return vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
@@ -8,6 +13,17 @@ function lsp_on_attach(on_attach, name)
       end
     end,
   })
+end
+
+local function key_supports(buffer, method)
+  method = method:find("/") and method or "textDocument/" .. method
+  local clients = lsp_get_clients({ bufnr = buffer })
+  for _, client in ipairs(clients) do
+    if client.supports_method(method) then
+      return true
+    end
+  end
+  return false
 end
 
 local function lspkeymap()
@@ -23,7 +39,6 @@ local function lspkeymap()
     { "<leader>ca", vim.lsp.buf.code_action,     desc = "Code Action",                mode = { "n", "v" },     has = "codeAction" },
     { "<leader>cc", vim.lsp.codelens.run,        desc = "Run Codelens",               mode = { "n", "v" },     has = "codeLens" },
     { "<leader>cC", vim.lsp.codelens.refresh,    desc = "Refresh & Display Codelens", mode = { "n" },          has = "codeLens" },
-    -- { "<leader>cR", LazyVim.lsp.rename_file, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
     { "<leader>cr", vim.lsp.buf.rename,          desc = "Rename",                     has = "rename" },
     { "<leader>cl", "<cmd>LspInfo<cr>",          desc = "Lsp Info" },
   }
@@ -81,7 +96,7 @@ return {
         local mapping = Keys.resolve(lspkeymap())
 
         for _, keys in pairs(mapping) do
-          local has = not keys.has
+          local has = not keys.has or key_supports(buffer, keys.has)
           local cond = not (keys.cond == false or ((type(keys.cond) == "function") and not keys.cond()))
 
           if has and cond then

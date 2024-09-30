@@ -46,16 +46,18 @@ return {
     end,
   },
   {
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        stages = "static", -- necessary until they fix flickering in tmux/zellij
-        renderer = "compact"
-      },
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      stages = "static", -- necessary until they fix flickering in tmux/zellij
+      renderer = "compact"
+    },
 
-      init = function()
-        vim.notify = require("notify")
-      end,
-    }
+    init = function()
+      vim.notify = require("notify")
+    end,
   }
 }
