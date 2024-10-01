@@ -61,7 +61,7 @@ copy_file config/alacritty.yml ~/.config/alacritty.yml
 copy_file config/nvim/autocommands.vim ~/.config/nvim/autocommands.vim
 copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
 copy_file config/nvim/config.vim ~/.config/nvim/config.vim
-copy_file config/nvim/lua/init.lua ~/.config/nvim/lua/init.lua
+copy_file config/nvim/init.lua ~/.config/nvim/init.lua
 copy_file config/nvim/lua/lazy-setup.lua ~/.config/nvim/lua/lazy-setup.lua
 
 copy_file config/nvim/lua/plugins/welcome.lua ~/.config/nvim/lua/plugins/welcome.lua
