@@ -39,6 +39,9 @@ return {
           }
         },
         pickers         = {
+          find_files = {
+            follow = true
+          },
           colorscheme = {
             enable_preview = true,
             ignore_builtin = true,
@@ -75,4 +78,25 @@ return {
       { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
     }
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function(_, opts)
+      require("telescope").setup(opts).load_extension "file_browser"
+    end,
+    keys = {
+      { "-", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser", mode = "n" },
+    },
+    opts = {
+      extensions = {
+        file_browser = {
+          theme = "dropdown",
+          hijack_netrw = true,
+          grouped = true,
+          select_buffer = true,
+          collapse_dirs = true,
+        }
+      },
+    }
+  }
 }

@@ -53,7 +53,7 @@ return {
     "rcarriga/nvim-notify",
     opts = {
       stages = "static", -- necessary until they fix flickering in tmux/zellij
-      renderer = "compact"
+      render = "compact"
     },
 
     init = function()

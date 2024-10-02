@@ -20,7 +20,7 @@ return {
         auto_brackets = {},
         completion = {
           -- completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
-          completeopt = "menu,menuone,preview,popup,noinsert"
+          completeopt = "menu,menuone,preview,popup,noinsert,noselect"
         },
         preselect = cmp.PreselectMode.None,
         mapping = cmp.mapping.preset.insert({

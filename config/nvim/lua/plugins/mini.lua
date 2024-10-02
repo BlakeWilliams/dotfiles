@@ -8,8 +8,11 @@ return {
 
       return {
         cursor = {
-          enable = true,
+          enable = false,
           timing = animate.gen_timing.linear({ duration = 50, unit = 'total' }),
+        },
+        resize = {
+          enable = false,
         },
         scroll = {
           timing = animate.gen_timing.linear({ duration = 125, unit = 'total' }),
