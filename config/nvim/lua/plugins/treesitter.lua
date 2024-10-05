@@ -19,7 +19,7 @@ return {
     opts = {
       auto_install = true,
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = false },
       -- Ensure general languages are installed. Specific languages with LSP
       -- and other config will be in the plugins/lang dir
       ensure_installed = {

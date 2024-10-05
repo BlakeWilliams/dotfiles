@@ -119,9 +119,10 @@ fi
 
 # Codespaces nvim install
 if [[ -n "$CODESPACES" ]]; then
-  sudo apt-get install -y ripgrep shellcheck fuse fzf ruby-dev tmux fuse jq
+  sudo apt-get install -y ripgrep shellcheck fuse ruby-dev tmux fuse jq
   sudo apt-get install -y bat fd-find noti tokei vale
   echo "export SKIP_GH_PRE_PUSH_HOOKS" >> ~/.zshrc
+
 
   # Install the latest neovim
   wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
@@ -141,5 +142,8 @@ if [[ -n "$CODESPACES" ]]; then
   fi
 
   # Install neovim plugins
-  nvim --headless +PlugInstall +qall
+  nvim --headless "+Lazy! update" +qall
+
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  yes | ~/.fzf/install --no-bash --no-fish --key-bindings --completion --update-rc
 fi

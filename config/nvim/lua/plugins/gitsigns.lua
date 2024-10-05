@@ -46,7 +46,7 @@ return {
           end
         end, "Prev hunk")
 
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, "Toggle current line blame")
+        map('n', '<leader>gp', gitsigns.toggle_current_line_blame, "Toggle current line blame")
         map('n', '<leader>gl', function() gitsigns.blame_line { full = true } end, "Show blame")
       end
     },
