@@ -28,19 +28,20 @@ end
 
 local function lspkeymap()
   return {
-    { "gD",         vim.lsp.buf.declaration,     desc = "Go to Declaration" },
-    { "gd",         vim.lsp.buf.definition,      desc = "Go to Definition",           has = "definition" },
-    { "K",          vim.lsp.buf.hover,           desc = "Hover" },
-    { "gi",         vim.lsp.buf.implementation,  desc = "Go to Implementation" },
-    { "<C-k>",      vim.lsp.buf.signature_help,  mode = "i",                          desc = "Signature Help", has = "signatureHelp" },
-    { "gr",         vim.lsp.buf.references,      desc = "References",                 nowait = true },
-    { "gy",         vim.lsp.buf.type_definition, desc = "Go to T[y]pe Definition" },
-    { "gK",         vim.lsp.buf.signature_help,  desc = "Signature Help",             has = "signatureHelp" },
-    { "<leader>ca", vim.lsp.buf.code_action,     desc = "Code Action",                mode = { "n", "v" },     has = "codeAction" },
-    { "<leader>cc", vim.lsp.codelens.run,        desc = "Run Codelens",               mode = { "n", "v" },     has = "codeLens" },
-    { "<leader>cC", vim.lsp.codelens.refresh,    desc = "Refresh & Display Codelens", mode = { "n" },          has = "codeLens" },
-    { "<leader>cr", vim.lsp.buf.rename,          desc = "Rename",                     has = "rename" },
-    { "<leader>cl", "<cmd>LspInfo<cr>",          desc = "Lsp Info" },
+    { "gD",         vim.lsp.buf.declaration,                    desc = "Go to Declaration" },
+    { "gd",         vim.lsp.buf.definition,                     desc = "Go to Definition",           has = "definition" },
+    { "K",          vim.lsp.buf.hover,                          desc = "Hover" },
+    { "gi",         vim.lsp.buf.implementation,                 desc = "Go to Implementation" },
+    { "<C-k>",      vim.lsp.buf.signature_help,                 mode = "i",                          desc = "Signature Help", has = "signatureHelp" },
+    { "gr",         vim.lsp.buf.references,                     desc = "References",                 nowait = true },
+    { "gy",         vim.lsp.buf.type_definition,                desc = "Go to T[y]pe Definition" },
+    { "gK",         vim.lsp.buf.signature_help,                 desc = "Signature Help",             has = "signatureHelp" },
+    { "<leader>ca", vim.lsp.buf.code_action,                    desc = "Code Action",                mode = { "n", "v" },     has = "codeAction" },
+    { "<leader>cc", vim.lsp.codelens.run,                       desc = "Run Codelens",               mode = { "n", "v" },     has = "codeLens" },
+    { "<leader>cC", vim.lsp.codelens.refresh,                   desc = "Refresh & Display Codelens", mode = { "n" },          has = "codeLens" },
+    { "<leader>cr", vim.lsp.buf.rename,                         desc = "Rename",                     has = "rename" },
+    { "<leader>cl", "<cmd>LspInfo<cr>",                         desc = "Lsp Info" },
+    { "<leader>e",  "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Show diagnostic" },
   }
 end
 

@@ -23,9 +23,14 @@ return {
         defaults        = {
           mappings = {
             i = {
-              ["<esc>"] = actions.close,
+              -- ["<esc>"] = actions.close,
               ["<C-j>"] = actions.move_selection_next,
               ["<C-k>"] = actions.move_selection_previous,
+              ["<C-h>"] = function(prompt_bufnr)
+                local current = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+                local hidden = current.finder.hidden
+                current:refresh(current.finder, { hidden = not hidden })
+              end,
             },
           },
           vim_grep_arguments = {
@@ -78,25 +83,25 @@ return {
       { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
     }
   },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    config = function(_, opts)
-      require("telescope").setup(opts).load_extension "file_browser"
-    end,
-    keys = {
-      { "-", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser", mode = "n" },
-    },
-    opts = {
-      extensions = {
-        file_browser = {
-          theme = "dropdown",
-          hijack_netrw = true,
-          grouped = true,
-          select_buffer = true,
-          collapse_dirs = true,
-        }
-      },
-    }
-  }
+  -- {
+  --   "nvim-telescope/telescope-file-browser.nvim",
+  --   dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  --   config = function(_, opts)
+  --     require("telescope").setup(opts).load_extension "file_browser"
+  --   end,
+  --   keys = {
+  --     { "-", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser", mode = "n" },
+  --   },
+  --   opts = {
+  --     extensions = {
+  --       file_browser = {
+  --         theme = "dropdown",
+  --         hijack_netrw = true,
+  --         grouped = true,
+  --         select_buffer = true,
+  --         collapse_dirs = true,
+  --       }
+  --     },
+  --   }
+  -- }
 }

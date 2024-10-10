@@ -22,6 +22,10 @@ return {
           -- completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
           completeopt = "menu,menuone,preview,popup,noinsert,noselect"
         },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         preselect = cmp.PreselectMode.None,
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
