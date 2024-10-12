@@ -1,26 +1,5 @@
 return {
   {
-    'echasnovski/mini.animate',
-    version = '*',
-    lazy = false,
-    opts = function()
-      local animate = require('mini.animate')
-
-      return {
-        cursor = {
-          enable = false,
-          timing = animate.gen_timing.linear({ duration = 50, unit = 'total' }),
-        },
-        resize = {
-          enable = false,
-        },
-        scroll = {
-          timing = animate.gen_timing.linear({ duration = 125, unit = 'total' }),
-        },
-      }
-    end
-  },
-  {
     'echasnovski/mini.comment',
     version = '*',
     opts = {}
