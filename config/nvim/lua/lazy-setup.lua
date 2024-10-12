@@ -1,3 +1,8 @@
+local function is_git_commit()
+  local filepath = vim.fn.expand('%:p')
+  return filepath:match('COMMIT_EDITMSG') ~= nil
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -28,5 +33,9 @@ require("lazy").setup({
     { import = "plugins.langs" },
   },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = {
+    enabled = not is_git_commit(),
+    notify = not is_git_commit(),
+    frequency = 3600 * 24,
+  },
 })
