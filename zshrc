@@ -1,6 +1,10 @@
 # Add binstubs to path
 export PATH=".git/safe/../../bin:$PATH"
 
+# Some tools and languages don't have a reasonable XDG_CONFIG_HOME setup on
+# macOS so we need to set it manually
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Load autocomplete
 autoload -U compinit
 compinit
@@ -15,6 +19,17 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 autoload -U colors
 colors
 export CLICOLOR=1
+
+# Better less
+export LESS="--status-column --ignore-case --LONG-PROMPT --HILITE-UNREAD -tabs=4 --window=-4"
+
+export LESS_TERMCAP_mb=$'\E[1;31m'     # Set bold to red
+export LESS_TERMCAP_md=$'\E[1;36m'     # Set blink to cyan
+export LESS_TERMCAP_me=$'\E[0m'        # clear bold/blink
+export LESS_TERMCAP_so=$'\E[1;34m'     # bold blue for highlighted text
+export LESS_TERMCAP_se=$'\E[0m'        # clear reverse video
+export LESS_TERMCAP_us=$'\E[4;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 # Show ls on dark backgrounds well
 unset LSCOLORS

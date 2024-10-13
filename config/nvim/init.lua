@@ -18,7 +18,13 @@ GlobalConfig.border = {
   { '│', 'FloatBorder' },
 }
 vim.diagnostic.config({
-  float = { border = GlobalConfig.border },
+  float = {
+    border = GlobalConfig.border,
+    format = function(diagnostic)
+      return string.format('%s [%s]', diagnostic.message, diagnostic.source)
+    end,
+    severity_sort = true,
+  },
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = GlobalConfig.border })
@@ -115,7 +121,7 @@ vim.opt.wildignorecase = true                   -- Case insensitive completions
 vim.opt.wildmenu = true                         -- Better wildmenu
 
 vim.opt.signcolumn = 'yes:1'                    -- Show sign column
-vim.opt.signcolumn = 'auto:1-2'                 -- Adaptive signcolumn
+vim.opt.signcolumn = 'auto:1'                   -- Adaptive signcolumn
 
 -- Formatting settings
 vim.opt.expandtab = true -- Make spaces not tabs

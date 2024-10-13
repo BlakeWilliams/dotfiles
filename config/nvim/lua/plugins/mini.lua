@@ -28,6 +28,9 @@ return {
         update_n_lines = "gsn", -- Update `n_lines`
       },
     },
-
+  },
+  {
+    'echasnovski/mini.ai',
+    version = '*',
   },
 }

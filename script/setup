@@ -54,6 +54,9 @@ copy_file zshrc ~/.zshrc
 # Bat
 copy_file config/bat/config ~/.config/bat/config
 
+# Lazygit
+copy_file config/lazygit/config.yml ~/.config/lazygit/config.yml
+
 # Alacritty
 copy_file config/alacritty.yml ~/.config/alacritty.yml
 
@@ -83,6 +86,7 @@ copy_file config/nvim/lua/plugins/noice.lua ~/.config/nvim/lua/plugins/noice.lua
 copy_file config/nvim/lua/plugins/trouble.lua ~/.config/nvim/lua/plugins/trouble.lua
 copy_file config/nvim/lua/plugins/mini.lua ~/.config/nvim/lua/plugins/mini.lua
 copy_file config/nvim/lua/plugins/grug.lua ~/.config/nvim/lua/plugins/grug.lua
+copy_file config/nvim/lua/plugins/snippets.lua ~/.config/nvim/lua/plugins/snippets.lua
 
 copy_file config/nvim/lua/plugins/langs/go.lua ~/.config/nvim/lua/plugins/langs/go.lua
 copy_file config/nvim/lua/plugins/langs/ruby.lua ~/.config/nvim/lua/plugins/langs/ruby.lua

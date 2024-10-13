@@ -4,6 +4,9 @@ return {
     event = "InsertEnter",
     cmd = { "Copilot" },
     build = ":Copilot auth",
+    keys = {
+      { "<leader>ct", "<cmd>Copilot toggle<cr>", desc = "Toggle Copilot" },
+    },
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
