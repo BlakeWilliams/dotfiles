@@ -5,6 +5,16 @@ export PATH=".git/safe/../../bin:$PATH"
 # macOS so we need to set it manually
 export XDG_CONFIG_HOME="$HOME/.config"
 
+
+# Load completions for brew and brew installed packages that provide completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Load autocomplete
 autoload -U compinit
 compinit
@@ -49,6 +59,20 @@ export GREP_COLOR='3;32'
 # Partial match highlighting
 zstyle -e ':completion:*:default' list-colors \
   'reply=("${PREFIX:+=(#bi)($PREFIX:t)()*==34=34}:${(s.:.)LS_COLORS}")'
+
+# Setup corrections to ignore case and correct me when I'm wrong
+zstyle ':completion:*' menu select completer _extensions _complete _approximate _arguments
+zstyle ':completion:*' scroll true
+zstyle ':completion:*:*:*:*:corrections' ignore-case true
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}Corrected command%f'
+zstyle ':completion:*:warnings' format ' %F{red}No matches found%f'
+
+# Enable descriptions for completion
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:options' descriptions yes
+
+# Enable shift-tab to go backwards
+bindkey '^[[Z' reverse-menu-complete
 
 setopt append_history         # Append, not replace
 setopt inc_append_history     # Immediately append history
