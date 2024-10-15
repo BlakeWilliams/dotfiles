@@ -21,7 +21,7 @@ colors
 export CLICOLOR=1
 
 # Better less
-export LESS="--status-column --ignore-case --LONG-PROMPT --HILITE-UNREAD -tabs=4 --window=-4"
+export LESS="--status-column --ignore-case --LONG-PROMPT --HILITE-UNREAD --tabs=4 --window=-4 --RAW-CONTROL-CHARS"
 
 export LESS_TERMCAP_mb=$'\E[1;31m'     # Set bold to red
 export LESS_TERMCAP_md=$'\E[1;36m'     # Set blink to cyan

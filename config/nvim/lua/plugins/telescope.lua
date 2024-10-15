@@ -5,10 +5,17 @@ return {
     version = false,
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        lazy = false,
+        version = false,
+        build = 'make',
+        config = function()
+          require("telescope").load_extension("fzf")
+        end
+      },
     },
     init = function()
-      require("telescope").load_extension("fzf")
       require("which-key").add({
         { "<leader>f", group = "File" },
         { "<leader>s", group = "Search" },

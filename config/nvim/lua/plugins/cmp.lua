@@ -91,30 +91,4 @@ return {
       }
     end
   },
-  {
-    "hrsh7th/cmp-cmdline",
-    dependencies = { "hrsh7th/nvim-cmp" },
-    init = function()
-      local cmp = require("cmp")
-      cmp.setup.cmdline(":", {
-        formatting = { fields = { "abbr" } },
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = 'path' }
-        }, {
-          { name = 'cmdline' }
-        }),
-        matching = { disallow_symbol_nonprefix_matching = false }
-      })
-
-      -- cmp.setup.cmdline({ '/', '?' }, {
-      --   formatting = { fields = { "abbr" } },
-      --   mapping = cmp.mapping.preset.cmdline(),
-      --   sources = {
-      --     { name = 'buffer' }
-      --   }
-      -- })
-    end,
-
-  }
 }
