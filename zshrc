@@ -16,8 +16,11 @@ then
 fi
 
 # Load autocomplete
-autoload -U compinit
-compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
 
 # Load completion functions
 fpath=(/usr/local/share/zsh/site-functions $fpath)
@@ -52,9 +55,8 @@ unsetopt multios
 # Notify before prompt instead of directly on exit
 unsetopt notify
 
-# Grep gets colors too
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='3;32'
+# Set grep options
+alias grep='grep --color=auto --ignore-case'
 
 # Partial match highlighting
 zstyle -e ':completion:*:default' list-colors \

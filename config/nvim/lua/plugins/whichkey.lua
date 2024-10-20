@@ -8,6 +8,15 @@ return {
       spelling  = { enabled = true },
       show_help = false,
 
+      filter    = function(mapping)
+        -- filter out fold mappings since they're not useful
+        if mapping.lhs:sub(1, 1) and mapping.desc and mapping.desc:lower():match("fold") then
+          return false
+        end
+
+        return true
+      end,
+
       spec      = {
         { "<leader><space>", "<cmd>noh<cr>", desc = "Clear highlights" },
         { "<leader>h",       "<C-w>h",       desc = "Move left",                    mode = "n" },
