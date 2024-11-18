@@ -83,9 +83,9 @@ return {
           end,
         },
         experimental = {
-          ghost_text = {
-            hl_group = "CmpGhostText",
-          },
+          -- ghost_text = {
+          --   hl_group = "CmpGhostText",
+          -- },
         },
         sorting = defaults.sorting,
       }

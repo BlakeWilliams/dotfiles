@@ -33,10 +33,4 @@ return {
     'echasnovski/mini.ai',
     version = '*',
   },
-  {
-    "echasnovski/mini.pairs",
-    opts = {
-      modes = { insert = true, command = false, terminal = false },
-    },
-  }
 }

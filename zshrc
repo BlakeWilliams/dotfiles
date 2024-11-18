@@ -6,13 +6,11 @@ export PATH=".git/safe/../../bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 
+autoload -Uz compinit
 # Load completions for brew and brew installed packages that provide completions
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
 fi
 
 # Load autocomplete
@@ -34,7 +32,7 @@ colors
 export CLICOLOR=1
 
 # Better less
-export LESS="--status-column --ignore-case --LONG-PROMPT --HILITE-UNREAD --tabs=4 --window=-4 --RAW-CONTROL-CHARS"
+export LESS="--status-column --ignore-case --LONG-PROMPT --HILITE-UNREAD --tabs=4 --window=-4 --RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
 
 export LESS_TERMCAP_mb=$'\E[1;31m'     # Set bold to red
 export LESS_TERMCAP_md=$'\E[1;36m'     # Set blink to cyan

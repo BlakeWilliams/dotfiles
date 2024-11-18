@@ -108,6 +108,7 @@ vim.opt.completeopt:append('menuone')           -- Always show menu
 vim.opt.completeopt:append('noselect')          -- Don't select only option
 vim.opt.shortmess:append('fmnrWIcF')            -- Customize what vim yells at you
 vim.opt.showmatch = true                        -- Highlight matching paren/brace/bracket
+vim.opt.showmode = false                        -- Hide mode
 vim.opt.smartcase = true                        -- Enable case-sensitive search only when uppercase characters present
 vim.opt.smartindent = true                      -- Auto insert extra indent level in certain cases
 vim.opt.smarttab = true                         -- Prevents tab/space issues
@@ -121,7 +122,7 @@ vim.opt.wildignorecase = true                   -- Case insensitive completions
 vim.opt.wildmenu = true                         -- Better wildmenu
 
 vim.opt.signcolumn = 'yes:1'                    -- Show sign column
-vim.opt.signcolumn = 'auto:1'                   -- Adaptive signcolumn
+-- vim.opt.signcolumn = 'auto:1'                   -- Adaptive signcolumn
 
 -- Formatting settings
 vim.opt.expandtab = true -- Make spaces not tabs

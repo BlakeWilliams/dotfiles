@@ -63,7 +63,7 @@ return {
 
       local netrw_ext = {
         sections = {
-          lualine_a = { function() return 'NETRW' end },
+          -- lualine_a = { function() return 'NETRW' end },
           lualine_c = { rel_netrw },
           lualine_z = { 'location' },
         },
@@ -86,7 +86,8 @@ return {
         },
 
         sections = {
-          lualine_a = { { 'mode', fmt = function(s) return modes[s] or s end } },
+          -- lualine_a = { { 'mode', fmt = function(s) return modes[s] or s end } },
+          lualine_a = {},
           lualine_b = {},
           lualine_c = { rel_file },
           lualine_x = {

@@ -36,6 +36,6 @@ require("lazy").setup({
   checker = {
     enabled = not is_git_commit(),
     notify = not is_git_commit(),
-    frequency = 3600 * 24,
+    frequency = 3600 * 24 * 7,
   },
 })
