@@ -87,7 +87,7 @@ return {
   },
   {
     "nvimtools/none-ls.nvim",
-    optional = true,
+    lazy = false,
     dependencies = {
       {
         "williamboman/mason.nvim",
@@ -101,6 +101,7 @@ return {
         nls.builtins.code_actions.impl,
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.gofmt,
+        nls.builtins.diagnostics.golangci_lint
       })
     end,
   },
@@ -108,6 +109,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        -- go = { "goimports", "gofmt" },
         go = { "goimports", "gofmt" },
       },
     },

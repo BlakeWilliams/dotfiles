@@ -14,6 +14,15 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     border = GlobalConfig.border
   }
 )
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = true,
+    underline = false,
+    virtual_text = true,
+    show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
+    diagnostic_delay = 500
+  }
+)
 
 function lsp_get_clients(opts)
   local clients = vim.lsp.get_clients(opts)
