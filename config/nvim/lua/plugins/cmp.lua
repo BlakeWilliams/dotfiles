@@ -19,8 +19,9 @@ return {
       return {
         auto_brackets = {},
         completion = {
+          autocomplete = false,
           -- completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
-          completeopt = "menu,menuone,preview,popup,noinsert,noselect"
+          completeopt = "menu,menuone,preview,popup,noinsert"
         },
         window = {
           completion = cmp.config.window.bordered(),
@@ -45,8 +46,11 @@ return {
             fallback()
           end,
           ['<Tab>'] = cmp.mapping(function(fallback)
+            local col = vim.fn.col('.') - 1
             if cmp.visible() then
               cmp.select_next_item()
+            elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') == nil then
+              cmp.complete()
             else
               fallback()
             end

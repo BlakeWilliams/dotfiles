@@ -87,6 +87,7 @@ copy_file config/nvim/lua/plugins/trouble.lua ~/.config/nvim/lua/plugins/trouble
 copy_file config/nvim/lua/plugins/mini.lua ~/.config/nvim/lua/plugins/mini.lua
 copy_file config/nvim/lua/plugins/grug.lua ~/.config/nvim/lua/plugins/grug.lua
 copy_file config/nvim/lua/plugins/snippets.lua ~/.config/nvim/lua/plugins/snippets.lua
+copy_file config/nvim/lua/plugins/snacks.lua ~/.config/nvim/lua/plugins/snacks.lua
 
 copy_file config/nvim/lua/plugins/langs/go.lua ~/.config/nvim/lua/plugins/langs/go.lua
 copy_file config/nvim/lua/plugins/langs/ruby.lua ~/.config/nvim/lua/plugins/langs/ruby.lua
