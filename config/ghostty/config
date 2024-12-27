@@ -1,0 +1,13 @@
+clipboard-read = allow
+clipboard-write = allow
+window-theme = system
+font-size = 12.5
+font-thicken = true
+font-family = Cascadia Mono NF
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+macos-titlebar-style = tabs
+cursor-style = block
+cursor-style-blink = true
+command = /bin/zsh
+adjust-cell-width = -10%

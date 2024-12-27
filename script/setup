@@ -57,6 +57,9 @@ copy_file config/bat/config ~/.config/bat/config
 # Lazygit
 copy_file config/lazygit/config.yml ~/.config/lazygit/config.yml
 
+# Ghostty
+copy_file config/ghostty/config ~/.config/ghostty/config
+
 # Alacritty
 copy_file config/alacritty.yml ~/.config/alacritty.yml
 
