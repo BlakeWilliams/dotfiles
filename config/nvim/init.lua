@@ -162,3 +162,9 @@ end
 
 vim.cmd('source $HOME/.config/nvim/colors.vim')
 vim.cmd('source $HOME/.config/nvim/autocommands.vim')
+
+vim.api.nvim_create_autocmd("colorscheme", {
+  callback = function()
+    vim.cmd("highlight SignColumn guibg=bg")
+  end,
+})

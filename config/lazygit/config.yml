@@ -1,41 +1,28 @@
 gui:
   language: en
-  timeFormat: 02 Jan 06 # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
-  shortTimeFormat: 3:04PM # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
-
+  timeFormat: 02 Jan 06
+  shortTimeFormat: 3:04PM
   showListFooter: false
-
-  # If true, display the files in the file views as a tree. If false, display the files as a flat list.
-  # This can be toggled from within Lazygit with the '~' key, but that will not change the default.
-  showFileTree: false
-  showRandomTip: true
+  showFileTree: true # Display as tree, use ~ to swap between tree and flat
+  showRandomTip: false
   showCommandLog: false
-  # If true, show the bottom line that contains keybinding info and useful buttons. If false, this line will be hidden except to display a loader for an in-progress action.
-  showBottomLine: true
-  # If true, show jump-to-window keybindings in window titles.
-  showPanelJumps: true
-
-  # Nerd fonts version to use.
-  # One of: '2' | '3' | empty string (default)
-  # If empty, do not show icons.
+  showBottomLine: false # Hide bottom bar with instructions
+  showPanelJumps: false # If true, show jump-to-window keybindings in window titles.
   nerdFontsVersion: 3
-  # If true (default), file icons are shown in the file views. Only relevant if NerdFontsVersion is not empty.
   showFileIcons: true
   showBranchCommitHash: false
   showDivergenceFromBaseBranch: onlyArrow
   splitDiff: auto
   filterMode: fuzzy
-
-  # Status panel view.
-  # One of 'dashboard' (default) | 'allBranchesLog'
+  quitOnTopLevelReturn: false
+  confirmOnQuit: true
   statusPanelView: allBranchesLog
-
-  # If true, jump to the Files panel after popping a stash
   switchToFilesAfterStashPop: true
-
-  # If true, jump to the Files panel after applying a stash
   switchToFilesAfterStashApply: true
 
   theme:
     selectedLineBgColor:
       - reverse
+  authorColors:
+    "Blake Williams": magenta
+    "*": blue

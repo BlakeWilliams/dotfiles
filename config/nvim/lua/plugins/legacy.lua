@@ -25,6 +25,7 @@ return {
   { 'catppuccin/vim',            lazy = false },
   { 'folke/tokyonight.nvim',     lazy = false },
   { 'rose-pine/neovim',          lazy = false },
+  { 'maxmx03/solarized.nvim' },
 
   -- writing
   { 'junegunn/goyo.vim',         lazy = false },
