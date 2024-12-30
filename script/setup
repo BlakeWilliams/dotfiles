@@ -72,6 +72,7 @@ copy_file config/nvim/lua/lazy-setup.lua ~/.config/nvim/lua/lazy-setup.lua
 
 copy_file config/nvim/lua/plugins/welcome.lua ~/.config/nvim/lua/plugins/welcome.lua
 copy_file config/nvim/lua/plugins/whichkey.lua ~/.config/nvim/lua/plugins/whichkey.lua
+copy_file config/nvim/lua/plugins/neotree.lua ~/.config/nvim/lua/plugins/neotree.lua
 copy_file config/nvim/lua/plugins/legacy.lua ~/.config/nvim/lua/plugins/legacy.lua
 copy_file config/nvim/lua/plugins/cmp.lua ~/.config/nvim/lua/plugins/cmp.lua
 copy_file config/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins/lsp.lua
