@@ -1,13 +1,26 @@
-clipboard-read = allow
-clipboard-write = allow
-window-theme = system
-font-size = 12.5
-font-thicken = true
-font-family = Cascadia Mono NF
-mouse-hide-while-typing = true
-mouse-shift-capture = true
-macos-titlebar-style = tabs
+# Fonts and colors
+adjust-cell-width = -10%
 cursor-style = block
 cursor-style-blink = true
-command = /bin/zsh
-adjust-cell-width = -10%
+font-family = Cascadia Mono NF
+font-size = 12.5
+font-thicken = true
+
+# Window style
+macos-titlebar-style = tabs
+window-theme = system
+
+# Clipboard, mouse, keyboard
+clipboard-read = allow
+clipboard-write = allow
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+shell-integration = zsh
+# Necessary for zsh to respect cursor style
+shell-integration-features = no-cursor
+
+# Icon color
+macos-icon = custom-style
+macos-icon-ghost-color = 333300
+macos-icon-screen-color = 222222
+keybind = global:cmd+grave_accent=toggle_quick_terminal
