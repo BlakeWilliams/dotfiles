@@ -29,7 +29,7 @@ colorscheme everforest
 let s:bgFile = expand("~/.config/nvim/background")
 let s:modeFile = expand("~/.config/nvim/colormode")
 
-function! SyncBG()
+function! SyncBG(timer)
   if filereadable(s:bgFile)
     let value = readfile(s:bgFile)[0]
     if g:colors_name != value
@@ -49,7 +49,7 @@ endfunction
 
 exec timer_start(5000, 'SyncBG', {'repeat': -1})
 
-call SyncBG()
+call SyncBG(0)
 
 function! s:SetTermColors()
   let tty='/dev/'.system('ps -o tty= $(ps -o ppid= $(ps -o ppid= $$))')
