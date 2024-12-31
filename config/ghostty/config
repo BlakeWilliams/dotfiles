@@ -23,4 +23,3 @@ shell-integration-features = no-cursor
 macos-icon = custom-style
 macos-icon-ghost-color = 333300
 macos-icon-screen-color = 222222
-keybind = global:cmd+grave_accent=toggle_quick_terminal
