@@ -7,6 +7,9 @@ return {
       registers = true,
       spelling  = { enabled = true },
       show_help = false,
+      icons     = {
+        mappings = false,
+      },
 
       filter    = function(mapping)
         -- filter out fold mappings since they're not useful
