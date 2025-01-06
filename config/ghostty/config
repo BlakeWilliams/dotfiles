@@ -1,14 +1,16 @@
 # Fonts and colors
-adjust-cell-width = -10%
+adjust-cell-width = -4%
 cursor-style = block
 cursor-style-blink = true
-font-family = Cascadia Mono NF
-font-size = 12.5
+font-family = JetBrainsMono NerdFont
+font-size = 12
 font-thicken = true
+theme = GruvboxDarkHard
 
 # Window style
 macos-titlebar-style = tabs
 window-theme = system
+window-colorspace = display-p3
 
 # Clipboard, mouse, keyboard
 clipboard-read = allow
