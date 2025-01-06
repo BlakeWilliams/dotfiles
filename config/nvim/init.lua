@@ -1,9 +1,9 @@
 GlobalConfig = {}
 GlobalConfig.icons = {
-  Error = "✕ ",
-  Warn = " ",
-  Hint = "󰅺 ",
-  Info = "i ",
+  Error = " ",
+  Warn = " ",
+  Hint = " ",
+  Info = " ",
 }
 
 -- Specify how the border looks like

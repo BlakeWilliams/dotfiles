@@ -8,11 +8,18 @@ return {
     },
     keys = {
       {
+        "<leader>e",
+        function()
+          require("neo-tree.command").execute()
+        end,
+        desc = "Explorer NeoTree",
+      },
+      {
         "<leader>fe",
         function()
           require("neo-tree.command").execute({ toggle = true })
         end,
-        desc = "Explorer NeoTree",
+        desc = "NeoTree",
       },
       {
         "<leader>fE",
@@ -21,7 +28,6 @@ return {
         end,
         desc = "Explorer NeoTree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
     },
     opts = {
       sources = { "filesystem", "buffers", "git_status" },
@@ -31,6 +37,12 @@ return {
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
         hijack_netrw_behavior = 'disabled',
+        filtered_items = {
+          hide_dotfiles = false
+        },
+        always_show_by_pattern = {
+          "env*",
+        },
       },
       window = {
         mappings = {
@@ -68,15 +80,15 @@ return {
           end,
         },
         indent = {
-          with_expanders = false, -- if nil and file nesting is enabled, will enable expanders
+          with_expanders = false,
           expander_collapsed = "",
           expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
         },
         git_status = {
           symbols = {
-            added     = "M", -- or "✚", but this is redundant info if you use git_status_colors on the name
-            modified  = "M", -- or "", but this is redundant info if you use git_status_colors on the name
+            added     = "M",
+            modified  = "M",
             -- Status type
             untracked = "U",
             ignored   = "I",
@@ -87,6 +99,13 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("neo-tree").setup(opts)
+
+      vim.api.nvim_exec([[hi! link NeoTreeNormal normal]], false)
+      vim.api.nvim_exec([[hi! link NeoTreeNormalNC normal]], false)
+      vim.api.nvim_exec([[hi! link NeoTreeEndOfBuffer normal]], false)
+    end
   },
   {
     "nvim-tree/nvim-web-devicons",
