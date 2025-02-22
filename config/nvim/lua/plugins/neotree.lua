@@ -30,6 +30,7 @@ return {
       },
     },
     opts = {
+      close_if_last_window = false,
       sources = { "filesystem", "buffers", "git_status" },
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
       filesystem = {
@@ -57,7 +58,8 @@ return {
             end,
             desc = "Copy Path to Clipboard",
           },
-          ["P"] = { "toggle_preview", config = { use_float = true } },
+          ["/"] = "noop",
+          ["P"] = { "toggle_preview", config = { use_float = false } },
         },
       },
       enable_diagnostics = true,
@@ -105,6 +107,13 @@ return {
       vim.api.nvim_exec([[hi! link NeoTreeNormal normal]], false)
       vim.api.nvim_exec([[hi! link NeoTreeNormalNC normal]], false)
       vim.api.nvim_exec([[hi! link NeoTreeEndOfBuffer normal]], false)
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_exec([[hi! link NeoTreeNormal normal]], false)
+          vim.api.nvim_exec([[hi! link NeoTreeNormalNC normal]], false)
+          vim.api.nvim_exec([[hi! link NeoTreeEndOfBuffer normal]], false)
+        end,
+      })
     end
   },
   {
@@ -117,19 +126,19 @@ return {
         }
       },
     },
-    config = function(_, opts)
-      local devicons = require("nvim-web-devicons")
-      devicons.setup(opts)
-
-      for ext, icon_data in pairs(devicons.get_icons()) do
-        devicons.set_icon({
-          [ext] = {
-            icon = "",
-            color = icon_data.color,
-            name = icon_data.name,
-          }
-        })
-      end
-    end,
+    -- config = function(_, opts)
+    --   local devicons = require("nvim-web-devicons")
+    --   devicons.setup(opts)
+    --
+    --   for ext, icon_data in pairs(devicons.get_icons()) do
+    --     devicons.set_icon({
+    --       [ext] = {
+    --         icon = "",
+    --         color = icon_data.color,
+    --         name = icon_data.name,
+    --       }
+    --     })
+    --   end
+    -- end,
   },
 }

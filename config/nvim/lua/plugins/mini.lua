@@ -33,4 +33,38 @@ return {
     'echasnovski/mini.ai',
     version = '*',
   },
+  {
+    "echasnovski/mini.indentscope",
+    version = false, -- wait till new 0.7.0 release to put it back on semver
+    opts = function(_, opts)
+      return {
+        symbol = "",
+        -- symbol = "│",
+        options = { try_as_border = true },
+        draw = {
+          delay = 100,
+          animation = require('mini.indentscope').gen_animation.none()
+        },
+      }
+    end,
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "alpha",
+          "dashboard",
+          "fzf",
+          "help",
+          "mason",
+          "neo-tree",
+          "notify",
+          "toggleterm",
+          "Trouble",
+          "trouble",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+  }
 }

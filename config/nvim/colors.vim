@@ -51,7 +51,7 @@ exec timer_start(5000, 'SyncBG', {'repeat': -1})
 
 call SyncBG(0)
 
-function! s:SetTermColors()
+function! SyncTermColors()
   let tty='/dev/'.system('ps -o tty= $(ps -o ppid= $(ps -o ppid= $$))')
 
   let cmd = s:SetColor('11', synIDattr(synIDtrans(hlID("Normal")), "bg#"))
@@ -96,5 +96,5 @@ function! s:SetColor(i, color)
 endfunction
 
 augroup AutoColor
-  autocmd ColorScheme * silent call s:SetTermColors()
+  autocmd ColorScheme * silent call SyncTermColors()
 augroup END

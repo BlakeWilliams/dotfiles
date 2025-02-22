@@ -19,7 +19,7 @@ return {
       return {
         auto_brackets = {},
         completion = {
-          autocomplete = false,
+          -- autocomplete = false,
           -- completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
           completeopt = "menu,menuone,preview,popup,noinsert"
         },
