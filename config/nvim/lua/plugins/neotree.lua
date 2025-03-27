@@ -33,6 +33,14 @@ return {
       close_if_last_window = false,
       sources = { "filesystem", "buffers", "git_status" },
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+      renderer = {
+        group_empty = true,
+
+        -- set the title to be the directory name
+        root_folder_label = function(path)
+          return vim.fn.fnamemodify(path, ":t")
+        end,
+      },
       filesystem = {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },
@@ -61,6 +69,9 @@ return {
           ["/"] = "noop",
           ["P"] = { "toggle_preview", config = { use_float = false } },
         },
+      },
+      bufffers = {
+        name = "NeoTree"
       },
       enable_diagnostics = true,
       hide_root_node = true,
