@@ -109,6 +109,7 @@ copy_file zsh/aliases.zsh ~/.zsh/aliases.zsh
 copy_file zsh/fzf.zsh ~/.zsh/fzf.zsh
 copy_file zsh/g.zsh ~/.zsh/g.zsh
 copy_file zsh/prompt.zsh ~/.zsh/prompt.zsh
+copy_file zsh/t.zsh ~/.zsh/t.zsh
 
 # Weechat
 copy_file weechat/weechat.conf ~/.config/weechat/weechat.conf
@@ -116,9 +117,9 @@ copy_file weechat/weechat.conf ~/.config/weechat/weechat.conf
 # Setup RDM
 if [[ -n "$CODESPACES" ]]; then
   # Use RDM for copy/paste and open support
-  wget https://github.com/BlakeWilliams/remote-development-manager/releases/download/v0.0.3/rdm-linux-amd64
-  sudo mv rdm-linux-amd64 /usr/bin/local/rdm
-  chmod +x /usr/bin/local/rdm
+  wget https://github.com/BlakeWilliams/remote-development-manager/releases/download/v0.0.6/rdm-linux-amd64
+  sudo mv rdm-linux-amd64 /usr/bin/rdm
+  chmod +x /usr/bin/rdm
 
   if [[ "$TERM_PROGRAM" != 'vscode' ]]; then
     gh config set browser "rdm open"
@@ -131,8 +132,6 @@ fi
 if [[ -n "$CODESPACES" ]]; then
   sudo apt-get install -y ripgrep shellcheck fuse ruby-dev tmux fuse jq
   sudo apt-get install -y bat fd-find noti tokei vale
-  echo "export SKIP_GH_PRE_PUSH_HOOKS" >> ~/.zshrc
-
 
   # Install the latest neovim
   wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
