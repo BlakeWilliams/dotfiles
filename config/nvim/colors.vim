@@ -56,7 +56,7 @@ function! SyncTermColors()
 
   let cmd = s:SetColor('11', synIDattr(synIDtrans(hlID("Normal")), "bg#"))
   let cmd = cmd . " " . s:SetColor('10', synIDattr(synIDtrans(hlID("Normal")), "fg#"))
-  let cmd = cmd . " " . s:SetColor('12', synIDattr(synIDtrans(hlID("TermCursor")), "fg#"))
+  let cmd = cmd . " " . s:SetColor('12', synIDattr(synIDtrans(hlID("Normal")), "fg#"))
   let cmd = cmd . " " . s:SetColor('4;0', g:terminal_color_0)
   let cmd = cmd . " " . s:SetColor('4;1', g:terminal_color_1)
   let cmd = cmd . " " . s:SetColor('4;2', g:terminal_color_2)

@@ -59,7 +59,7 @@ return {
     },
   },
   -- {
-  --   "williamboman/mason.nvim",
+  --   "mason-org/mason.nvim",
   --   opts = function()
   --     opts.ensure_installed = opts.ensure_installed or {}
   --     table.insert(opts.ensure_installed, "tsserver")
@@ -70,7 +70,7 @@ return {
     optional = true,
     dependencies = {
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         opts = { ensure_installed = { "gomodifytags", "impl" } },
       },
     },
