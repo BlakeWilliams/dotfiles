@@ -74,7 +74,7 @@ end
 return {
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 
     dependencies = {

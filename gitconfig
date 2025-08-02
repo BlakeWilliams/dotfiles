@@ -36,9 +36,9 @@
   ap = !git add --all --intent-to-add && git add -p
   c = commit
   ca = commit --amend
-  ci = !hub ci-status -v
+  ci = !gh pr checks
   co = checkout
-  conflicts = diff --diff-filter=U
+  conflicts = diff --name-only --diff-filter=U
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
   d = diff
   deets = show --pretty=full

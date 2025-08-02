@@ -3,8 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ":TSUpdate",
     version = false,
-    event = { "BufEnter", "VeryLazy" },
-    lazy = vim.fn.argc(-1) == 0,
+    event = { "BufReadPre", "VeryLazy", "BufNewFile" },
 
     -- unsure why this is necessary, but lazyvim does it
     init = function(plugin)
