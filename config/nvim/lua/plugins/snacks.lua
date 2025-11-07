@@ -6,7 +6,10 @@ return {
     scroll = { enabled = true },
     animate = {
       duration = { step = 10, total = 150 },
+
       easing = "linear",
     },
+    input = { enabled = true },
+    words = { enabled = true },
   },
 }

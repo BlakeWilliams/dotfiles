@@ -87,7 +87,7 @@ return {
   },
   {
     "nvimtools/none-ls.nvim",
-    lazy = false,
+    lazy = true,
     dependencies = {
       {
         "mason-org/mason.nvim",

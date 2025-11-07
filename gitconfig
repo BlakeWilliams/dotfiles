@@ -49,7 +49,7 @@
   pf = p --force-with-lease
   retro = log --since='7 days ago' --author=\"Blake Williams\"
   standup = log --since=yesterday --author=\"Blake Williams\"
-  up = !git fetch origin && git rebase -i origin/master
+  up = !git fetch origin && git rebase -i origin/main
   squash = "!f() { git reset --soft $(git merge-base HEAD \"$@\") && git commit; }; f"
 [status]
   branch = 1
