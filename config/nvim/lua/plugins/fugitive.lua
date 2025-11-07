@@ -2,6 +2,7 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = { "Git" },
+    event = "VeryLazy",
     dependencies = { 'tpope/vim-rhubarb' },
     keys = {
       { "<leader>gs", "<cmd>Git<cr>",        desc = "Git status" },
@@ -12,7 +13,4 @@ return {
       { "<leader>gl", "<cmd>Git log<cr>",    desc = "Git log" },
     }
   },
-  { 'tpope/vim-rhubarb',
-     lazy = false
-   },
 }

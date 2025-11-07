@@ -1,41 +1,23 @@
 return {
-  { 'tpope/vim-eunuch',          lazy = false },
-  { 'tpope/vim-rails',           lazy = false },
-  { 'tpope/vim-repeat',          lazy = false },
-  { 'tpope/vim-rhubarb',         lazy = false },
-  { 'tpope/vim-surround',        lazy = false },
-  { 'tpope/vim-vinegar',         laze = false },
-  { 'tpope/vim-projectionist',   lazy = false },
-
-  -- Workflow
-  { 'sjl/gundo.vim',             lazy = false },
+  { 'tpope/vim-eunuch',          event = "VeryLazy" },
+  { 'tpope/vim-rails',           event = "VeryLazy" },
+  { 'tpope/vim-vinegar',         event = "VeryLazy" },
+  { 'tpope/vim-projectionist',   event = "VeryLazy" },
 
   -- Searching
-  { 'RRethy/vim-illuminate',     lazy = false },
-  { 'mhinz/vim-grepper',         lazy = false },
+  { 'RRethy/vim-illuminate',     event = "VeryLazy" },
+  { 'mhinz/vim-grepper',         event = "VeryLazy" },
 
   -- Languages and markup
-  { 'sheerun/vim-polyglot',      lazy = false },
+  { 'sheerun/vim-polyglot',      event = "VeryLazy" },
 
   -- Colors / Theme
-  { 'gruvbox-community/gruvbox', lazy = false },
-  { 'sainnhe/gruvbox-material',  lazy = false },
-  { 'sainnhe/sonokai',           lazy = false },
-  { 'sainnhe/everforest',        lazy = false },
-  { 'catppuccin/vim',            lazy = false },
-  { 'folke/tokyonight.nvim',     lazy = false },
-  { 'rose-pine/neovim',          lazy = false },
+  { 'gruvbox-community/gruvbox' },
+  { 'sainnhe/gruvbox-material' },
+  { 'sainnhe/sonokai' },
+  { 'sainnhe/everforest' },
+  { 'catppuccin/vim' },
+  { 'folke/tokyonight.nvim' },
+  { 'rose-pine/neovim' },
   { 'maxmx03/solarized.nvim' },
-
-  -- writing
-  { 'junegunn/goyo.vim',         lazy = false },
-
-  { 'nvim-lua/plenary.nvim',     lazy = false },
-
-  -- { 'hrsh7th/cmp-cmdline', lazy = false },
-
-  -- Snippets
-  -- { 'hrsh7th/cmp-vsnip', lazy = false },
-  -- { 'hrsh7th/vim-vsnip', lazy = false },
-  -- { 'golang/vscode-go', lazy = false },
 }
