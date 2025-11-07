@@ -4,6 +4,7 @@ return {
     cmd = "Neotree",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
     },
     keys = {
@@ -137,19 +138,19 @@ return {
         }
       },
     },
-    -- config = function(_, opts)
-    --   local devicons = require("nvim-web-devicons")
-    --   devicons.setup(opts)
-    --
-    --   for ext, icon_data in pairs(devicons.get_icons()) do
-    --     devicons.set_icon({
-    --       [ext] = {
-    --         icon = "",
-    --         color = icon_data.color,
-    --         name = icon_data.name,
-    --       }
-    --     })
-    --   end
-    -- end,
+    config = function(_, opts)
+      local devicons = require("nvim-web-devicons")
+      devicons.setup(opts)
+
+      for ext, icon_data in pairs(devicons.get_icons()) do
+        devicons.set_icon({
+          [ext] = {
+            icon = "",
+            color = icon_data.color,
+            name = icon_data.name,
+          }
+        })
+      end
+    end,
   },
 }

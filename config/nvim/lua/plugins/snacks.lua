@@ -1,5 +1,6 @@
 return {
   "folke/snacks.nvim",
+  version = "*",
   priority = 1000,
   lazy = false,
   opts = {
@@ -9,7 +10,26 @@ return {
 
       easing = "linear",
     },
-    input = { enabled = true },
     words = { enabled = true },
+    input = {
+      enabled = true,
+      icon = "",
+      relative = "cursor",
+      prompt_pos = "left",
+      win = {
+        relative = "cursor",
+        row = -3,
+      },
+      expand = true,
+    },
+    notifier = {
+      enabled = true,
+      icons = {
+        error = " ",
+        warn = " ",
+        info = " ",
+      },
+    },
+    quickfile = { enabled = true }
   },
 }

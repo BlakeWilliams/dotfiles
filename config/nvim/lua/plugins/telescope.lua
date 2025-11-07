@@ -88,7 +88,15 @@ return {
       { "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
       { "<leader>fd", "<cmd>Telescope diagnostics<cr>",               desc = "Workspace Diagnostics" },
       { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
-    }
+    },
+    {
+      'nvim-telescope/telescope-ui-select.nvim',
+      lazy = true,
+      dependencies = { 'nvim-telescope/telescope.nvim' },
+      init = function()
+        require("telescope").load_extension("ui-select")
+      end,
+    },
   },
   -- {
   --   "nvim-telescope/telescope-file-browser.nvim",
