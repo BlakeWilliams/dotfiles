@@ -133,7 +133,7 @@ if [[ -n "$CODESPACES" ]]; then
   sudo apt-get install -y bat fd-find noti tokei vale
 
   # Install the latest neovim
-  wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
+  wget https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.appimage nvim.appimage
   chmod u+x nvim.appimage
   sudo mv nvim.appimage /usr/local/bin/nvim
 
