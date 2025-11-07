@@ -160,6 +160,9 @@ if os.getenv("CODESPACES") ~= nil and os.getenv("CODESPACES") ~= "" then
   }
 end
 
+-- Borders
+vim.o.winborder = "rounded"
+
 vim.cmd('source $HOME/.config/nvim/colors.vim')
 vim.cmd('source $HOME/.config/nvim/autocommands.vim')
 
