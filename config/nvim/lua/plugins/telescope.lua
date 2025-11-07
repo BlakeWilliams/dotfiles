@@ -69,7 +69,6 @@ return {
         }
       }
     end,
-
     keys = {
       { "<C-p>",      "<cmd>Telescope find_files<cr>",                desc = "Find files" },
       { "<leader>b",  "<cmd>Telescope buffers<cr>",                   desc = "Find buffers" },
@@ -89,34 +88,13 @@ return {
       { "<leader>fd", "<cmd>Telescope diagnostics<cr>",               desc = "Workspace Diagnostics" },
       { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
     },
-    {
-      'nvim-telescope/telescope-ui-select.nvim',
-      lazy = true,
-      dependencies = { 'nvim-telescope/telescope.nvim' },
-      init = function()
-        require("telescope").load_extension("ui-select")
-      end,
-    },
   },
-  -- {
-  --   "nvim-telescope/telescope-file-browser.nvim",
-  --   dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  --   config = function(_, opts)
-  --     require("telescope").setup(opts).load_extension "file_browser"
-  --   end,
-  --   keys = {
-  --     { "-", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser", mode = "n" },
-  --   },
-  --   opts = {
-  --     extensions = {
-  --       file_browser = {
-  --         theme = "dropdown",
-  --         hijack_netrw = true,
-  --         grouped = true,
-  --         select_buffer = true,
-  --         collapse_dirs = true,
-  --       }
-  --     },
-  --   }
-  -- }
+  {
+    'nvim-telescope/telescope-ui-select.nvim',
+    lazy = true,
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    init = function()
+      require("telescope").load_extension("ui-select")
+    end,
+  },
 }
