@@ -31,6 +31,7 @@
   rebase = true
 [merge]
   ff = only
+  conflictStyle = diff3
 [alias]
   aa = add --all
   ap = !git add --all --intent-to-add && git add -p
