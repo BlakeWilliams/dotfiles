@@ -151,7 +151,7 @@ return {
           },
           lualine_b = {},
           lualine_c = {},
-          -- lualine_z = {'windows'},
+          lualine_z = {},
           lualine_z = {
             {
               'windows',

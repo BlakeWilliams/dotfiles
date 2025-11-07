@@ -95,6 +95,7 @@ vim.opt.backup = false                          -- No Backup files
 vim.opt.errorbells = false                      -- Obvious
 vim.opt.hidden = true                           -- Hide unsaved buffers
 vim.opt.number = true                           -- Show regular numbers
+vim.opt.fillchars:append({ eob = " " })         -- Hide ~ at end of files
 vim.opt.foldenable = false                      -- Disable folds
 -- vim.opt.showcmd = false                      -- Don't show command in the last line of the screen
 vim.opt.swapfile = false                        -- No swap

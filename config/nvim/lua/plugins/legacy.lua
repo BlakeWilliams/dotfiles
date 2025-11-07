@@ -1,7 +1,7 @@
 return {
   { 'tpope/vim-eunuch',          event = "VeryLazy" },
   { 'tpope/vim-rails',           event = "VeryLazy" },
-  { 'tpope/vim-vinegar',         event = "VeryLazy" },
+  { 'tpope/vim-vinegar',         lazy = false },
   { 'tpope/vim-projectionist',   event = "VeryLazy" },
 
   -- Searching

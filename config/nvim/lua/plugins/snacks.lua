@@ -24,12 +24,27 @@ return {
     },
     notifier = {
       enabled = true,
+      style = "compact",
       icons = {
-        error = " ",
-        warn = " ",
-        info = " ",
+        error = "",
+        warn = "",
+        info = "",
+      },
+      win = {
+        wo = {             -- window-local options
+          wrap = true,
+          linebreak = true,
+          breakindent = true,
+        },
       },
     },
-    quickfile = { enabled = true }
+    quickfile = { enabled = true },
+    styles = {
+      notification = {
+        wo = {
+          wrap = true,
+        },
+      },
+    },
   },
 }
