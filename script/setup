@@ -86,7 +86,6 @@ copy_file config/nvim/lua/plugins/telescope.lua ~/.config/nvim/lua/plugins/teles
 copy_file config/nvim/lua/plugins/tbro.lua ~/.config/nvim/lua/plugins/tbro.lua
 copy_file config/nvim/lua/plugins/pry.lua ~/.config/nvim/lua/plugins/pry.lua
 copy_file config/nvim/lua/plugins/copilot.lua ~/.config/nvim/lua/plugins/copilot.lua
-copy_file config/nvim/lua/plugins/noice.lua ~/.config/nvim/lua/plugins/noice.lua
 copy_file config/nvim/lua/plugins/trouble.lua ~/.config/nvim/lua/plugins/trouble.lua
 copy_file config/nvim/lua/plugins/mini.lua ~/.config/nvim/lua/plugins/mini.lua
 copy_file config/nvim/lua/plugins/grug.lua ~/.config/nvim/lua/plugins/grug.lua
