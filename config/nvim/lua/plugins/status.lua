@@ -1,3 +1,8 @@
+local icons = {
+  modified = '✱',
+  readonly = ''
+}
+
 local function progress()
   local cur = vim.fn.line('.')
   local total = vim.fn.line('$')
@@ -45,13 +50,13 @@ return {
 
         if path == vim.fn.getcwd() then
           return '[No Name]'
-        elseif path:match("^/") then
+        elseif vim.fn.isdirectory(full_path) == 0 and vim.bo.buftype ~= 'nofile' then
           if vim.bo.modified then
-            path = path .. "[+]"
+            path = path .. " " .. icons.modified
           end
 
           if vim.bo.modifiable == false or vim.bo.readonly then
-            path = path .. "[-]"
+            path = path .. " " .. icons.readonly
           end
 
           return path
@@ -68,11 +73,17 @@ return {
         return make_rel(vim.fn.expand('%:p'))
       end
 
+      local function location()
+        local line = vim.fn.line('.')
+        local col = vim.fn.col('.')
+        return string.format(' %d/%d', line, col)
+      end
+
       local netrw_ext = {
         sections = {
           lualine_a = { function() return 'NETRW' end },
           lualine_c = { rel_netrw },
-          lualine_z = { 'location' },
+          lualine_z = { location },
         },
         filetypes = { 'netrw' }
       }
@@ -81,9 +92,18 @@ return {
         sections = {
           lualine_a = { function() return 'NEOTREE' end },
           lualine_c = {},
-          lualine_y = { 'location' },
+          lualine_y = { location },
         },
         filetypes = { 'neo-tree' }
+      }
+
+      local dashboard_ext = {
+        sections = {
+          lualine_a = { function() return '' end },
+          lualine_c = {},
+          lualine_y = { },
+        },
+        filetypes = { 'alpha' }
       }
 
       local extract_color = require 'lualine.utils.utils'.extract_highlight_colors
@@ -92,10 +112,8 @@ return {
         options = {
           icons_enabled = true,
           theme = 'auto',
-          -- component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
-          -- section_separators = { left = '', right = '' },
-          component_separators = { left = '┃', right = '┃' },
+          component_separators = { left = '', right = ''},
+          section_separators = { left = '', right = ''},
           disabled_filetypes = {
             -- 'neo-tree',
             -- 'netrw',
@@ -106,8 +124,10 @@ return {
 
         sections = {
           lualine_a = { { 'mode', fmt = function(s) return modes[s] or s end } },
-          lualine_b = {},
-          lualine_c = { rel_file },
+          lualine_b = { },
+          lualine_c = {
+            rel_file,
+          },
           lualine_x = {
             {
               'diagnostics',
@@ -117,8 +137,8 @@ return {
                 hint = { fg = extract_color("String", "fg") },
                 error = { fg = extract_color("ErrorMsg", "fg") },
               },
-              sections = { 'error', 'warn' },
-
+              sections = { 'error', 'warn', 'hint', 'info', },
+              always_visible = false,
               symbols = {
                 error = GlobalConfig.icons.Error,
                 warn = GlobalConfig.icons.Warn,
@@ -127,39 +147,46 @@ return {
               },
               sources = { 'nvim_lsp', },
             },
-            'filetype',
+            'encoding'
           },
-          lualine_y = {
-            { progress },
-          },
-          lualine_z = { 'location' }
+          lualine_y = { },
+          lualine_z = { location }
         },
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
           lualine_c = { rel_file },
-          lualine_x = { 'location' },
+          lualine_x = { location },
           lualine_y = {},
           lualine_z = {}
         },
-        tabline = {
-          lualine_a = {
-            {
-              'tabs',
-              mode = 1
-            }
-          },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_z = {},
-          -- lualine_z = {
-          --   {
-          --     'windows',
-          --     icons_enabled = false
-          --   }
-          -- },
-        },
-        extensions = { netrw_ext, neotree_ext }
+        -- tabline = {
+        --   lualine_a = {
+        --   },
+        --   lualine_b = {
+        --   }
+        --   lualine_c = {
+        --     {
+        --       'tabs',
+        --       mode = 1,
+        --       tabs_color = {
+        --         active = 'lualine_section_a_normal',
+        --         active = 'lualine_section_a_inactive',
+        --       },
+        --       symbols = {
+        --         modified = icons.modified,
+        --       },
+        --     }
+        --   },
+        --   lualine_z = {},
+        --   -- lualine_z = {
+        --   --   {
+        --   --     'windows',
+        --   --     icons_enabled = false
+        --   --   }
+        --   -- },
+        -- },
+        extensions = { netrw_ext, neotree_ext, dashboard_ext }
       }
     end
   },
@@ -167,7 +194,32 @@ return {
     'b0o/incline.nvim',
     event = 'VeryLazy',
     config = function()
-      require('incline').setup()
+      require('incline').setup({
+        hide = {
+          only_win = true
+        }
+      })
     end,
-  }
+  },
+  {
+    'akinsho/bufferline.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    opts = function()
+      return {
+        options = {
+          mode = 'tabs',
+          modified_icon = icons.modified,
+          diagnostics = false,
+          show_buffer_icons = false,
+          show_close_icon = false,
+          indicator = { style = "none" },
+          always_show_bufferline = false,
+          auto_toggle_bufferline = true,
+        }
+      }
+    end
+  },
 }
