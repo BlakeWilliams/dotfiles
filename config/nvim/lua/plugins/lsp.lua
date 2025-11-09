@@ -68,6 +68,8 @@ local function lspkeymap()
     { "<leader>cr", vim.lsp.buf.rename,                         desc = "Rename",                     has = "rename" },
     { "<leader>cl", "<cmd>LspInfo<cr>",                         desc = "Lsp Info" },
     { "<leader>e",  "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Show diagnostic" },
+    { "<leader>fl", "<cmd>Telescope lsp_references<cr>",        desc = "LSP references" },
+    { "<leader>fo", "<cmd>Telescope lsp_document_symbols<cr>",  desc = "LSP document symbols" },
   }
 end
 

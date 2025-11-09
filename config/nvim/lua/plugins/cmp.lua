@@ -45,7 +45,6 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
   callback = function()
     local links = {
       CmpItemKind            = "Pmenu",
-      CmpItemAbbr            = "Pmenu",
       CmpItemAbbrMatch       = "Search",
       CmpItemMenu            = "Comment",
 
@@ -75,10 +74,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
       CmpItemKindOperator    = "Operator",
       CmpItemKindTypeParameter = "Type",
 
-      -- custom kinds if you use them
       CmpItemKindCopilot     = "String",
-      CmpItemKindCodeium     = "Special",
-      CmpItemKindTabNine     = "Special",
     }
 
     for group, link in pairs(links) do

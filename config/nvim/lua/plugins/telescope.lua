@@ -17,6 +17,16 @@ return {
       },
     },
     init = function()
+      -- Cursorline breaks Telescope's prompt UI
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "TelescopePrompt",
+        callback = function()
+          vim.opt_local.cursorline = false
+          vim.opt_local.cursorcolumn = false
+          vim.opt_local.cursorlineopt = "number"  -- optional, keeps it tame if reenabled
+        end,
+      })
+
       require("which-key").add({
         { "<leader>f", group = "File" },
         { "<leader>s", group = "Search" },
@@ -51,7 +61,7 @@ return {
             "--smart-case",
           }
         },
-        pickers         = {
+        pickers = {
           find_files = {
             follow = true
           },
@@ -60,7 +70,7 @@ return {
             ignore_builtin = true,
           }
         },
-        extensions      = {
+        extensions = {
           fzf = {
             fuzzy = true,
             override_generic_sorter = true,
@@ -75,19 +85,23 @@ return {
       { "<leader>b",  "<cmd>Telescope buffers<cr>",                   desc = "Find buffers" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>",                desc = "Find files" },
       { "<leader>/",  "<cmd>Telescope live_grep<cr>",                 desc = "Live grep" },
+      { "<leader>ft", "<cmd>Telescope live_grep<cr>",                 desc = "Find text via live grep" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>",                 desc = "Live grep" },
+      { "<leader>fc", "<cmd>Telescope git_commits<cr>",               desc = "Find commits" },
       { "<leader>fb", "<cmd>Telescope buffers<cr>",                   desc = "Find Buffers" },
-      { "<leader>sh", "<cmd>Telescope help_tags<cr>",                 desc = "Help tags" },
-      { "<leader>fl", "<cmd>Telescope lsp_references<cr>",            desc = "LSP references" },
-      { "<leader>fo", "<cmd>Telescope lsp_document_symbols<cr>",      desc = "LSP document symbols" },
       { "<leader>fq", "<cmd>Telescope quickfix<cr>",                  desc = "Quickfix" },
       { "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer fuzzy find" },
-      { "<leader>:",  "<cmd>Telescope command_history<cr>",           desc = "Command History" },
+      { "<leader>f:",  "<cmd>Telescope command_history<cr>",           desc = "Command History" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                  desc = "Recent" },
       { "<leader>fs", "<cmd>Telescope git_status<CR>",                desc = "Status" },
       { "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
       { "<leader>fd", "<cmd>Telescope diagnostics<cr>",               desc = "Workspace Diagnostics" },
       { "<leader>fc", "<cmd>Telescope colorscheme<cr>",               desc = "Colors" },
+      { "<leader>sh", "<cmd>Telescope help_tags<cr>",                 desc = "Help tags" },
+      { "<leader>sr", "<cmd>Telescope registers<cr>",                 desc = "Search registers" },
+      { "<leader>sc", "<cmd>Telescope commands<cr>",                  desc = "Search commands" },
+      { "<leader>sm", "<cmd>Telescope man_pages<cr>",                 desc = "Search man pages" },
+      { "<leader>sp", "<cmd>Telescope pickers<cr>",                   desc = "Telescope Pickers" },
     },
   },
   {

@@ -69,6 +69,7 @@ copy_file config/nvim/colors.vim ~/.config/nvim/colors.vim
 copy_file config/nvim/config.vim ~/.config/nvim/config.vim
 copy_file config/nvim/init.lua ~/.config/nvim/init.lua
 copy_file config/nvim/lua/lazy-setup.lua ~/.config/nvim/lua/lazy-setup.lua
+copy_file config/nvim/lua/colorhacks.lua ~/.config/nvim/lua/colorhacks.lua
 
 copy_file config/nvim/lua/plugins/welcome.lua ~/.config/nvim/lua/plugins/welcome.lua
 copy_file config/nvim/lua/plugins/whichkey.lua ~/.config/nvim/lua/plugins/whichkey.lua
