@@ -131,6 +131,7 @@ return {
       local devicons = require("nvim-web-devicons")
       devicons.setup(opts)
 
+      -- Override all icons to use the same icon but keep their colors
       for ext, icon_data in pairs(devicons.get_icons()) do
         devicons.set_icon({
           [ext] = {

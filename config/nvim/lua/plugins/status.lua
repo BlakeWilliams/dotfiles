@@ -48,6 +48,9 @@ return {
       local function make_rel(full_path)
         local path = vim.fn.fnamemodify(full_path, ':.')
 
+        local filename = vim.fn.fnamemodify(path, ":t")
+        local ext = vim.fn.fnamemodify(path, ":e")
+        local icon, _ = require('nvim-web-devicons').get_icon(filename, ext, { default = true })
         if path == vim.fn.getcwd() then
           return '[No Name]'
         elseif vim.fn.isdirectory(full_path) == 0 and vim.bo.buftype ~= 'nofile' then
@@ -59,9 +62,18 @@ return {
             path = path .. " " .. icons.readonly
           end
 
-          return path
+          if icon then
+            return icon .. " " .. path
+          else
+            return path
+          end
+
         else
-          return path
+          if icon then
+            return icon .. " " .. path
+          else
+            return path
+          end
         end
       end
 
@@ -97,13 +109,13 @@ return {
         filetypes = { 'neo-tree' }
       }
 
-      local dashboard_ext = {
+      local hidden_ext = {
         sections = {
           lualine_a = { function() return '' end },
           lualine_c = {},
           lualine_y = { },
         },
-        filetypes = { 'alpha' }
+        filetypes = { 'alpha', 'TelescopePrompt' }
       }
 
       local extract_color = require 'lualine.utils.utils'.extract_highlight_colors
@@ -160,33 +172,7 @@ return {
           lualine_y = {},
           lualine_z = {}
         },
-        -- tabline = {
-        --   lualine_a = {
-        --   },
-        --   lualine_b = {
-        --   }
-        --   lualine_c = {
-        --     {
-        --       'tabs',
-        --       mode = 1,
-        --       tabs_color = {
-        --         active = 'lualine_section_a_normal',
-        --         active = 'lualine_section_a_inactive',
-        --       },
-        --       symbols = {
-        --         modified = icons.modified,
-        --       },
-        --     }
-        --   },
-        --   lualine_z = {},
-        --   -- lualine_z = {
-        --   --   {
-        --   --     'windows',
-        --   --     icons_enabled = false
-        --   --   }
-        --   -- },
-        -- },
-        extensions = { netrw_ext, neotree_ext, dashboard_ext }
+        extensions = { netrw_ext, neotree_ext, hidden_ext }
       }
     end
   },
