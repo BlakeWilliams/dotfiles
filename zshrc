@@ -120,9 +120,18 @@ if [[ -n "$TMUX" ]]; then
   echo -ne "\033]2;\033\\"
 fi
 
-# Load all files in ~/.zsh
-for function in ~/.zsh/*.zsh; do
-  source $function
+# load paths.zsh first if it exists
+if [ -f ~/.zsh/paths.zsh ]; then
+  source ~/.zsh/paths.zsh
+fi
+
+# # Load all other files in ~/.zsh
+for script in "$HOME"/.zsh/*.zsh; do
+  if [ "$script" = "~/.zsh/paths.zsh" ]; then
+    continue
+  fi
+
+  source $script
 done
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
