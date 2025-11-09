@@ -101,7 +101,7 @@ return {
             -- 'netrw',
           },
           always_divide_middle = true,
-          globalstatus = false,
+          globalstatus = true,
         },
 
         sections = {
@@ -152,15 +152,22 @@ return {
           lualine_b = {},
           lualine_c = {},
           lualine_z = {},
-          lualine_z = {
-            {
-              'windows',
-              icons_enabled = false
-            }
-          },
+          -- lualine_z = {
+          --   {
+          --     'windows',
+          --     icons_enabled = false
+          --   }
+          -- },
         },
         extensions = { netrw_ext, neotree_ext }
       }
     end
   },
+  {
+    'b0o/incline.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('incline').setup()
+    end,
+  }
 }
