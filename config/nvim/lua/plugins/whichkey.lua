@@ -26,7 +26,8 @@ return {
         { "<leader>j",       "<C-w>j",       desc = "Move below",                   mode = "n" },
         { "<leader>k",       "<C-w>k",       desc = "Move above",                   mode = "n" },
         { "<leader>l",       "<C-w>l",       desc = "Move right",                   mode = "n" },
-        { "<leader>c",       group = "code" },
+        { "<leader>c",       group = "Code" },
+        { "<leader>g",       group = "Git" },
         { "Y",               "y$",           desc = "Yank line" },
 
         { "gp",              "`[v`]",        desc = "Select last inserted text",    mode = "n" },

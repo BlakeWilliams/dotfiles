@@ -10,6 +10,10 @@ return {
         let g:test#custom_strategies = {'tbro': function('tbro#send')}
         let g:test#strategy = 'tbro'
       ]]
+
+      require("which-key").add({
+        { "<leader>r", group = "Run" },
+      })
     end,
     keys = {
       { "<leader>rn", "<cmd>TestNearest<cr>", desc = "Run nearest test" },
