@@ -37,10 +37,11 @@
   ap = !git add --all --intent-to-add && git add -p
   c = commit
   ca = commit --amend
+  # commit filter
+  cf = "!git log --color=always | fzf --ansi --reverse --preview 'git deets {1} --color=always' --delimiter=' ' --accept-nth=1"
   ci = !gh pr checks
   co = checkout
   conflicts = diff --name-only --diff-filter=U
-  commits = "!git log --color=always | fzf --ansi --reverse --preview 'git deets {1} --color=always' --delimiter=' ' --accept-nth=1"
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
   d = diff
   deets = show --pretty=full
