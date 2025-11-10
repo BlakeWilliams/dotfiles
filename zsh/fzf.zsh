@@ -2,7 +2,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g ""'
-export FZF_DEFAULT_OPTS='--color=16 --tmux center'
+export FZF_DEFAULT_OPTS='--color=16 --tmux center --bind up:preview-up,down:preview-down,ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 
 # if bat is installed, we preview
 if command -v bat &> /dev/null; then
