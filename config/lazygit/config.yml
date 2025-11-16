@@ -22,7 +22,7 @@ gui:
 
   theme:
     selectedLineBgColor:
-      - reverse
+      - underline
   authorColors:
     "Blake Williams": magenta
     "*": blue

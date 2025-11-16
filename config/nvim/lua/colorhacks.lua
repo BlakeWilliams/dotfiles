@@ -74,3 +74,19 @@ end
 
 vim.api.nvim_create_autocmd("ColorScheme", { callback = standardize_numbers, })
 standardize_numbers()
+
+-- Better fugitive blame colors
+vim.g.fugitive_dynamic_colors = 0
+local blame_group = vim.api.nvim_create_augroup("FugitiveBlameColors", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = blame_group,
+  pattern = "fugitiveblame",
+  callback = function()
+    vim.api.nvim_set_hl(0, "FugitiveBlameHash",   { link = "String" })
+    vim.api.nvim_set_hl(0, "FugitiveBlameAuthor", { link = "Statement" })
+    vim.api.nvim_set_hl(0, "FugitiveBlameDate",   { link = "Comment" })
+    vim.api.nvim_set_hl(0, "FugitiveBlameLine",   { link = "CursorLine" })
+    vim.api.nvim_set_hl(0, "FugitiveBlameOld",    { link = "NonText" })
+  end,
+})

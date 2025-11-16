@@ -9,7 +9,7 @@ return {
       { "<leader>gg", ":GBrowse<cr>",        desc = "View file in GitHub", mode = { "n", "v" } },
       { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit" },
       { "<leader>gb", "<cmd>Git blame<cr>",  desc = "Git blame" },
-      { "<leader>gd", "<cmd>Git diff<cr>",   desc = "Git diff" },
+      { "<leader>gd", "<cmd>Git diff %<cr>", desc = "Git diff" },
       { "<leader>gl", "<cmd>Git log<cr>",    desc = "Git log" },
     }
   },

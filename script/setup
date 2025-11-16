@@ -76,6 +76,7 @@ copy_file config/nvim/lua/plugins/whichkey.lua ~/.config/nvim/lua/plugins/whichk
 copy_file config/nvim/lua/plugins/neotree.lua ~/.config/nvim/lua/plugins/neotree.lua
 copy_file config/nvim/lua/plugins/legacy.lua ~/.config/nvim/lua/plugins/legacy.lua
 copy_file config/nvim/lua/plugins/cmp.lua ~/.config/nvim/lua/plugins/cmp.lua
+copy_file config/nvim/lua/plugins/fzf.lua ~/.config/nvim/lua/plugins/fzf.lua
 copy_file config/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins/lsp.lua
 copy_file config/nvim/lua/plugins/treesitter.lua ~/.config/nvim/lua/plugins/treesitter.lua
 copy_file config/nvim/lua/plugins/formatter.lua ~/.config/nvim/lua/plugins/formatter.lua
@@ -83,7 +84,6 @@ copy_file config/nvim/lua/plugins/status.lua ~/.config/nvim/lua/plugins/status.l
 copy_file config/nvim/lua/plugins/gitsigns.lua ~/.config/nvim/lua/plugins/gitsigns.lua
 copy_file config/nvim/lua/plugins/test.lua ~/.config/nvim/lua/plugins/test.lua
 copy_file config/nvim/lua/plugins/fugitive.lua ~/.config/nvim/lua/plugins/fugitive.lua
-copy_file config/nvim/lua/plugins/telescope.lua ~/.config/nvim/lua/plugins/telescope.lua
 copy_file config/nvim/lua/plugins/tbro.lua ~/.config/nvim/lua/plugins/tbro.lua
 copy_file config/nvim/lua/plugins/pry.lua ~/.config/nvim/lua/plugins/pry.lua
 copy_file config/nvim/lua/plugins/copilot.lua ~/.config/nvim/lua/plugins/copilot.lua
