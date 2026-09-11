@@ -103,7 +103,7 @@ They may step away. Being unanswered is not permission to start taking bigger st
 
 ## Finished
 
-Once every todo is struck off and every requirement verified, one check before the last word: load the `changed` skill, derive its table from the diff without looking at `## changes` first, and match the two by subject. Its gap lines are the one addition to the vocabulary above, and a gap can mean we are not finished. Then the last word — and the first thing anyone coming back reads:
+Once every todo is struck off and every requirement verified, one check before the last word: load the `changed` skill, derive its "What it touches" table from the diff without looking at `## changes` first, and match the two by subject. Its gap lines are the one addition to the vocabulary above, and a gap can mean we are not finished. Then the last word — and the first thing anyone coming back reads:
 
 ```
 finished: <what is now true that was not before, under 40 words>

@@ -1,72 +1,77 @@
 ---
 name: changed
-description: A high-level account of what a change touched that something outside it depends on — interfaces, tables, dependencies, boundaries, side effects, visible behaviour — one line each, never the diff. Use on a branch, PR or working tree when the user asks "what changed", "what does this touch", "summarise this diff", or wants a review at the level of contracts and tables rather than lines. Also the format and the check the pair skill uses at the end of its work.
+description: High-level walkthrough of a change so a reader understands it without reading every line — before/after model, what it touches, changed and new functions with how callers use them, and tests added. Use on a branch, PR or working tree when the user asks "what changed", "walk me through this", "summarise this PR", or wants to review at the level of contracts rather than lines. Also the end-of-work check in the pair skill.
 ---
 
-# What changed
+# Changed
 
-A diff answers "what is different now" and answers it exhaustively, which is the problem: it has thrown the order away, it never had the reasons, and a signature everything depends on reads exactly like a reflowed comment. This is the rung above the diff — the level at which someone can actually disagree.
+Load the `hyperfocus` skill first. Its shape applies to every line here.
 
-## The table
+## Derive, in this order
+- Commit messages and PR body. Intent.
+- Tests. They state behaviour.
+- Signatures and types. The skeleton.
+- Bodies, only to answer what the above left open.
+- Callers: `git grep` each changed or new symbol. How it's used matters more than who uses it.
 
-One line per thing that something outside the change depends on. Nothing else qualifies.
+## Output, in this order
 
-```
-kind        op      subject                     — what changes for whoever depends on it
-contract    modify  Settings.pauseMs            — callers pass ms, not seconds
-state       add     table sessions_archive      — migration 0042; nothing reads it yet
-dependency  add     zod@3                       — renderer bundle +40kB
-boundary    modify  preload → main IPC          — new channel 'archive:list'
-effect      add     writes ~/.halon/archive     — on every finished step
-behavior    modify  Thread pane                 — finished card shows `next`
-```
+### Before → after
+- One line each. The model shift, not the file list.
 
-Six kinds, and the question each answers:
+### Why
+- One sentence.
 
-- **contract** — a signature, type, schema or protocol something else calls or parses.
-- **state** — durable state added, removed or moved: a table, a column, a file on disk, a key in a store.
-- **dependency** — something new to install or upgrade, or a direction of dependence reversed.
-- **boundary** — a trust, process or module boundary crossed where it was not before: a new IPC channel, a new endpoint, a package now importing another.
-- **effect** — something now happens outside the process: a write, a request, a notification.
-- **behavior** — what an observer sees is different.
+### The shape now
+- The pieces and how they connect. A trace: who hands what to whom, where state lives.
 
-Three ops: `add`, `remove`, `modify`.
+### What it touches
+- One entry per thing outside the change that depends on it. Kinds: `contract`, `state`, `dependency`, `boundary`, `effect`, `behavior`. Ops: `add`, `remove`, `modify`.
+- Format: bold `kind/op` + subject, one line why, then code for contracts.
 
-`subject` is a name — a symbol, a file, a table, a channel — precise enough to be found in the diff afterwards. That is what makes a line a claim rather than a mood: "Settings.pauseMs" can be checked, "the settings" cannot.
-
-The last column is one line for a person, not for matching.
-
-Ranked with `state` and `boundary` first: they are the two that should stop a change before it lands. `contract` next. The rest after.
-
-## What is not a change
-
-- Anything internal to one module that nothing outside it names.
-- A rename with the old name still exported.
-- Reflowed comments, formatting, moved code that does the same thing.
-- Test-only edits, unless a test fixture is itself a contract others build on.
-
-A change that lists more than seven or eight lines is doing more than one thing. Say so, and split the table by commit or by step rather than growing it.
-
-## Deriving it from a diff
-
-Read the diff — `git diff <base>...HEAD`, a PR, or the working tree, whichever was asked for — and look in this order, because it is the order of how much each one costs to get wrong:
-
-1. Migrations, schema files, anything under a `db/`, `migrations/` or `store` path → `state`.
-2. New channels, routes, handlers, `preload`/`main` or client/server crossings, new imports across package or layer boundaries → `boundary`.
-3. Exported signatures, public types, wire formats, config shapes → `contract`.
-4. Package manifests and lockfiles → `dependency`.
-5. New writes to disk, network calls, notifications, spawned processes → `effect`.
-6. Anything a user or operator would notice → `behavior`.
-
-Then write the table and nothing else. No narrative above it, no list of files below it.
-
-## Checking a declaration
-
-If the working tree has a `PLAN.md` with a `## changes` section, that is what the author said the change WOULD do, written before the work. Derive the table from the diff independently — do not read the declaration first — then match the two by `subject`:
-
-```
-undeclared: state add table sessions_archive — migration 0042 adds it; PLAN.md does not mention it
-unmade: contract modify Settings.pauseMs — declared, but the diff leaves it unchanged
+**contract/modify** `diff::render_line`
+Gutter width threaded into every row.
+```diff
+- fn render_line(line: &DiffLine, width: usize) -> Line<'static>
++ fn render_line(line: &DiffLine, width: usize, label: Option<usize>, gutter: usize) -> Line<'static>
 ```
 
-`undeclared` is in the diff and not in the plan. `unmade` is in the plan and not in the diff. One line each, or `changes: declared and made agree` when they do. A declaration that matches the diff is the review done; the gaps are the review.
+- Signature only. Never the body.
+- Rank: state, boundary, contract, then the rest.
+- Say when a kind has nothing.
+
+### Changed functions
+- Only those whose behaviour or signature changed meaningfully. Not reflow, not renames.
+- Per function: bold name, file, what changed, then how callers use it now — what they hand it, what they do with the result, what that means on screen or in state.
+
+### New functions
+- Every one. Signature, file, how it's used.
+
+### Deleted functions
+- Every one. Who used it, what replaced it.
+
+### Types
+- Structs, enums, classes, traits added, removed, or reshaped. Same treatment. "None" if none.
+
+### Tests added
+- Every one, by name, one line on what it holds.
+- Then what's not covered.
+
+### Check
+- The command that proves it.
+
+## Plan vs diff
+- If `PLAN.md` has `## changes`, derive first, read it second, match by subject.
+- `plan/missing kind/op: subject` — in the plan, not in the diff.
+- `diff/unplanned kind/op: subject` — in the diff, not in the plan.
+- Or `plan and diff agree`.
+
+## Not a change
+- Internal to one module, nothing outside names it.
+- Rename with the old name still exported.
+- Reflow, formatting, moved code that does the same thing.
+- Test-only edits, unless the fixture is a contract.
+
+## Scope
+- Past eight entries in "What it touches", split by commit. The change is doing more than one thing; say so.
+- Where it goes: terminal when asked; `gh pr edit --body` when there's a PR.
