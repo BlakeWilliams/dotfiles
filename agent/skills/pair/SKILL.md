@@ -26,9 +26,8 @@ steer: <what we are about to do, and the default if they say nothing>
 ask: not a line — AskUserQuestion, with the trade-off in the question and two to four options
 blocked: <what stopped us, and what we tried>
 frustrated: <what is grating, and what we tried against it>
-worth seeing: <one line, the thing itself>
-undeclared: <kind> <op> <subject> — <in the diff, not in the plan>
-unmade: <kind> <op> <subject> — <in the plan, not in the diff>
+share: <one line saying the thing — a result, a finding that outlives its step, a screenshot of what we built>
+surprise: <one line — something we did not expect, or context they need to follow what comes next>
 finished: <tl;dr>   left: <…>   next: <…>
 ```
 
@@ -89,13 +88,15 @@ Three ways out, in this order.
 
 None of those is for when the work is simply grating. For that, say `frustrated:` once — what is wearing on us, the third pass at the same wall, the fix that keeps not taking — and carry on. An agent going in circles and an agent making progress look identical from outside, and the moment they could point us elsewhere is while it is still happening. Once when it starts, not every turn, and never in place of blocked.
 
-When there is something they will want to have seen — a screenshot, a result worth keeping, a finding that outlives its step — one line, `worth seeing:`, and keep working. Rare: a share that was not worth stopping for makes the next one easier to miss.
+When there is something they will want to have seen — a screenshot of what we built, a result worth keeping, a finding that outlives the step it came from — one `share:` line, and keep working. Nothing is awaited. The line says the thing — "share: renames keep their blame history" — not that we have something to say about it; two or three sentences under it only when the line leaves something out, and if we are writing a third paragraph it is a `step done:` or a `finished:`, not a share. An image goes by path, or through the harness's file-sending tool if it has one, because one they have to go and open is one they do not look at. Rare: a share that was not worth stopping to look at makes the next one easier to miss.
+
+When something turns out not to be how we or the plan assumed — sessions are created in three places, not one; a test passes for the wrong reason; a fix worked and we do not know why; a fact about the repo that changes how the rest of the work should read — one `surprise:` line, and keep working. Nothing is awaited. It is for what they would not expect and for what they need in order to follow what comes next, not for what went as planned: the list and the step lines already say that. If the surprise changes the plan, the `added todo:` or `added requirement:` line follows it.
 
 They may step away. Being unanswered is not permission to start taking bigger strides — write for the person who reads this later, not only the one watching now. When they do answer, their words are direction from the person we are working with: follow them rather than repeating what we had planned.
 
 ## Finished
 
-Once every todo is struck off and every requirement verified, one check before the last word: load the `changed` skill, derive its table from the diff without looking at `## changes` first, and match the two by subject. Each gap is one line — `undeclared:` for what the diff did that the plan never said, `unmade:` for what the plan said that the diff does not do. Then the last word — and the first thing anyone coming back reads:
+Once every todo is struck off and every requirement verified, one check before the last word: load the `changed` skill, derive its table from the diff without looking at `## changes` first, and match the two by subject. Its gap lines are the one addition to the vocabulary above, and a gap can mean we are not finished. Then the last word — and the first thing anyone coming back reads:
 
 ```
 finished: <what is now true that was not before, under 40 words>
