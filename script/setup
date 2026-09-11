@@ -32,6 +32,24 @@ function copy_file() {
   fi
 }
 
+# A whole directory, so anything added under it is picked up without a new
+# line here. Skills are per-agent dirs of SKILL.md files, and every agent
+# reads the same ones.
+function link_dir() {
+  local source="$(pwd)/$1"
+  local target=$2
+
+  mkdir -p $(dirname "$target")
+
+  if [[ -L $target ]]; then
+    echo "$target already exists"
+  elif [[ -d $target ]]; then
+    echo "$target already exists but is not a symlink!"
+  else
+    ln -svf "$source" "$target"
+  fi
+}
+
 # Standard dotfiles
 copy_file excludes ~/.excludes
 copy_file gitconfig ~/.gitconfig
@@ -113,6 +131,10 @@ copy_file zsh/t.zsh ~/.zsh/t.zsh
 
 # Weechat
 copy_file weechat/weechat.conf ~/.config/weechat/weechat.conf
+
+# Agent skills: one directory, linked into every agent that reads skills
+link_dir agent/skills ~/.claude/skills
+link_dir agent/skills ~/.agents/skills
 
 # Setup RDM
 if [[ -n "$CODESPACES" ]]; then
