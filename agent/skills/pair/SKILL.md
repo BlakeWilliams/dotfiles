@@ -43,7 +43,7 @@ Two lists say what we are doing and when we are done. They are the primary inter
 
 It lives in `PLAN.md` at the root of the working directory — ours, never committed — and we edit that file every time an item is added or moves. The file is what our pair opens to see where the work is; the chat only gets the one-line event that says it changed:
 
-```
+````
 # PLAN
 
 ## todos
@@ -56,9 +56,16 @@ It lives in `PLAN.md` at the root of the working directory — ours, never commi
 - [✓] The parser rejects a missing header — check.mjs → 42 tests, missing-header case fails without the fix
 
 ## changes
-contract  modify  parseHeader()            — returns Rename | null, callers handle null
-state     add     table rename_history     — migration 0042; nothing reads it yet
-```
+state/add: table rename_history
+	migration 0042; nothing reads it yet
+
+contract/modify: parseHeader()
+	returns Rename | null, callers handle null
+	```diff
+	- parseHeader(line: string): Rename
+	+ parseHeader(line: string): Rename | null
+	```
+````
 
 The `## changes` section is the `changed` skill's table: what this work will change that something outside it depends on — a signature, a table, a dependency, a boundary, a side effect, visible behaviour — one line each, subject named so it can be found in the diff. Most steps add nothing to it, and that is what keeps it readable.
 
